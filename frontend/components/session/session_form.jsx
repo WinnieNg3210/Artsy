@@ -31,6 +31,7 @@ class SessionForm extends React.Component {
 
         // let currentForm;
         let signUpUser;
+        let guestDemo;
         // if (this.props.formType) {
         //     currentForm = (
         //         <div className="navLink">
@@ -41,7 +42,7 @@ class SessionForm extends React.Component {
 
         let currentForm = (this.props.formType === "Sign up") ? (
         <div className = "navLink">
-            Please sign up to continue or {this.props.navLink}
+            Please sign up to continue or {this.props.navLink} with demo
         </div>
         ) : (
         <div className = "navLink">
@@ -61,10 +62,16 @@ class SessionForm extends React.Component {
             )
         }
 
+        if (this.props.formType === "Sign In") {
+            guestDemo = (
+                <input type="submit" value="Demo Sign In" className="form-button" onClick={this.guestDemo}/>
+            )
+        }
+
 
         return (
             <div className="session-modal">
-                <div className="exitModalButton"></div>
+                <div className="exitModalButton">&times;</div>
                 <form onSubmit={this.handleSubmit} className="modal-form">
                     {/* Please {this.props.formType} or {this.props.navLink} */}
                     {currentForm}
@@ -85,7 +92,7 @@ class SessionForm extends React.Component {
                                 />
                         </label> 
                         <input type="submit" value={this.props.formType} className="form-button"/>
-                        <input type="submit" value="Demo Sign In" className="form-button"/>
+                        {guestDemo}
                     </div>
                 </form>
             </div>
