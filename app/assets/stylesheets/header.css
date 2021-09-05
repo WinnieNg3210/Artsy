@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Besley&display=swap");
+
+.headerTop {
+  /* width: 100%; */
+  padding: 1em 2em;
+  display: flex;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  /* border: thin solid black; */
+}
+
+.headerLogo {
+  font-size: 2.5em;
+  color: #eb6d20;
+  font-family: "Besley", serif;
+}
+
+.headerSearchBar {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border: medium solid black;
+  padding: 0.5em;
+  border-radius: 24px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.headerSearchIcon {
+  /* border: thin solid pink; */
+  padding-left: 10px;
+  padding-right: 5px;
+  border-radius: 0 24px 24px 0;
+}
+
+.headerSearchInput {
+  width: 100%;
+  border: none;
+  border-radius: 24px;
+}
+
+.headerCart {
+  display: flex;
+  align-items: center;
+}
+
+.headerSignIn {
+  color: black;
+  font-size: 1em;
+}
+
+.headerSignIn,
+.headerCart {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+/* 
+.session-modal {
+  display: none;
+} */
+
+/* .modal-form {
+  
+} */
+
+.headerBottom {
+  width: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+.categoryItems {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.showName {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  /* background-color: #eb6d20; */
+  /* border-radius: 50%; */
+  /* color: white; */
+}
+
+.signOutDropDown {
+  /* display: none; */
+
+  position: absolute;
+  padding: 1rem;
+  border: thin solid black;
+  border-radius: 0.75rem;
+  z-index: 7;
+  text-align: left;
+}
+
+.signOutButton {
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  background-color: white;
+}
+
+.showName:hover .signOutDropDown {
+  display: block;
+}
+
+.signOutContainer {
+  display: flex;
+  align-items: center;
+}
+
+.showFullName,
+.signOutButton {
+  font-size: 1rem;
+}
