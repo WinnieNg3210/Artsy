@@ -68,12 +68,11 @@ class SessionForm extends React.Component {
             )
         }
 
-
         return (
             <div className="session-modal">
-                <div className="exitModalButton">&times;</div>
+                <Link to="/" className="exitModalButton">&times;</Link>
+                {/* <div className="exitModalButton">&times;</div> */}
                 <form onSubmit={this.handleSubmit} className="modal-form">
-                    {/* Please {this.props.formType} or {this.props.navLink} */}
                     {currentForm}
                     <div className= "formInput">
                         {signUpUser}
@@ -95,8 +94,7 @@ class SessionForm extends React.Component {
                         {guestDemo}
                     </div>
                 </form>
-            </div>
-
+            </div>            
         )
     }
 }

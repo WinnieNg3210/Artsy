@@ -32,6 +32,7 @@ const Header = ({currentUser, logout}) => {
         <div>
             {/* <Link to="/signup">Sign Up</Link> */}
             {/* <br/> */}
+            {/* <button className="headerSignIn">Sign in</button> */}
             <Link to="/login" className="headerSignIn">Sign in</Link>
         </div>
     );
