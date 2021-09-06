@@ -1,13 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { signup } from "../../util/session_api_util";
+import {withRouter} from "react-router-dom";
 
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            username: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.guestDemo = this.guestDemo.bind(this);
@@ -26,29 +28,37 @@ class SessionForm extends React.Component {
     guestDemo() {
         this.setState({email: "beOurGuest@gmail.com", password: "guestDemo" })
     }
-    
+
+    renderErrors() {
+        // debugger
+        return(
+        <ul>
+            {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+                {error}
+            </li>
+            ))}
+        </ul>
+        );
+    }
+
     render() {
-
-        // let currentForm;
-        let signUpUser;
         let guestDemo;
-        // if (this.props.formType) {
-        //     currentForm = (
-        //         <div className="navLink">
-        //             {this.props.navLink}
-        //         </div>
-        //     )
-        // };
+        let signUpUser;    
 
-        let currentForm = (this.props.formType === "Sign up") ? (
-        <div className = "navLink">
-            Please sign up to continue or {this.props.navLink} with demo
-        </div>
-        ) : (
-        <div className = "navLink">
-            Please sign in to continue or {this.props.navLink}
-        </div>
-        )
+        if (this.props.formType === "Sign in") {
+            guestDemo = (
+                <input type="submit" value="Demo Sign In" className="form-button" onClick={this.guestDemo}/>
+            )
+        }
+
+        if (this.props.formType) {
+            currentForm = (
+                <div> 
+                    {this.props.otherForm}
+                </div>
+            )
+        };
 
         if (this.props.formType === "Sign up") {            
             signUpUser = (
@@ -60,44 +70,54 @@ class SessionForm extends React.Component {
                     />
                 </label>
             )
-        }
+        }        
 
-        if (this.props.formType === "Sign In") {
-            guestDemo = (
-                <input type="submit" value="Demo Sign In" className="form-button" onClick={this.guestDemo}/>
-            )
-        }
+        let currentForm = (this.props.formType === "Sign up") ? (
+        <div>
+            Please sign up to continue or {this.props.otherForm} with demo
+        </div>
+        ) : (
+        <div>
+            Please sign in to continue or {this.props.otherForm}
+        </div>
+        )                
 
         return (
-            <div className="session-modal">
-                <Link to="/" className="exitModalButton">&times;</Link>
-                {/* <div className="exitModalButton">&times;</div> */}
-                <form onSubmit={this.handleSubmit} className="modal-form">
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    
                     {currentForm}
-                    <div className= "formInput">
+                    <div onClick={this.props.closeModal}>X</div>
+
+                    {this.renderErrors()}
+                    <div className="formInput">
                         {signUpUser}
-                        <label className= "formInput">Email:
-                            <input
-                                type = "email"
-                                value= {this.state.email}
-                                onChange= {this.update("email")} 
-                                />
+                        <label className="formInput">Email:
+                            <input 
+                                type="email"
+                                value={this.state.email}
+                                onChange={this.update('email')}
+                            />
                         </label>
-                        <label className= "formInput">Password:
-                            <input
-                                type = "password"
-                                value= {this.state.password}
-                                onChange= {this.update("password")} 
-                                />
-                        </label> 
+
+                        <label className="formInput">Password:
+                            <input type="password"
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                            />
+                        </label>
+
                         <input type="submit" value={this.props.formType} className="form-button"/>
-                        <br/>
                         {guestDemo}
                     </div>
+                
                 </form>
-            </div>            
-        )
+            </div>
+        );
     }
+
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
+// export default SessionForm;
+

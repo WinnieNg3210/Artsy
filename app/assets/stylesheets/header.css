@@ -1,12 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Besley&display=swap");
 
 .headerTop {
-  /* width: 100%; */
   padding: 1em 2em;
   display: flex;
-  /* justify-content: space-evenly; */
+
   align-items: center;
-  /* border: thin solid black; */
 }
 
 .headerLogo {
@@ -27,7 +25,6 @@
 }
 
 .headerSearchIcon {
-  /* border: thin solid pink; */
   padding-left: 10px;
   padding-right: 5px;
   border-radius: 0 24px 24px 0;
@@ -54,14 +51,6 @@
   margin-left: 1.5em;
   margin-right: 1.5em;
 }
-/* 
-.session-modal {
-  display: none;
-} */
-
-/* .modal-form {
-  
-} */
 
 .headerBottom {
   width: 100%;
@@ -77,14 +66,9 @@
 .showName {
   font-size: 1.5rem;
   margin-left: 10px;
-  /* background-color: #eb6d20; */
-  /* border-radius: 50%; */
-  /* color: white; */
 }
 
 .signOutDropDown {
-  /* display: none; */
-
   position: absolute;
   padding: 1rem;
   border: thin solid black;

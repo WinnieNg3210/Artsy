@@ -19,7 +19,7 @@
    License: none (public domain)
 */
 
-html,
+/* html,
 body,
 div,
 span,
@@ -109,7 +109,7 @@ video {
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
 }
-/* HTML5 display-role reset for older browsers */
+
 article,
 aside,
 details,
@@ -145,3 +145,20 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */

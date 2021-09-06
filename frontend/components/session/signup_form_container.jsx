@@ -1,17 +1,31 @@
 import React from "react";
 import {connect} from "react-redux";
 import { signup } from "../../actions/session_actions";
-import {Link} from "react-router-dom";
 import SessionForm from "./session_form";
+import { showModal, hideModal } from "../../actions/modal_actions";
 
-const mSTP = state => ({
-    errors: Object.values(state.errors),
-    formType: "Sign up",
-    navLink: <Link to="/login">Sign in</Link>
-})
+// const mSTP = state => ({
+//     errors: errors.loginError,
+//     formType: "signup"
+//     // navLink: <Link to="/login">Sign in</Link>
+// })
+
+const mSTP = state => {
+  // debugger
+  return {
+    errors: state.errors.loginError,
+    formType: "Sign up"
+  };
+}
 
 const mDTP = (dispatch, ownProps) => ({
-    processForm: user => dispatch(signup(user))
+    processForm: user => dispatch(signup(user)),
+    otherForm: (
+      <button onClick={() => dispatch(showModal('Sign in'))}>
+        Sign in
+      </button>        
+    ),
+    hideModal: () => dispatch(hideModal())
 })
 
 export default connect(mSTP, mDTP)(SessionForm);
