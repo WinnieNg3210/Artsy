@@ -19,7 +19,7 @@
    License: none (public domain)
 */
 
-/* html,
+html,
 body,
 div,
 span,
@@ -107,9 +107,8 @@ video {
   font: inherit;
   vertical-align: baseline;
   text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
 }
-
+/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -161,4 +160,9 @@ table {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-} */
+}
+
+button {
+  border: none;
+  background-color: white;
+}

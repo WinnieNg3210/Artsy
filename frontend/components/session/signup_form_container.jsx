@@ -4,12 +4,6 @@ import { signup } from "../../actions/session_actions";
 import SessionForm from "./session_form";
 import { showModal, hideModal } from "../../actions/modal_actions";
 
-// const mSTP = state => ({
-//     errors: errors.loginError,
-//     formType: "signup"
-//     // navLink: <Link to="/login">Sign in</Link>
-// })
-
 const mSTP = state => {
   // debugger
   return {

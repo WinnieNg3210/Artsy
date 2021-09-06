@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { signup } from "../../util/session_api_util";
+// import { Link } from "react-router-dom";
+// import { signup } from "../../util/session_api_util";
 import {withRouter} from "react-router-dom";
 
 class SessionForm extends React.Component {
@@ -9,8 +9,8 @@ class SessionForm extends React.Component {
         this.state = {
             email: "",
             password: "",
-            username: ""
-        }
+            first_name: ""
+        };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.guestDemo = this.guestDemo.bind(this);
     }
@@ -22,7 +22,10 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);        
+        this.props.processForm(user);
+        this.props.hideModal();
+        // .then doesn't work because processForm is not a promise, it's a
+        // function which will dispatch a promise and result into a POJO
     }
 
     guestDemo() {
@@ -52,20 +55,12 @@ class SessionForm extends React.Component {
             )
         }
 
-        if (this.props.formType) {
-            currentForm = (
-                <div> 
-                    {this.props.otherForm}
-                </div>
-            )
-        };
-
         if (this.props.formType === "Sign up") {            
             signUpUser = (
                 <label className = "formInput">First Name:
                     <input 
                         type="text"
-                        value = {this.state.username}
+                        value = {this.state.first_name}
                         onChange= {this.update("first_name")}
                     />
                 </label>
@@ -73,44 +68,42 @@ class SessionForm extends React.Component {
         }        
 
         let currentForm = (this.props.formType === "Sign up") ? (
-        <div>
+        <div className = "navLink">
             Please sign up to continue or {this.props.otherForm} with demo
         </div>
         ) : (
-        <div>
+        <div className="navLink">
             Please sign in to continue or {this.props.otherForm}
         </div>
         )                
 
         return (
-            <div>
+            <div className="session-modal">
                 <form onSubmit={this.handleSubmit}>
-                    
-                    {currentForm}
-                    <div onClick={this.props.closeModal}>X</div>
+                    <div className="modal-form">
+                        <div onClick={this.props.hideModal} className="exitModalButton">x</div>
+                        {currentForm}            
+                        {this.renderErrors()}
+                        <div className="formInput">
+                            {signUpUser}
+                            <label className="formInput">Email:
+                                <input 
+                                    type="email"
+                                    value={this.state.email}
+                                    onChange={this.update('email')}
+                                />
+                            </label>
 
-                    {this.renderErrors()}
-                    <div className="formInput">
-                        {signUpUser}
-                        <label className="formInput">Email:
-                            <input 
-                                type="email"
-                                value={this.state.email}
-                                onChange={this.update('email')}
-                            />
-                        </label>
-
-                        <label className="formInput">Password:
-                            <input type="password"
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                            />
-                        </label>
-
-                        <input type="submit" value={this.props.formType} className="form-button"/>
-                        {guestDemo}
+                            <label className="formInput">Password:
+                                <input type="password"
+                                    value={this.state.password}
+                                    onChange={this.update('password')}
+                                />
+                            </label>
+                            <input type="submit" value={this.props.formType} className="form-button"/>
+                            {guestDemo}
                     </div>
-                
+                    </div>                
                 </form>
             </div>
         );
@@ -119,5 +112,5 @@ class SessionForm extends React.Component {
 }
 
 export default withRouter(SessionForm);
-// export default SessionForm;
+
 
