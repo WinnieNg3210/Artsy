@@ -42,6 +42,11 @@
   font-size: 1.35rem;
 }
 
+.otherForm {
+  font-size: 1.2rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
 .exitModalButton {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2em;

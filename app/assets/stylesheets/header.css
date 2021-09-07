@@ -63,11 +63,11 @@
   justify-content: space-evenly;
 }
 
-.showName {
+/* .showName {
   font-size: 1.5rem;
   margin-left: 10px;
-}
-
+} */
+/* 
 .signOutDropDown {
   position: absolute;
   padding: 1rem;
@@ -75,25 +75,39 @@
   border-radius: 0.75rem;
   z-index: 7;
   text-align: left;
-}
+} */
 
-.signOutButton {
+.signInButton {
   cursor: pointer;
   text-decoration: none;
   border: none;
   background-color: white;
-}
-
-.showName:hover .signOutDropDown {
-  display: block;
-}
-
-.signOutContainer {
-  display: flex;
-  align-items: center;
+  font-size: 1rem;
+  padding-left: 3px;
 }
 
 .showFullName,
 .signOutButton {
   font-size: 1rem;
+}
+
+.dropDownContainer {
+  background-color: white;
+  position: absolute;
+  top: 3.5rem;
+  right: 6.5rem;
+  padding: 1rem;
+  border: thin solid black;
+  border-radius: 0.75rem;
+  z-index: 7;
+  text-align: left;
+}
+
+.signOutIcon {
+  display: flex;
+}
+
+.dropDownBtn,
+.signInButton {
+  cursor: pointer;
 }

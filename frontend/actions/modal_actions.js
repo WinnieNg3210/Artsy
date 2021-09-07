@@ -1,18 +1,19 @@
 export const SHOW_MODAL = "SHOW_MODAL";
 export const HIDE_MODAL = "HIDE_MODAL";
 
-export const showModal = modal => ({
-    type: SHOW_MODAL,
-    modal
-})
+export const showModal = (modal) => ({
+  type: SHOW_MODAL,
+  modal,
+});
 
 // export const hideModal = () => ({
 //     type: HIDE_MODAL
 // })
 
 export const hideModal = () => {
-    // debugger
-    return {
-        type: HIDE_MODAL
-    }
-}
+  // debugger
+  console.log("hideModal");
+  return {
+    type: HIDE_MODAL,
+  };
+};

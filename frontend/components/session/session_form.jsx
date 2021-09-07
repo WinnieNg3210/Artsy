@@ -9,7 +9,7 @@ class SessionForm extends React.Component {
     this.state = {
       email: "",
       password: "",
-      // first_name: ""
+      first_name: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.guestDemo = this.guestDemo.bind(this);
@@ -22,8 +22,11 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
-    this.props.hideModal();
+    this.props.processForm(user).then(this.props.hideModal);
+
+    // this.props.processForm(user);
+    // this.props.hideModal();
+
     // .then doesn't work because processForm is not a promise, it's a
     // function which will dispatch a promise and result into a POJO
   }
@@ -37,7 +40,9 @@ class SessionForm extends React.Component {
     return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>{error}</li>
+          <li key={`error-${i}`} className="formErrors">
+            {error}
+          </li>
         ))}
       </ul>
     );
@@ -74,11 +79,12 @@ class SessionForm extends React.Component {
     let currentForm =
       this.props.formType === "Sign up" ? (
         <div className="navLink">
-          Please sign up to continue or {this.props.otherForm} with demo
+          Please sign up to continue or<span>{this.props.otherForm}</span>with
+          demo
         </div>
       ) : (
         <div className="navLink">
-          Please sign in to continue or {this.props.otherForm}
+          Please sign in to continue or<span>{this.props.otherForm}</span>
         </div>
       );
 

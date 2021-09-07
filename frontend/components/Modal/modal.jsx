@@ -1,19 +1,19 @@
-import React from 'react';
-import { hideModal } from '../../actions/modal_actions';
-import { connect } from 'react-redux';
-import LoginFormContainer from '../session/login_form_container';
-import SignupFormContainer from '../session/signup_form_container';
+import React from "react";
+import { hideModal } from "../../actions/modal_actions";
+import { connect } from "react-redux";
+import LoginFormContainer from "../session/login_form_container";
+import SignupFormContainer from "../session/signup_form_container";
 
-function Modal({modal, hideModal}) {
+function Modal({ modal, hideModal }) {
   if (!modal) {
     return null;
   }
   let component;
   switch (modal) {
-    case 'Sign in':
+    case "Sign in":
       component = <LoginFormContainer />;
       break;
-    case 'Sign up':
+    case "Sign up":
       component = <SignupFormContainer />;
       break;
     default:
@@ -21,22 +21,22 @@ function Modal({modal, hideModal}) {
   }
   return (
     <div className="modal-background" onClick={hideModal}>
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
-        { component }
+      <div className="modal-child" onClick={(e) => e.stopPropagation()}>
+        {component}
       </div>
     </div>
   );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    hideModal: () => dispatch(hideModal())
+    hideModal: () => dispatch(hideModal()),
   };
 };
 
