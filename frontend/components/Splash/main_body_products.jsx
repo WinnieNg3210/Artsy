@@ -1,5 +1,4 @@
 import React from "react";
-// import Quebec from "../../../app/assets/images/Quebec.jpg";
 
 export const MainBodyProduct = () => {
   return (
@@ -8,36 +7,36 @@ export const MainBodyProduct = () => {
         {/* <h1 className="category">Category 1</h1> */}
         <div className="main-product-items">
           <div className="main-product">
-            {/* <img className="main-product-img" src={Quebec} /> */}
-            <div className="main-product-img"></div>
+            <img className="main-product-img" src={Quebec} />
+            {/* <div className="main-product-img"></div> */}
             <div className="main-product-info">
               <p className="main-product-price">free</p>
             </div>
           </div>
           <div className="main-product">
-            {/* <img className="main-product-img" src={Quebec} /> */}
-            <div className="main-product-img"></div>
+            <img className="main-product-img" src={Quebec} />
+            {/* <div className="main-product-img"></div> */}
             <div className="main-product-info">
               <p className="main-product-price">free</p>
             </div>
           </div>
           <div className="main-product">
-            {/* <img className="main-product-img" src={Quebec} /> */}
-            <div className="main-product-img"></div>
+            <img className="main-product-img" src={Quebec} />
+            {/* <div className="main-product-img"></div> */}
             <div className="main-product-info">
               <p className="main-product-price">free</p>
             </div>
           </div>
           <div className="main-product">
-            {/* <img className="main-product-img" src={Quebec} /> */}
-            <div className="main-product-img"></div>
+            <img className="main-product-img" src={Quebec} />
+            {/* <div className="main-product-img"></div> */}
             <div className="main-product-info">
               <p className="main-product-price">free</p>
             </div>
           </div>
           <div className="main-product">
-            {/* <img className="main-product-img" src={Quebec} /> */}
-            <div className="main-product-img"></div>
+            <img className="main-product-img" src={Quebec} />
+            {/* <div className="main-product-img"></div> */}
             <div className="main-product-info">
               <p className="main-product-price">free</p>
             </div>
@@ -46,36 +45,36 @@ export const MainBodyProduct = () => {
         {/* <h1 className="category">Category 2</h1> */}
         <div className="main-product-items">
           <div className="main-product">
-            {/* <img className="main-product-img" src={Quebec} /> */}
-            <div className="main-product-img"></div>
+            <img className="main-product-img" src={Quebec} />
+            {/* <div className="main-product-img"></div> */}
             <div className="main-product-info">
               <p className="main-product-price">free</p>
             </div>
           </div>
           <div className="main-product">
-            {/* <img className="main-product-img" src={Quebec} /> */}
-            <div className="main-product-img"></div>
+            <img className="main-product-img" src={Quebec} />
+            {/* <div className="main-product-img"></div> */}
             <div className="main-product-info">
               <p className="main-product-price">free</p>
             </div>
           </div>
           <div className="main-product">
-            {/* <img className="main-product-img" src={Quebec} /> */}
-            <div className="main-product-img"></div>
+            <img className="main-product-img" src={Quebec} />
+            {/* <div className="main-product-img"></div> */}
             <div className="main-product-info">
               <p className="main-product-price">free</p>
             </div>
           </div>
           <div className="main-product">
-            {/* <img className="main-product-img" src={Quebec} /> */}
-            <div className="main-product-img"></div>
+            <img className="main-product-img" src={Quebec} />
+            {/* <div className="main-product-img"></div> */}
             <div className="main-product-info">
               <p className="main-product-price">free</p>
             </div>
           </div>
           <div className="main-product">
-            {/* <img className="main-product-img" src={Quebec} /> */}
-            <div className="main-product-img"></div>
+            <img className="main-product-img" src={Quebec} />
+            {/* <div className="main-product-img"></div> */}
             <div className="main-product-info">
               <p className="main-product-price">free</p>
             </div>

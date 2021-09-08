@@ -8,36 +8,36 @@ export const TopPickProduct = () => {
       <div className="picks-row top-picks-row">
         <div className="top-picks-container">
           <div>
-            {/* <img className="top-picks-img" src={Quebec} /> */}
-            <div className="top-picks-img"></div>
+            <img className="top-picks-img" src={Quebec} />
+            {/* <div className="top-picks-img"></div> */}
             <div className="top-product-info">
               <p className="top-pick-title">Top Pick Title</p>
             </div>
           </div>
           <div>
-            {/* <img className="top-picks-img" src={Quebec} /> */}
-            <div className="top-picks-img"></div>
+            <img className="top-picks-img" src={Quebec} />
+            {/* <div className="top-picks-img"></div> */}
             <div className="top-product-info">
               <p className="top-pick-title">Top Pick Title</p>
             </div>
           </div>
           <div>
-            {/* <img className="top-picks-img" src={Quebec} /> */}
-            <div className="top-picks-img"></div>
+            <img className="top-picks-img" src={Quebec} />
+            {/* <div className="top-picks-img"></div> */}
             <div className="top-product-info">
               <p className="top-pick-title">Top Pick Title</p>
             </div>
           </div>
           <div>
-            {/* <img className="top-picks-img" src={Quebec} /> */}
-            <div className="top-picks-img"></div>
+            <img className="top-picks-img" src={Quebec} />
+            {/* <div className="top-picks-img"></div> */}
             <div className="top-product-info">
               <p className="top-pick-title">Top Pick Title</p>
             </div>
           </div>
           <div>
-            {/* <img className="top-picks-img" src={Quebec} /> */}
-            <div className="top-picks-img"></div>
+            <img className="top-picks-img" src={Quebec} />
+            {/* <div className="top-picks-img"></div> */}
             <div className="top-product-info">
               <p className="top-pick-title">Top Pick Title</p>
             </div>
