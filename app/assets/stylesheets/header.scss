@@ -1,12 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Besley&display=swap");
 .header-top {
   padding: 1em 2em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .header-logo {
@@ -16,15 +14,9 @@
 }
 
 .header-search-bar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex: 1;
+  align-items: center;
   border: medium solid black;
   padding: 0.5em;
   border-radius: 24px;
@@ -45,12 +37,8 @@
 }
 
 .header-cart {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .exit-app-icon {
@@ -95,8 +83,7 @@
   border-radius: 0.75rem;
   z-index: 7;
   text-align: left;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .dropDownBtn,
@@ -111,11 +98,6 @@
 }
 
 .category-items {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  justify-content: space-evenly;
 }
-/*# sourceMappingURL=header.css.map */
