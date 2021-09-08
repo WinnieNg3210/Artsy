@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
 .body-container {
-  font-family: "Martel";
+  font-family: "Guardian-EgypTT", "Charter Bitstream", "Noto Serif Light", "Droid Serif", Georgia, serif;
 }
 
 .banner-img {
@@ -22,14 +22,14 @@
   margin: auto 3rem;
 }
 
-.main-product-row,
-.top-picks-row,
+.main-product-items,
+.top-picks-container,
 .banner-product {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(18rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
 }
 
 .header-banner-product {

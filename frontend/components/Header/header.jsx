@@ -38,14 +38,14 @@ class Header extends React.Component {
       dropDownMenu = (
         <div className="dropDownContainer">
           <div className="dropDownName">
-            {/* <h3>{currentUser.first_name[0]}</h3> */}
             <h3 className="dropDownBtn">{currentUser.first_name}</h3>
           </div>
           <div className="signoutIcon">
             <button onClick={logout} className="signOutButton">
               Sign Out
             </button>
-            <ExitToAppIcon />
+
+            <ExitToAppIcon className="exit-app-icon" />
           </div>
         </div>
       );
@@ -64,22 +64,26 @@ class Header extends React.Component {
 
     return (
       <div className="header">
-        <div className="headerTop">
+        <div className="header-top">
           <Link to="/">
-            <h1 className="headerLogo">Artsy</h1>
+            <h1 className="header-logo">Artsy</h1>
           </Link>
-          <div className="headerSearchBar">
-            <input className="headerSearchInput" type="text" />
-            <SearchIcon className="headerSearchIcon" />
+          <div className="header-search-bar">
+            <input
+              className="header-search-input"
+              type="text"
+              placeholder="Search for anything"
+            />
+            <SearchIcon className="header-search-icon" />
           </div>
           {display}
-          <div className="headerCart">
+          <div className="header-cart">
             <ShoppingCartIcon />
-            <span className="headerCartCount">0</span>
+            <span className="header-cart-count">0</span>
           </div>
         </div>
-        <div className="headerBottom">
-          <ul className="categoryItems">
+        <div className="header-bottom">
+          <ul className="category-items">
             <li>Category 1</li>
             <li>Category 2</li>
             <li>Category 3</li>

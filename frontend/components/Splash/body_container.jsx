@@ -1,45 +1,18 @@
 import React from "react";
-import { MainBodyProduct, TopPickProduct } from "./body";
+// import { MainBodyProduct, TopPickProduct, BannerBodyProduct } from "./body";
+import MainBodyProduct from "./main_body_products";
+import TopPickProduct from "./top_picks_product";
+import BannerBodyProduct from "./banner_body_products";
 import What from "./what";
 
 const BodyContainer = () => {
   return (
     <div className="body-container">
-      <div className="banner-container">
-        <div className="banner-img">
-          <div className="welcome-banner">Welcome back!</div>
-        </div>
-        <div className="banner-product header-banner-product">
-          <MainBodyProduct />
-          <MainBodyProduct />
-          <MainBodyProduct />
-          <MainBodyProduct />
-          <MainBodyProduct />
-        </div>
-      </div>
-
+      <BannerBodyProduct />
       <div className="body-product-image">
-        <div className="top-picks">
-          <h2 className="top-picks-header">Our picks for you</h2>
-          <div className="picks-row top-picks-row">
-            <TopPickProduct />
-            <TopPickProduct />
-            <TopPickProduct />
-            <TopPickProduct />
-            <TopPickProduct />
-          </div>
-        </div>
+        <TopPickProduct />
         <br />
-        <div className="main-product-row">
-          <MainBodyProduct />
-          <MainBodyProduct />
-          <MainBodyProduct />
-          <MainBodyProduct />
-          <MainBodyProduct />
-          <MainBodyProduct />
-          <MainBodyProduct />
-          <MainBodyProduct />
-        </div>
+        <MainBodyProduct />
       </div>
       <What />
     </div>
