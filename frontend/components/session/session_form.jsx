@@ -19,16 +19,14 @@ class SessionForm extends React.Component {
     return (e) => this.setState({ [field]: e.currentTarget.value });
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(this.props.hideModal);
-
-    // this.props.processForm(user);
-    // this.props.hideModal();
-
-    // .then doesn't work because processForm is not a promise, it's a
-    // function which will dispatch a promise and result into a POJO
   }
 
   guestDemo() {

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { signup } from "../../actions/session_actions";
+import { signup, clearErrors } from "../../actions/session_actions";
 import SessionForm from "./session_form";
 import { showModal, hideModal } from "../../actions/modal_actions";
 
@@ -22,6 +22,7 @@ const mDTP = (dispatch, ownProps) => ({
     </button>
   ),
   hideModal: () => dispatch(hideModal()),
+  clearErrors: () => dispatch(clearErrors()),
 });
 
 export default connect(mSTP, mDTP)(SessionForm);

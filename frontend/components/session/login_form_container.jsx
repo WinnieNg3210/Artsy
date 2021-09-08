@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { login } from "../../actions/session_actions";
+import { login, clearErrors } from "../../actions/session_actions";
 import { showModal, hideModal } from "../../actions/modal_actions";
 import SessionForm from "./session_form";
 
@@ -23,6 +23,7 @@ const mapDispatchToProps = (dispatch) => {
       </button>
     ),
     hideModal: () => dispatch(hideModal()),
+    clearErrors: () => dispatch(clearErrors()),
   };
 };
 

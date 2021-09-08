@@ -2,6 +2,7 @@ import { HIDE_MODAL } from "../actions/modal_actions";
 import {
   RECEIVE_CURRENT_USER,
   RECEIVE_SESSION_ERRORS,
+  CLEAR_ERRORS,
 } from "../actions/session_actions";
 
 const sessionErrorsReducer = (state = [], action) => {
@@ -13,6 +14,8 @@ const sessionErrorsReducer = (state = [], action) => {
     case RECEIVE_CURRENT_USER:
       return [];
     case HIDE_MODAL:
+      return [];
+    case CLEAR_ERRORS:
       return [];
     default:
       return state;
