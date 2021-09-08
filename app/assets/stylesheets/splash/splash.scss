@@ -1,0 +1,166 @@
+// @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Besley&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+
+.body-container {
+  font-family: "Martel";
+}
+
+.banner-img {
+  margin-top: 3rem;
+  background-color: #fdebd2;
+  height: 300px;
+}
+
+.welcome-banner {
+  padding-top: 2rem;
+  text-align: center;
+  font-family: "Martel", serif;
+  font-size: 4rem;
+}
+
+.body-product-image {
+  margin: auto 3rem;
+}
+
+.main-product-row,
+.top-picks-row,
+.banner-product {
+  display: grid;
+  // grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  grid-gap: 1rem;
+}
+
+.header-banner-product {
+  position: relative;
+  bottom: 13vh;
+  margin: auto 3rem;
+}
+
+.main-product-img {
+  height: 30vh;
+  width: 18rem;
+  border-radius: 1rem;
+}
+
+.top-picks-header {
+  margin-bottom: 2rem;
+  font-size: 4rem;
+}
+
+.top-picks {
+  text-align: center;
+  // border: thick solid black;
+}
+
+.top-picks-img {
+  height: 60%;
+  width: 50%;
+  border-radius: 50%;
+}
+
+.main-product-info {
+  background-color: white;
+  font-size: 1.5rem;
+  border-radius: 1.25rem;
+  width: 35%;
+  height: 2rem;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0rem;
+  position: relative;
+  left: 1rem;
+  bottom: 3rem;
+}
+
+.top-product-info {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.top-pick-title {
+  font-size: 1.5rem;
+}
+
+.what-container {
+  background-color: #fdebd2;
+  text-align: center;
+  font-weight: 100px;
+  padding: 4rem 0;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+}
+
+.what-reasons {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.footer-container {
+  margin-top: 2rem; // the margin between what-container and this one
+  background-color: #2f466c;
+  font-family: "Roboto", sans-serif;
+  padding: 2rem 1rem;
+  color: white;
+  display: grid;
+  grid-template-columns: 25% 25% 25% auto;
+  line-height: 2rem;
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  a {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    color: white;
+  }
+}
+
+.footer-col,
+.help-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.download-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  border-radius: 2rem;
+  border: medium solid white;
+  width: 19rem;
+  font-size: 1.25rem;
+}
+
+.download-logo {
+  color: #2f466c;
+  font-size: 1.5rem;
+  font-family: "Martel";
+  background-color: white;
+  border-radius: 0.5rem;
+  margin: 0.5rem 0;
+
+  width: 2rem;
+  text-align: center;
+}
+
+.download-app {
+  margin-top: 0.5rem;
+}

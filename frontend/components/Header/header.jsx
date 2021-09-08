@@ -37,7 +37,10 @@ class Header extends React.Component {
     if (dropdown && currentUser) {
       dropDownMenu = (
         <div className="dropDownContainer">
-          <h3 className="dropDownBtn">{currentUser.first_name}</h3>
+          <div className="dropDownName">
+            {/* <h3>{currentUser.first_name[0]}</h3> */}
+            <h3 className="dropDownBtn">{currentUser.first_name}</h3>
+          </div>
           <div className="signoutIcon">
             <button onClick={logout} className="signOutButton">
               Sign Out

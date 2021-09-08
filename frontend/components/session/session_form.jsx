@@ -79,12 +79,12 @@ class SessionForm extends React.Component {
     let currentForm =
       this.props.formType === "Sign up" ? (
         <div className="navLink">
-          Please sign up to continue or<span>{this.props.otherForm}</span>with
+          Please sign up to continue or <span>{this.props.otherForm}</span> with
           demo
         </div>
       ) : (
         <div className="navLink">
-          Please sign in to continue or<span>{this.props.otherForm}</span>
+          Please sign in to continue or <span>{this.props.otherForm}</span>
         </div>
       );
 

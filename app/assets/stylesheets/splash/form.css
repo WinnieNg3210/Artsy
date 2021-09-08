@@ -10,7 +10,8 @@
 } */
 
 .modal-form {
-  width: 100%;
+  width: 400px;
+  height: 500px;
   margin: auto;
   border-radius: 1rem;
   border: thin solid grey;
