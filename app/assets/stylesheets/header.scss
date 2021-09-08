@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Besley&display=swap");
+.header-top {
+  padding: 1em 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-logo {
+  font-size: 2.5em;
+  color: #eb6d20;
+  font-family: "Besley", serif;
+}
+
+.header-search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: medium solid black;
+  padding: 0.5em;
+  border-radius: 24px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.header-search-icon {
+  padding-left: 10px;
+  padding-right: 5px;
+  border-radius: 0 24px 24px 0;
+}
+
+.header-search-input {
+  width: 100%;
+  border: none;
+  border-radius: 24px;
+}
+
+.header-cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.exit-app-icon {
+  position: relative;
+  left: 5px;
+  top: 5px;
+}
+
+.header-sign-in {
+  color: black;
+  font-size: 1em;
+}
+
+.header-sign-in,
+.header-cart {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+
+.header-bottom {
+  width: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+.signInButton {
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  background-color: white;
+  font-size: 1rem;
+  padding-left: 3px;
+}
+
+.dropDownContainer {
+  background-color: white;
+  position: absolute;
+  top: 3.5rem;
+  right: 6.5rem;
+  padding: 1rem;
+  border: thin solid grey;
+  border-radius: 0.75rem;
+  z-index: 7;
+  text-align: left;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.dropDownBtn,
+.signInButton {
+  cursor: pointer;
+}
+
+.dropDownBtn,
+.signOutButton {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+.category-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+/*# sourceMappingURL=header.css.map */

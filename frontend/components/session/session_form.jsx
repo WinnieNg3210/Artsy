@@ -1,97 +1,136 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { signup } from "../../util/session_api_util";
+// import { Link } from "react-router-dom";
+// import { signup } from "../../util/session_api_util";
+import { withRouter } from "react-router-dom";
 
 class SessionForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: "",
-            password: ""
-        }
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.guestDemo = this.guestDemo.bind(this);
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: "",
+      first_name: "",
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestDemo = this.guestDemo.bind(this);
+  }
+
+  update(field) {
+    return (e) => this.setState({ [field]: e.currentTarget.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user).then(this.props.hideModal);
+
+    // this.props.processForm(user);
+    // this.props.hideModal();
+
+    // .then doesn't work because processForm is not a promise, it's a
+    // function which will dispatch a promise and result into a POJO
+  }
+
+  guestDemo() {
+    this.setState({ email: "beOurGuest@gmail.com", password: "guestDemo" });
+  }
+
+  renderErrors() {
+    return (
+      <ul className="form-errors">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`} className="individual-errors">
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  // componentWillUnmount() {
+  //   this.props.errors = [];
+  // }
+
+  render() {
+    let guestDemo;
+    let signUpUser;
+
+    if (this.props.formType === "Sign in") {
+      guestDemo = (
+        <input
+          type="submit"
+          value="Demo Sign In"
+          className="form-button"
+          onClick={this.guestDemo}
+        />
+      );
     }
 
-    update(field) {
-        return e => this.setState({[field]: e.currentTarget.value})
+    if (this.props.formType === "Sign up") {
+      signUpUser = (
+        <label className="formInput">
+          First Name:
+          <input
+            type="text"
+            value={this.state.first_name}
+            onChange={this.update("first_name")}
+          />
+        </label>
+      );
     }
 
-    handleSubmit(e) {
-        e.preventDefault()
-        const user = Object.assign({}, this.state);
-        this.props.processForm(user);        
-    }
-
-    guestDemo() {
-        this.setState({email: "beOurGuest@gmail.com", password: "guestDemo" })
-    }
-    
-    render() {
-
-        // let currentForm;
-        let signUpUser;
-        // if (this.props.formType) {
-        //     currentForm = (
-        //         <div className="navLink">
-        //             {this.props.navLink}
-        //         </div>
-        //     )
-        // };
-
-        let currentForm = (this.props.formType === "Sign up") ? (
-        <div className = "navLink">
-            Please sign up to continue or {this.props.navLink}
+    let currentForm =
+      this.props.formType === "Sign up" ? (
+        <div className="navLink">
+          Please sign up to continue or <span>{this.props.otherForm}</span> with
+          demo
         </div>
-        ) : (
-        <div className = "navLink">
-            Please sign in to continue or {this.props.navLink}
+      ) : (
+        <div className="navLink">
+          Please sign in to continue or <span>{this.props.otherForm}</span>
         </div>
-        )
+      );
 
-        if (this.props.formType === "Sign up") {            
-            signUpUser = (
-                <label className = "formInput">First Name:
-                    <input 
-                        type="text"
-                        value = {this.state.username}
-                        onChange= {this.update("first_name")}
-                    />
-                </label>
-            )
-        }
-
-
-        return (
-            <div className="session-modal">
-                <div className="exitModalButton"></div>
-                <form onSubmit={this.handleSubmit} className="modal-form">
-                    {/* Please {this.props.formType} or {this.props.navLink} */}
-                    {currentForm}
-                    <div className= "formInput">
-                        {signUpUser}
-                        <label className= "formInput">Email:
-                            <input
-                                type = "email"
-                                value= {this.state.email}
-                                onChange= {this.update("email")} 
-                                />
-                        </label>
-                        <label className= "formInput">Password:
-                            <input
-                                type = "password"
-                                value= {this.state.password}
-                                onChange= {this.update("password")} 
-                                />
-                        </label> 
-                        <input type="submit" value={this.props.formType} className="form-button"/>
-                        <input type="submit" value="Demo Sign In" className="form-button"/>
-                    </div>
-                </form>
+    return (
+      <div className="session-modal">
+        <form onSubmit={this.handleSubmit}>
+          <div className="modal-form">
+            <div onClick={this.props.hideModal} className="exitModalButton">
+              x
             </div>
+            {currentForm}
+            {this.renderErrors()}
+            <div className="formInput">
+              {signUpUser}
+              <label className="formInput">
+                Email:
+                <input
+                  type="email"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                />
+              </label>
 
-        )
-    }
+              <label className="formInput">
+                Password:
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                />
+              </label>
+              <input
+                type="submit"
+                value={this.props.formType}
+                className="form-button"
+              />
+              {guestDemo}
+            </div>
+          </div>
+        </form>
+      </div>
+    );
+  }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
