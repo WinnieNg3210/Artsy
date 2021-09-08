@@ -6,13 +6,7 @@ export const showModal = (modal) => ({
   modal,
 });
 
-// export const hideModal = () => ({
-//     type: HIDE_MODAL
-// })
-
 export const hideModal = () => {
-  // debugger
-  console.log("hideModal");
   return {
     type: HIDE_MODAL,
   };

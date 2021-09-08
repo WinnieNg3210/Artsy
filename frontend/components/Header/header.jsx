@@ -16,7 +16,6 @@ class Header extends React.Component {
 
   handleDropDown(e) {
     e.preventDefault();
-    console.log(this.state.dropdown);
     this.setState({ dropdown: !this.state.dropdown });
   }
 
