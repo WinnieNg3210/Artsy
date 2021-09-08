@@ -38,14 +38,18 @@ class SessionForm extends React.Component {
   renderErrors() {
     // debugger
     return (
-      <ul>
+      <ul className="form-errors">
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`} className="formErrors">
+          <li key={`error-${i}`} className="individual-errors">
             {error}
           </li>
         ))}
       </ul>
     );
+  }
+
+  componentWillUnmount() {
+    this.props.errors = [];
   }
 
   render() {
