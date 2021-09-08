@@ -1,5 +1,5 @@
 import React from "react";
-import Quebec from "../../../app/assets/images/Quebec.jpg";
+// import Quebec from "../../../app/assets/images/Quebec.jpg";
 
 const BannerBodyProduct = ({ currentUser }) => {
   let welcome;
@@ -21,31 +21,36 @@ const BannerBodyProduct = ({ currentUser }) => {
         <div className="main-product-container">
           <div className="main-product-items">
             <div className="main-product">
-              <img className="main-product-img" src={Quebec} />
+              <div className="main-product-img"></div>
+              {/* <img className="main-product-img" src={Quebec} /> */}
               <div className="main-product-info">
                 <p className="main-product-price">free</p>
               </div>
             </div>
             <div className="main-product">
-              <img className="main-product-img" src={Quebec} />
+              <div className="main-product-img"></div>
+              {/* <img className="main-product-img" src={Quebec} /> */}
               <div className="main-product-info">
                 <p className="main-product-price">free</p>
               </div>
             </div>
             <div className="main-product">
-              <img className="main-product-img" src={Quebec} />
+              <div className="main-product-img"></div>
+              {/* <img className="main-product-img" src={Quebec} /> */}
               <div className="main-product-info">
                 <p className="main-product-price">free</p>
               </div>
             </div>
             <div className="main-product">
-              <img className="main-product-img" src={Quebec} />
+              <div className="main-product-img"></div>
+              {/* <img className="main-product-img" src={Quebec} /> */}
               <div className="main-product-info">
                 <p className="main-product-price">free</p>
               </div>
             </div>
             <div className="main-product">
-              <img className="main-product-img" src={Quebec} />
+              <div className="main-product-img"></div>
+              {/* <img className="main-product-img" src={Quebec} /> */}
               <div className="main-product-info">
                 <p className="main-product-price">free</p>
               </div>

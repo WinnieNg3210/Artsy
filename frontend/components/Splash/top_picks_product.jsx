@@ -1,5 +1,5 @@
 import React from "react";
-import Quebec from "../../../app/assets/images/Quebec.jpg";
+// import Quebec from "../../../app/assets/images/Quebec.jpg";
 
 export const TopPickProduct = () => {
   return (
@@ -8,31 +8,36 @@ export const TopPickProduct = () => {
       <div className="picks-row top-picks-row">
         <div className="top-picks-container">
           <div>
-            <img className="top-picks-img" src={Quebec} />
+            {/* <img className="top-picks-img" src={Quebec} /> */}
+            <div className="top-picks-img"></div>
             <div className="top-product-info">
               <p className="top-pick-title">Top Pick Title</p>
             </div>
           </div>
           <div>
-            <img className="top-picks-img" src={Quebec} />
+            {/* <img className="top-picks-img" src={Quebec} /> */}
+            <div className="top-picks-img"></div>
             <div className="top-product-info">
               <p className="top-pick-title">Top Pick Title</p>
             </div>
           </div>
           <div>
-            <img className="top-picks-img" src={Quebec} />
+            {/* <img className="top-picks-img" src={Quebec} /> */}
+            <div className="top-picks-img"></div>
             <div className="top-product-info">
               <p className="top-pick-title">Top Pick Title</p>
             </div>
           </div>
           <div>
-            <img className="top-picks-img" src={Quebec} />
+            {/* <img className="top-picks-img" src={Quebec} /> */}
+            <div className="top-picks-img"></div>
             <div className="top-product-info">
               <p className="top-pick-title">Top Pick Title</p>
             </div>
           </div>
           <div>
-            <img className="top-picks-img" src={Quebec} />
+            {/* <img className="top-picks-img" src={Quebec} /> */}
+            <div className="top-picks-img"></div>
             <div className="top-product-info">
               <p className="top-pick-title">Top Pick Title</p>
             </div>
