@@ -22,35 +22,35 @@ const BannerBodyProduct = ({ currentUser }) => {
           <div className="main-product-items">
             <div className="main-product">
               {/* <div className="main-product-img"></div> */}
-              <img className="main-product-img" src={window.Quebec} />
+              <img className="main-product-img" src={window.quebec} />
               <div className="main-product-info">
                 <p className="main-product-price">free</p>
               </div>
             </div>
             <div className="main-product">
               {/* <div className="main-product-img"></div> */}
-              <img className="main-product-img" src={window.Quebec} />
+              <img className="main-product-img" src={window.quebec} />
               <div className="main-product-info">
                 <p className="main-product-price">free</p>
               </div>
             </div>
             <div className="main-product">
               {/* <div className="main-product-img"></div> */}
-              <img className="main-product-img" src={window.Quebec} />
+              <img className="main-product-img" src={window.quebec} />
               <div className="main-product-info">
                 <p className="main-product-price">free</p>
               </div>
             </div>
             <div className="main-product">
               {/* <div className="main-product-img"></div> */}
-              <img className="main-product-img" src={window.Quebec} />
+              <img className="main-product-img" src={window.quebec} />
               <div className="main-product-info">
                 <p className="main-product-price">free</p>
               </div>
             </div>
             <div className="main-product">
               {/* <div className="main-product-img"></div> */}
-              <img className="main-product-img" src={window.Quebec} />
+              <img className="main-product-img" src={window.quebec} />
               <div className="main-product-info">
                 <p className="main-product-price">free</p>
               </div>
