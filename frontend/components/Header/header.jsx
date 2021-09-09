@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCartOutlined";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 
 class Header extends React.Component {
   constructor(props) {
@@ -50,11 +51,24 @@ class Header extends React.Component {
       );
     }
 
+    let dropDownIcon;
+    if (currentUser) {
+      dropDownIcon = <ArrowDropDownIcon className="drop-down-arrow" />;
+    }
+
     const welcome = () => (
       <div>
-        <h2 className="dropDownClick" onClick={this.handleDropDown}>
-          {currentUser.first_name[0]}
-        </h2>
+        <div className="hover-drop-down">
+          <div className="name-drop-arrow">
+            <div className="orange-circle">
+              <h2 className="dropDownClick" onClick={this.handleDropDown}>
+                {currentUser.first_name[0]}
+              </h2>
+            </div>
+            {dropDownIcon}
+          </div>
+        </div>
+
         {dropDownMenu}
       </div>
     );

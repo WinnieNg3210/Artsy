@@ -57,6 +57,35 @@
   margin-right: 1.5em;
 }
 
+// .hover-drop-down:hover {
+//   text-align: center;
+//   width: 5rem;
+//   height: 3rem;
+//   border-radius: 45%;
+//   background-color: lightgrey;
+// }
+
+.name-drop-arrow {
+  display: flex;
+}
+
+.drop-down-arrow {
+  color: gray;
+}
+
+.orange-circle {
+  width: 1.75rem;
+  height: 1.75rem;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #eb6d20;
+
+  h2 {
+    padding-top: 0.4rem;
+    color: white;
+  }
+}
+
 .header-bottom {
   width: 100%;
   // margin-top: 0.5em;
@@ -75,8 +104,8 @@
 .dropDownContainer {
   background-color: white;
   position: absolute;
-  top: 3.5rem;
-  right: 6.5rem;
+  top: 3.75rem;
+  right: 15rem;
   padding: 1rem;
   border: thin solid grey;
   border-radius: 0.75rem;
@@ -85,18 +114,18 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.dropDownBtn,
-.signInButton {
+.dropDownBtn {
   cursor: pointer;
 }
 
 .dropDownBtn,
 .signOutButton {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
+  font-family: "Martel";
+  font-size: 0.85rem;
 }
 
 .category-items {
+  margin-bottom: 1rem;
   padding: 0rem 4rem;
   display: flex;
   justify-content: space-evenly;

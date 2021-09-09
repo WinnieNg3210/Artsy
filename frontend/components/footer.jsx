@@ -6,18 +6,18 @@ const Footer = () => {
       <div className="footer-col">
         <h1>Shop</h1>
         <a href="#">Gift cards</a>
-        <a href="#">Etsy blog</a>
+        <a href="#">Artsy blog</a>
       </div>
       <div className="footer-col">
         <h1>Sell</h1>
-        <a href="#">Sell on Etsy</a>
+        <a href="#">Sell on Artsy</a>
         <a href="#">Teams</a>
         <a href="#">Forums</a>
         <a href="#">Affiliates</a>
       </div>
       <div className="footer-col">
         <h1>About</h1>
-        <a href="#">Etsy, Inc.</a>
+        <a href="#">Artsy, Inc.</a>
         <a href="#">Policies</a>
         <a href="#">Investors</a>
         <a href="#">Careers</a>
