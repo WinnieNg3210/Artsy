@@ -1,65 +1,47 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 // import Quebec from "../../../app/assets/images/Quebec.jpg";
 
-const BannerBodyProduct = ({ currentUser }) => {
-  let welcome;
-
-  if (currentUser) {
-    welcome = (
-      <div className="welcome-banner">
-        Welcome back, {currentUser.first_name}!
-      </div>
-    );
-  } else {
-    welcome = <div className="welcome-banner">Beautifully Crafted Arts</div>;
+class BannerBodyProduct extends React.Component {
+  constructor(props) {
+    super(props);
   }
 
-  return (
-    <div className="banner-container">
-      <div className="banner-img">{welcome}</div>
-      <div className="banner-product header-banner-product">
-        <div className="main-product-container">
-          <div className="main-product-items">
-            <div className="main-product">
-              {/* <div className="main-product-img"></div> */}
-              <img className="main-product-img" src={window.quebec} />
-              <div className="main-product-info">
-                <p className="main-product-price">free</p>
-              </div>
-            </div>
-            <div className="main-product">
-              {/* <div className="main-product-img"></div> */}
-              <img className="main-product-img" src={window.quebec} />
-              <div className="main-product-info">
-                <p className="main-product-price">free</p>
-              </div>
-            </div>
-            <div className="main-product">
-              {/* <div className="main-product-img"></div> */}
-              <img className="main-product-img" src={window.quebec} />
-              <div className="main-product-info">
-                <p className="main-product-price">free</p>
-              </div>
-            </div>
-            <div className="main-product">
-              {/* <div className="main-product-img"></div> */}
-              <img className="main-product-img" src={window.quebec} />
-              <div className="main-product-info">
-                <p className="main-product-price">free</p>
-              </div>
-            </div>
-            <div className="main-product">
-              {/* <div className="main-product-img"></div> */}
-              <img className="main-product-img" src={window.quebec} />
-              <div className="main-product-info">
-                <p className="main-product-price">free</p>
-              </div>
+  componentDidMount() {
+    debugger;
+    this.props.fetchProducts();
+  }
+
+  mapBannerItems(arr = []) {
+    // debugger;
+    return arr.map((item) => {
+      <div className="main-product">
+        <Link to={`/products/${item.id}`}>
+          <img className="main-product-img" src={window.quebec} />
+        </Link>
+        <div className="main-product-info">
+          <p className="main-product-price">{item.price}</p>
+        </div>
+      </div>;
+    });
+  }
+
+  render() {
+    return (
+      <div className="banner-container">
+        <div className="banner-img">
+          <div className="welcome-banner">Beautifully Crafted Arts</div>
+        </div>
+        <div className="banner-product header-banner-product">
+          <div className="main-product-container">
+            <div className="main-product-items">
+              {this.mapBannerItems(this.props.products)}
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default BannerBodyProduct;

@@ -15,7 +15,7 @@ export const receiveProduct = (product) => ({
 
 export const fetchProducts = () => (dispatch) => {
   return ProductApiUtil.fetchProducts().then((products) =>
-    dispatch(fetchProducts(products))
+    dispatch(receiveAllProducts(products))
   );
 };
 

@@ -1,15 +1,11 @@
 import React from "react";
 import { Route, Switch, Link } from "react-router-dom";
-
 import HeaderContainer from "./Header/header_container";
 import Modal from "./Modal/modal";
-import LoginFormContainer from "./session/login_form_container";
-import SignupFormContainer from "./session/signup_form_container";
-// import Product from "./Testing/product";
-import Footer from "./Splash/footer";
-
+import Footer from "./footer";
 import { AuthRoute } from "../util/route_util";
 import BodyContainer from "./Splash/body_container";
+import ProductIndexContainer from "./Splash/product_index_container";
 
 const App = () => (
   <div>
@@ -17,9 +13,8 @@ const App = () => (
     <HeaderContainer />
     {/* <Banner /> */}
     <Switch>
-      {/* <AuthRoute path="/login" component={LoginFormContainer} /> */}
-
-      <Link to="/" component={BodyContainer} />
+      <Route exact path="/" component={BodyContainer} />
+      {/* <Route exact path="/products" component={ProductIndexContainer} /> */}
     </Switch>
     <Footer />
   </div>
