@@ -8,6 +8,14 @@ class ProductIndexItem extends React.Component {
 
   render() {
     const { product } = this.props;
+
+    return (
+      <li key={product.id}>
+        <Link to={`products/${product.id}`}>
+          <img src={window.quebec} />
+        </Link>
+      </li>
+    );
   }
 }
 

@@ -1,7 +1,9 @@
 class Product < ApplicationRecord
-    validate :title, :description, :price, :seller_id
+    validates :title, :description, :price, :seller_id, presence: true
     
     belongs_to :seller,
         foreign_key: :seller_id,
         class_name: :User
+
+    has_one_attached :photo
 end
