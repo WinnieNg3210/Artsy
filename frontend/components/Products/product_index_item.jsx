@@ -12,8 +12,12 @@ class ProductIndexItem extends React.Component {
     return (
       <li key={product.id}>
         <Link to={`products/${product.id}`}>
-          <img src={window.quebec} />
+          {/* <img src={product.imageUrl} /> */}
+          <img src={window.quebec} className="top-picks-image" />
         </Link>
+        <div className="product-price-pill">
+          <p className="product-price">{product.price}</p>
+        </div>
       </li>
     );
   }

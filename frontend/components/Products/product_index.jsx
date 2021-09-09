@@ -1,5 +1,6 @@
 import React from "react";
 import ProductIndexItem from "./product_index_item";
+import What from "./what";
 
 class ProductIndex extends React.Component {
   constructor(props) {
@@ -16,9 +17,9 @@ class ProductIndex extends React.Component {
       return <ProductIndexItem key={product.id} product={product} />;
     });
     return (
-      <div>
+      <div className="product-index-container">
         <div className="banner">
-          <h1 className="welcome-banner">Beautifully Crafted Arts</h1>
+          <h1 className="welcome-banner">High Quality Photographs</h1>
         </div>
         <div className="banner-images">
           <ul>
@@ -26,26 +27,31 @@ class ProductIndex extends React.Component {
               <a href="">
                 <img src={window.quebec} className="round-image" />
               </a>
+              <p>Street Photography</p>
             </li>
             <li>
               <a href="">
                 <img src={window.quebec} className="round-image" />
               </a>
+              <p>Fashion</p>
             </li>
             <li>
               <a href="">
                 <img src={window.quebec} className="round-image" />
               </a>
+              <p>Black & White</p>
             </li>
             <li>
               <a href="">
                 <img src={window.quebec} className="round-image" />
               </a>
+              <p>Modern</p>
             </li>
             <li>
               <a href="">
                 <img src={window.quebec} className="round-image" />
               </a>
+              <p>Portrait</p>
             </li>
           </ul>
         </div>
@@ -54,9 +60,12 @@ class ProductIndex extends React.Component {
           <ul></ul>
         </div> */}
         <div className="top-picks">
-          <h2>Our picks for you</h2>
+          <div className="top-picks-title">
+            <p>Our picks for you</p>
+          </div>
           <ul>{productItems}</ul>
         </div>
+        <What />
       </div>
     );
   }

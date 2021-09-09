@@ -9,7 +9,7 @@ const What = () => {
           <h2 className="what-header">A community doing good</h2>
           <p className="what-text">
             Artsy is a global online marketplace where people come together to
-            create, sell, buy and curate artisan items
+            create, sell, and buy art
           </p>
         </div>
         <div className="what">
