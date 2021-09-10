@@ -12,11 +12,17 @@ class ProductShow extends React.Component {
 
   render() {
     const { product } = this.props;
+    let imageSrc;
+    if (product.imageUrl) {
+      imageSrc = product.imageUrl;
+    } else {
+      imageSrc = window.quebec;
+    }
     if (!product) return null; // will need this to return a page that a product does not exist
     return (
       <div className="product-page-container">
         <div className="product-left">
-          <img src={window.quebec} className="product-show-image" />
+          <img src={imageSrc} className="product-show-image" />
           <div className="reviews-container">
             <p>WILL ADD SOME REVIEWS SOON!</p>
           </div>
