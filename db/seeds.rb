@@ -41,21 +41,43 @@ user26 = User.create!(email: "smoothJSGamer@aa.com", first_name: "Julian", passw
 
 
 
-# image1 = open("https://artsy-seed.s3.amazonaws.com/p1.jpg")
-# product1.image.attach(io: image1, filename: 'p1.jpg')
+
 
 product1 = Product.create!(title: "Long White Snowy Never Ending Road to Nirvana", description: "High quality photograph by John Broks." , price: 59.99, seller_id: user4.id)
-product2 = Product.create!(title: "Woman Hurriedly Walking Past a Beautiful Collage of Drawn Faces Blurry Woman Walking Fast on the Street", description: "High quality photograph by Masahiro Miyagi", price: 64.99, seller_id: user6.id )
+image1 = URI.open("https://active-storage-artsapp-dev.s3.amazonaws.com/p1.jpg")
+product1.image.attach(io: image1, filename:"p1.jpg")
 
-image2 = File.open(Rails.root.join("app/assets/images/p3b.jpg"))
-product2.image.attach(io: image1, filename: "p3b.jpg")
+
+product2 = Product.create!(title: "Woman Hurriedly Walking Past a Beautiful Collage of Drawn Faces Blurry Woman Walking Fast on the Street", description: "High quality photograph by Masahiro Miyagi", price: 64.99, seller_id: user6.id )
+# image2 = URI.open("https://active-storage-artsapp-dev.s3.amazonaws.com/p2.jpg")
+# product1.image.attach(io: image2, filename:"p2.jpg")
 
 product3 = Product.create!(title: "Pikachu In Street Clothes Electric Mouse Pokemon in Hoodie and Sneakers in a Green Scenery", description: "High quality photograph by Lia", price: 75.99, seller_id: user7.id )
+# image3 = URI.open("https://active-storage-artsapp-dev.s3.amazonaws.com/p3.jpg")
+# product3.image.attach(io: image3, filename:"p3.jpg")
+
 product4 = Product.create!(title: "White Walls Overwhelming Around Someone", description: "High quality photograph by Nicola Fioravanti", price: 80.99, seller_id: user10.id )
+# image4 = URI.open("https://active-storage-artsapp-dev.s3.amazonaws.com/p4.jpg")
+# product4.image.attach(io: image4, filename:"p4.jpg")
+
 product5 = Product.create!(title: "Mountain Lake Welcoming the Start of Spring After a Cold Winter Snowy Mountain Melting Away to the Cold Lake", description: "High quality photograph by Click and Learn Photography", price: 85.99, seller_id: user10.id)
+# image5 = URI.open("https://active-storage-artsapp-dev.s3.amazonaws.com/p5.jpg")
+# product5.image.attach(io: image5, filename:"p5.jpg")
+
 product6 = Product.create!(title: "Black & White Photograph of a Bird Flying Through the Sky", description: "High quality photograph by Tamilazhagan", price: 90.99, seller_id: user6.id )
+# image6 = URI.open("https://active-storage-artsapp-dev.s3.amazonaws.com/p6.jpg")
+# product6.image.attach(io: image6, filename:"p6.jpg")
+
+
 product7 = Product.create!(title: "Street Photography of Silhouette Man on the Phone Street Photography Manipulated to Black and White Through the Use of Silhouette", description: "High quality photograph by Warren Wong", price: 95.99, seller_id: user4.id)
+# image7 = URI.open("https://active-storage-artsapp-dev.s3.amazonaws.com/p7.jpg")
+# product7.image.attach(io: image6, filename:"p7.jpg")
+
 product8 = Product.create!(title: "Field of Trees From Looking Above to the Dark Night Sky Filled with Bright Stars", description: "High quality photograph by Lia", price: 92.99, seller_id: user1.id)
+# image8 = URI.open("https://active-storage-artsapp-dev.s3.amazonaws.com/p8.jpg")
+# product8.image.attach(io: image6, filename:"p8.jpg")
+
+
 # product9 = Product.create!(title: "", description: "High quality photograph by ", price:, seller_id: )
 # product10 = Product.create!(title: "", description: "High quality photograph by ", price:, seller_id: )
 # product11 = Product.create!(title: "", description: "High quality photograph by ", price:, seller_id: )
