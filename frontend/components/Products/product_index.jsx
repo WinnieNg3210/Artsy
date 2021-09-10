@@ -19,7 +19,7 @@ class ProductIndex extends React.Component {
     return (
       <div className="product-index-container">
         <div className="banner">
-          <h1 className="welcome-banner">High Quality Photographs</h1>
+          <h1 className="welcome-banner">High Quality Photography</h1>
         </div>
         <div className="banner-images">
           <ul>
@@ -33,7 +33,7 @@ class ProductIndex extends React.Component {
               <a href="">
                 <img src={window.quebec} className="round-image" />
               </a>
-              <p>Fashion</p>
+              <p>Landscape</p>
             </li>
             <li>
               <a href="">
@@ -51,7 +51,7 @@ class ProductIndex extends React.Component {
               <a href="">
                 <img src={window.quebec} className="round-image" />
               </a>
-              <p>Portrait</p>
+              <p>Free Style</p>
             </li>
           </ul>
         </div>

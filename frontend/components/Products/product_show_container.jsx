@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import ProductShow from "./product_show";
 import { fetchProduct } from "../../actions/product_actions";
 
@@ -10,4 +11,4 @@ const mDTP = (dispatch) => ({
   fetchProduct: (productId) => dispatch(fetchProduct(productId)),
 });
 
-export default connect(mSTP, mDTP)(ProductShow);
+export default withRouter(connect(mSTP, mDTP)(ProductShow));
