@@ -42,8 +42,18 @@
 
 .exit-app-icon {
   position: relative;
-  left: 5px;
-  top: 5px;
+  left: 0;
+  top: 8px;
+
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.signOutButton {
+  margin-left: 0.65rem;
 }
 
 .header-sign-in {
@@ -79,6 +89,7 @@
   text-align: center;
   border-radius: 50%;
   background-color: #eb6d20;
+  margin-left: 1rem;
 
   h2 {
     padding-top: 0.4rem;
@@ -104,17 +115,72 @@
 .dropDownContainer {
   background-color: white;
   position: absolute;
-  top: 3.75rem;
-  right: 15rem;
+  width: 100px;
+  // height: 100px;
   padding: 1rem;
   border: thin solid grey;
   border-radius: 0.75rem;
   z-index: 7;
   text-align: left;
+
+  top: 4rem;
+  right: 15.5rem;
+  // left: 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.dropDownBtn {
+// .dropDownContainer:before {
+//   content: "";
+//   position: absolute;
+//   border-color: grey;
+//   border: solid transparent;
+//   border-bottom-color: white;
+//   border-width: 11px;
+//   margin-left: -10px;
+//   top: -21px;
+//   // right: 65px;
+//   right: 1rem;
+//   z-index: 1;
+// }
+
+// .drop-down-menu:after {
+//   content: "";
+//   position: absolute;
+//   right: 66px;
+//   top: -21px;
+//   width: 0;
+//   height: 0;
+//   border: solid transparent;
+//   border-width: 10px;
+//   border-bottom-color: #2b1a41;
+//   z-index: 0;
+// }
+
+.drop-down-circle {
+  width: 1.65rem;
+  height: 1.65rem;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #eb6d20;
+
+  h3 {
+    padding-top: 0.4rem;
+    color: white;
+  }
+}
+
+.full-name {
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.dropDownName {
+  display: flex;
+}
+
+.dropDownClick,
+.drop-down-arrow {
   cursor: pointer;
 }
 

@@ -12,14 +12,26 @@ class ProductIndex extends React.Component {
   }
 
   render() {
-    const { products } = this.props;
+    const { products, currentUser } = this.props;
     const productItems = products.map((product) => {
       return <ProductIndexItem key={product.id} product={product} />;
     });
+
+    // let welcomeBanner;
+
+    let welcomeBanner = currentUser ? (
+      <h1 className="welcome-banner">
+        Welcome back, {currentUser.first_name}!
+      </h1>
+    ) : (
+      <h1 className="welcome-banner">High Quality Photography</h1>
+    );
+
     return (
       <div className="product-index-container">
         <div className="banner">
-          <h1 className="welcome-banner">High Quality Photography</h1>
+          {/* <h1 className="welcome-banner">High Quality Photography</h1> */}
+          {welcomeBanner}
         </div>
         <div className="banner-images">
           <ul>

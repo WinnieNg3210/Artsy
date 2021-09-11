@@ -38,14 +38,16 @@ class Header extends React.Component {
       dropDownMenu = (
         <div className="dropDownContainer">
           <div className="dropDownName">
-            <h3 className="dropDownBtn">{currentUser.first_name}</h3>
+            <div className="drop-down-circle">
+              <h3 className="dropDownBtn">{currentUser.first_name[0]}</h3>
+            </div>
+            <h3 className="dropDownBtn full-name">{currentUser.first_name}</h3>
           </div>
           <div className="signoutIcon">
+            <ExitToAppIcon className="exit-app-icon" />
             <button onClick={logout} className="signOutButton">
               Sign Out
             </button>
-
-            <ExitToAppIcon className="exit-app-icon" />
           </div>
         </div>
       );
@@ -53,7 +55,12 @@ class Header extends React.Component {
 
     let dropDownIcon;
     if (currentUser) {
-      dropDownIcon = <ArrowDropDownIcon className="drop-down-arrow" />;
+      dropDownIcon = (
+        <ArrowDropDownIcon
+          className="drop-down-arrow"
+          onClick={this.handleDropDown}
+        />
+      );
     }
 
     const welcome = () => (
@@ -67,9 +74,8 @@ class Header extends React.Component {
             </div>
             {dropDownIcon}
           </div>
+          {dropDownMenu}
         </div>
-
-        {dropDownMenu}
       </div>
     );
 

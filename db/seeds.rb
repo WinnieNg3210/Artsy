@@ -45,7 +45,9 @@ user11 = User.create!(email: "smoothJSGamer@aa.com", first_name: "Julian", passw
 
 
 
-product1 = Product.create!(title: "Long White Snowy Never Ending Road to Nirvana", description: "High quality photograph by John Broks." , price: 59.99, seller_id: user4.id)
+product1 = Product.create!(title: "Long White Snowy Never Ending Road to Nirvana", description: "High quality photograph by John Broks. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacus nisi, facilisis at aliquam nec, luctus sed arcu. Donec id tempus nisl, quis lacinia lectus. Proin ultrices lorem eget commodo eleifend. Integer ligula enim, pharetra in aliquet ut, vehicula at mi. Curabitur vehicula lectus ligula, eu pretium nunc blandit sed. Nulla ac eros in justo sollicitudin porttitor. Nulla facilisi. Praesent a interdum ex, sit amet interdum urna.
+
+Nullam urna neque, placerat sit amet erat vitae, aliquet fermentum sem. Morbi tempus pulvinar neque id rhoncus. Duis iaculis ornare risus, quis cursus quam tincidunt vel. Sed eget nunc vitae tortor placerat dapibus in quis dolor. Donec dignissim est et nunc interdum semper. Sed dapibus velit sed erat bibendum eleifend. Duis convallis lorem neque, laoreet porttitor orci mattis nec. Vestibulum lobortis ligula id magna luctus pulvinar. Morbi blandit nec massa vitae condimentum. Suspendisse dictum ligula est, sed gravida nisi tincidunt a. Nulla dolor quam, ullamcorper lacinia sapien volutpat, lacinia maximus velit. Nam id hendrerit libero. Pellentesque venenatis vestibulum mauris eget fermentum." , price: 59.99, seller_id: user1.id)
 # image1 = URI.open("https://active-storage-artsapp-dev.s3.amazonaws.com/p1.jpg")
 # product1.image.attach(io: image1, filename:"p1.jpg")
 

@@ -3,10 +3,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
 .product-page-container {
   display: grid;
-  grid-template-columns: 60% auto;
+  grid-template-columns: 65% auto;
   border-top: thin solid lightgrey;
   //   border: thin solid black;
   padding: 1rem 10rem;
+
   //   border: thin solid black;
 }
 
@@ -16,20 +17,54 @@
 
 .product-seller {
   font-family: "Roboto", sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   margin-bottom: 1rem;
 }
 
 .product-title {
-  font-family: "Martel", serif;
-  font-size: 1.5rem;
+  // font-family: "Martel", serif;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
   line-height: 1.75rem;
+  font-weight: 200;
+}
+
+.stock-price {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.stock-container {
+  display: flex;
+}
+
+// .product-right {
+//   border: thin solid black;
+// }
+
+.stock-check {
+  position: relative;
+  bottom: 0.2rem;
+  right: 0.5rem;
+}
+
+.in-stock {
+  font-size: 0.85rem;
   font-weight: 100;
 }
 
 .product-show-price {
-  margin-top: 1rem;
-  font-size: 1.6rem;
+  display: flex;
+  font-size: 1.25rem;
+  font-weight: medium;
+}
+
+.price-plus {
+  font-size: 1.1rem;
+  position: relative;
+  bottom: 0.1rem;
 }
 
 .product-show-image {
@@ -65,3 +100,59 @@
 // .reviews-container {
 //   margin-top: 3rem;
 // }
+
+.cart-shipping-container {
+  margin-top: 1.5rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.hot-item-container,
+.shipping-container {
+  display: flex;
+  margin-top: 1rem;
+
+  p {
+    font-size: 0.75rem;
+    margin-left: 1rem;
+    padding-top: 0.5rem;
+    line-height: 0.85rem;
+  }
+
+  span {
+    font-weight: bold;
+  }
+}
+
+// .shipping-truck,
+// .hot-item-cart {
+//   font-size: medium;
+// }
+
+.description-container {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5rem;
+}
+
+.product-description-text {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  h1 {
+    font-weight: bold;
+  }
+}
+
+.product-description-text:hover {
+  border: thin solid rgb(240, 239, 239);
+  border-radius: 1rem;
+
+  background-color: rgb(240, 239, 239);
+}
+
+.product-description {
+  margin-top: 1rem;
+}

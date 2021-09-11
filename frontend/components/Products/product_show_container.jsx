@@ -5,6 +5,7 @@ import { fetchProduct } from "../../actions/product_actions";
 
 const mSTP = (state, ownProps) => ({
   product: state.entities.products[ownProps.match.params.productId],
+  currentUser: state.entities.users[state.session.id],
 });
 
 const mDTP = (dispatch) => ({
