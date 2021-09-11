@@ -5,31 +5,39 @@ const Footer = () => {
     <div className="footer-container">
       <div className="footer-col">
         <h1>Shop</h1>
-        <a href="#">Gift cards</a>
-        <a href="#">Artsy blog</a>
+        <div className="footer-list-container">
+          <a href="#">Gift cards</a>
+          <a href="#">Artsy blog</a>
+        </div>
       </div>
       <div className="footer-col">
         <h1>Sell</h1>
-        <a href="#">Sell on Artsy</a>
-        <a href="#">Teams</a>
-        <a href="#">Forums</a>
-        <a href="#">Affiliates</a>
+        <div className="footer-list-container">
+          <a href="#">Sell on Artsy</a>
+          <a href="#">Teams</a>
+          <a href="#">Forums</a>
+          <a href="#">Affiliates</a>
+        </div>
       </div>
       <div className="footer-col">
         <h1>About</h1>
-        <a href="#">Artsy, Inc.</a>
-        <a href="#">Policies</a>
-        <a href="#">Investors</a>
-        <a href="#">Careers</a>
-        <a href="#">Press</a>
-        <a href="#">Impact</a>
+        <div className="footer-list-container">
+          <a href="#">Artsy, Inc.</a>
+          <a href="#">Policies</a>
+          <a href="#">Investors</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Impact</a>
+        </div>
       </div>
       <div className="footer-col">
         <div className="help-container">
           <h1>Help</h1>
-          <a href="#">Help Center</a>
-          <a href="#">Trust and safety</a>
-          <a href="#">Privacy settings</a>
+          <div className="footer-list-container">
+            <a href="#">Help Center</a>
+            <a href="#">Trust and safety</a>
+            <a href="#">Privacy settings</a>
+          </div>
         </div>
         <div className="social">
           <div className="download-container">
