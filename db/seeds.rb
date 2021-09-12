@@ -10,6 +10,7 @@ require "open-uri"
 
 User.destroy_all
 Product.destroy_all
+# Review.destroy_all
 
 demoUser = User.create!(email: "beOurGuest@gmail.com", first_name: "Demo", password: "guestDemo")
 user1 = User.create!(email: "theyellowbear@honey.com", first_name:"Pooh", password: "WinnieThePooh")
@@ -52,7 +53,7 @@ Nullam urna neque, placerat sit amet erat vitae, aliquet fermentum sem. Morbi te
 # product1.image.attach(io: image1, filename:"p1.jpg")
 
 
-product2 = Product.create!(title: "Woman Hurriedly Walking Past a Beautiful Collage of Drawn Faces Blurry Woman Walking Fast on the Street", description: "High quality photograph by Masahiro Miyagi", price: 64.99, seller_id: user6.id )
+product2 = Product.create!(title: "Woman Hurriedly Walking Past a Beautiful Collage of Drawn Faces Blurry Woman Walking Fast on the Street City Vibes Black and White", description: "High quality photograph by Masahiro Miyagi", price: 64.99, seller_id: user6.id )
 # image2 = URI.open("https://active-storage-artsapp-dev.s3.amazonaws.com/p2.jpg")
 # product1.image.attach(io: image2, filename:"p2.jpg")
 
@@ -145,3 +146,53 @@ product8 = Product.create!(title: "Field of Trees From Looking Above to the Dark
 # image24 = URI.open("https://active-storage-artsapp-dev.s3.amazonaws.com/p24.jpg")
 # product24.image.attach(io: image24, filename:"p24.jpg")
 
+
+
+# review1 = Review.create!()
+# review2 = Review.create!()
+# review3 = Review.create!()
+# review4 = Review.create!()
+# review5 = Review.create!()
+# review6 = Review.create!()
+# review7 = Review.create!()
+# review8 = Review.create!()
+# review9 = Review.create!()
+# review10 = Review.create!()
+# review11 = Review.create!()
+# review12 = Review.create!()
+# review13 = Review.create!()
+# review14 = Review.create!()
+# review15 = Review.create!()
+# review16 = Review.create!()
+# review17 = Review.create!()
+# review18 = Review.create!()
+# review19 = Review.create!()
+# review20 = Review.create!()
+# review21 = Review.create!()
+# review22 = Review.create!()
+# review23 = Review.create!()
+# review24 = Review.create!()
+# review25 = Review.create!()
+# review26 = Review.create!()
+# review27 = Review.create!()
+# review28 = Review.create!()
+# review29 = Review.create!()
+# review30 = Review.create!()
+# review31 = Review.create!()
+# review32 = Review.create!()
+# review33 = Review.create!()
+# review34 = Review.create!()
+# review35 = Review.create!()
+# review36 = Review.create!()
+# review37 = Review.create!()
+# review38 = Review.create!()
+# review39 = Review.create!()
+# review40 = Review.create!()
+# review41 = Review.create!()
+# review42 = Review.create!()
+# review43 = Review.create!()
+# review44 = Review.create!()
+# review45 = Review.create!()
+# review46 = Review.create!()
+# review47 = Review.create!()
+# review48 = Review.create!()

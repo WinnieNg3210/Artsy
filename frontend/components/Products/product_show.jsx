@@ -4,18 +4,38 @@ import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import LocalShippingOutlinedIcon from "@material-ui/icons/LocalShippingOutlined";
 import CheckIcon from "@material-ui/icons/Check";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 class ProductShow extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      open: false,
+      quantity: "1",
+    };
+
+    this.togglePanel = this.togglePanel.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.productId);
   }
 
+  togglePanel(e) {
+    e.preventDefault();
+    this.setState({ open: !this.state.open });
+  }
+
+  handleChange(e) {
+    e.preventDefault();
+    this.setState({ quantity: e.target.value });
+  }
+
   render() {
     const { product, currentUser } = this.props;
+    const { open } = this.state;
     let imageSrc = window.quebec;
     // let imageSrc;
     // if (product.imageUrl) {
@@ -25,12 +45,17 @@ class ProductShow extends React.Component {
     // }
 
     let buyItNow;
-
     if (currentUser) {
       buyItNow = <button className="buy-now-button">Buy it now</button>;
     }
 
-    let randomNumber = Math.floor(Math.random() * 100) + 20;
+    let expand = open ? (
+      <ExpandMoreIcon className="expand-arrow" fontSize="small" />
+    ) : (
+      <ExpandLessIcon className="expand-arrow" fontSize="small" />
+    );
+
+    // const randomNumber = Math.floor(Math.random() * 100) + 20;
     if (!product) return null; // will need this to return a page that a product does not exist
     return (
       <div className="product-page-container">
@@ -62,7 +87,19 @@ class ProductShow extends React.Component {
               <p className="in-stock">In Stock</p>
             </div>
           </div>
-
+          <div className="product-quantity-container">
+            <p className="quantity">Quantity</p>
+            <div className="quantity-dropdown">
+              <select value={this.state.quantity} onChange={this.handleChange}>
+                <option selected value="1">
+                  1
+                </option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
           <div className="product-show-button">
             {buyItNow}
             <button className="add-item-button">Add to Cart</button>
@@ -76,7 +113,7 @@ class ProductShow extends React.Component {
               />
               <p>
                 <span className="hot-item">Other people want this. </span>
-                Over {randomNumber} people have this in their carts right now
+                Over 20 people have this in their carts right now
               </p>
             </div>
             <div className="shipping-container">
@@ -92,11 +129,19 @@ class ProductShow extends React.Component {
           </div>
 
           <div className="description-container">
-            <div className="product-description-text">
-              <h1>Description</h1>
-              <ExpandLessIcon className="expand-arrow" fontSize="small" />
+            <div className="description-hover">
+              <div
+                className="product-description-text"
+                onClick={(e) => this.togglePanel(e)}
+              >
+                <h1>Description</h1>
+                {expand}
+              </div>
             </div>
-            <p className="product-description">{product.description}</p>
+
+            {this.state.open ? (
+              <p className="product-description">{product.description}</p>
+            ) : null}
           </div>
         </div>
       </div>
