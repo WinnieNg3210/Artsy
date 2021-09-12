@@ -96,10 +96,12 @@ class Header extends React.Component {
             <SearchIcon className="header-search-icon" />
           </div>
           {display}
-          <div className="header-cart">
-            <ShoppingCartIcon />
-            <span className="header-cart-count">0</span>
-          </div>
+          <Link to="/checkout">
+            <div className="header-cart">
+              <ShoppingCartIcon />
+              <span className="header-cart-count">0</span>
+            </div>
+          </Link>
         </div>
         <div className="header-bottom">
           <ul className="category-items">
