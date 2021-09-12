@@ -82,11 +82,11 @@ product8 = Product.create!(title: "Field of Trees From Looking Above to the Dark
 # product8.image.attach(io: image6, filename:"p8.jpg")
 
 
-# product9 = Product.create!(title: "Man on Riding on Yellow Bus At Night While Doing Work", description: "High quality photograph by ", price:, seller_id: )
+product9 = Product.create!(title: "Man on Riding on Yellow Bus At Night While Doing Work Night Time Photography", description: "High quality photograph by ", price: 32.01, seller_id: user11.id )
 # image9 = URI.open("https://active-storage-artsapp-dev.s3.amazonaws.com/p9.jpg")
 # product9.image.attach(io: image9, filename:"p9.jpg")
 
-# product10 = Product.create!(title: "Autumn Trees Big Nature Blue Sky Reflecting Over A Large Lake", description: "High quality photograph by ", price:, seller_id: )
+product10 = Product.create!(title: "Autumn Trees Big Nature Blue Sky Reflecting Over A Large Lake Calm Zen Nature", description: "High quality photograph by ", price: 50.24, seller_id: user7.id )
 # image10 = URI.open("https://active-storage-artsapp-dev.s3.amazonaws.com/p10.jpg")
 # product10.image.attach(io: image10, filename:"p10.jpg")
 

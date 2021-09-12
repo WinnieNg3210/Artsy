@@ -25,7 +25,7 @@ class Header extends React.Component {
     const { dropdown } = this.state;
 
     const signinLink = () => (
-      <nav>
+      <nav className="sign-in-container">
         <button onClick={() => showModal("Sign in")} className="signInButton">
           Sign in
         </button>

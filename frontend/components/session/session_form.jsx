@@ -45,10 +45,6 @@ class SessionForm extends React.Component {
     );
   }
 
-  // componentWillUnmount() {
-  //   this.props.errors = [];
-  // }
-
   render() {
     let guestDemo;
     let signUpUser;

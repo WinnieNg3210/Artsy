@@ -38,6 +38,7 @@
 .header-cart {
   display: flex;
   align-items: center;
+  // border: thin solid black;
 }
 
 .exit-app-icon {
@@ -54,6 +55,27 @@
 
 .signOutButton {
   margin-left: 0.65rem;
+}
+
+.sign-in-container {
+  // border: thin solid black;
+  padding: 0.2rem 1rem 0 1rem;
+  height: 1.5rem;
+}
+
+.sign-in-container:hover,
+.signInButton:hover {
+  background-color: rgb(240, 239, 239);
+  border-radius: 2rem;
+}
+
+.signInButton {
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  // background-color: white;
+  font-size: 0.75rem;
+  padding: 0;
 }
 
 .header-sign-in {
@@ -101,15 +123,6 @@
   width: 100%;
   // margin-top: 0.5em;
   // margin-bottom: 1em;
-}
-
-.signInButton {
-  cursor: pointer;
-  text-decoration: none;
-  border: none;
-  background-color: white;
-  font-size: 0.75rem;
-  padding-left: 3px;
 }
 
 .dropDownContainer {

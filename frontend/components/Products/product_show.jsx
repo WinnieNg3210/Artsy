@@ -67,12 +67,14 @@ class ProductShow extends React.Component {
         </div>
         <div className="product-right">
           {/* <p className="product-seller">PokemonLover</p> */}
-          <p className="product-seller">
-            Sold by: {product?.seller?.first_name}
-          </p>
+          <div className="product-header-container">
+            <p className="product-seller">
+              Sold by: {product?.seller?.first_name}
+            </p>
 
-          {/* star ratings will appear once we get to review components */}
-          <h1 className="product-title">{product.title}</h1>
+            {/* star ratings will appear once we get to review components */}
+            <h1 className="product-title">{product.title}</h1>
+          </div>
 
           <div className="stock-price">
             <p className="product-show-price">
@@ -99,10 +101,10 @@ class ProductShow extends React.Component {
                 <option value="4">4</option>
               </select>
             </div>
-          </div>
-          <div className="product-show-button">
-            {buyItNow}
-            <button className="add-item-button">Add to Cart</button>
+            <div className="product-show-button">
+              {buyItNow}
+              <button className="add-item-button">Add to Cart</button>
+            </div>
           </div>
           <div className="cart-shipping-container">
             <div className="hot-item-container">
@@ -138,11 +140,10 @@ class ProductShow extends React.Component {
                 {expand}
               </div>
             </div>
-
-            {this.state.open ? (
-              <p className="product-description">{product.description}</p>
-            ) : null}
           </div>
+          {this.state.open ? (
+            <p className="product-description">{product.description}</p>
+          ) : null}
         </div>
       </div>
     );
