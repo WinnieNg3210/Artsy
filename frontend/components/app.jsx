@@ -6,6 +6,7 @@ import Footer from "./footer";
 // import { AuthRoute } from "../util/route_util";
 import ProductShowContainer from "./Products/product_show_container";
 import ProductIndexContainer from "./Products/product_index_container";
+import CartShowContainer from "./Cart_Items/cart_show_container";
 
 const App = () => (
   <div>
@@ -18,6 +19,7 @@ const App = () => (
         path="/products/:productId"
         component={ProductShowContainer}
       />
+      <Route exact path="/checkout" component={CartShowContainer} />
     </Switch>
     <Footer />
   </div>
