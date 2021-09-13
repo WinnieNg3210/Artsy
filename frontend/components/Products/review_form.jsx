@@ -4,25 +4,25 @@ import { withRouter } from "react-router-dom";
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.reviews;
+    this.state = this.props.review;
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.navigateToProductShow = this.navigateToProductShow.bind(this);
+    // this.navigateToProductShow = this.navigateToProductShow.bind(this);
   }
 
-  navigateToProductShow() {
-    const url = `products/${this.props.match.params.productId}`;
-    this.props.history.push(url);
-  }
+  // navigateToProductShow() {
+  //   const url = `products/${this.props.match.params.productId}`;
+  //   this.props.history.push(url);
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
-    const productId = this.props.match.params.productId;
+    const productId = parseInt(this.props.match.params.productId);
     const review = Object.assign({}, this.state, {
       product_id: productId,
     });
     this.props.createReview(review);
-    this.navigateToProductShow();
+    // this.navigateToProductShow();
   }
 
   update(field) {
@@ -46,7 +46,7 @@ class ReviewForm extends React.Component {
           </div>
           <button type="submit">Add Review</button>
         </form>
-        <button onClick={this.navigateToProductShow}>Cancel</button>
+        {/* <button onClick={this.navigateToProductShow}>Cancel</button> */}
 
         <h1>HI!</h1>
       </div>

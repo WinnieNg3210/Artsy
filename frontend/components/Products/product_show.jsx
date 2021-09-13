@@ -5,11 +5,9 @@ import LocalShippingOutlinedIcon from "@material-ui/icons/LocalShippingOutlined"
 import CheckIcon from "@material-ui/icons/Check";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { ProtectedRoute } from "../../util/route_util";
-import ReviewFormContainer from "./review_form_container";
-import { ReviewLink } from "../../util/link_util";
-
-import ProductReviews from "./product_reviews";
+// import { ProtectedRoute } from "../../util/route_util";
+import ReviewFormContainer from "./create_review_form_container";
+// import { ReviewLink } from "../../util/link_util";
 
 class ProductShow extends React.Component {
   constructor(props) {
@@ -39,7 +37,7 @@ class ProductShow extends React.Component {
   }
 
   render() {
-    const { product, productId, reviews, currentUser, userId } = this.props;
+    const { product, currentUser } = this.props;
     const { open } = this.state;
     let imageSrc = window.quebec;
     // let imageSrc;
@@ -62,22 +60,14 @@ class ProductShow extends React.Component {
 
     // const randomNumber = Math.floor(Math.random() * 100) + 20;
     if (!product) return null; // will need this to return a page that a product does not exist
+    // debugger;
     return (
       <div className="product-page-container">
         <div className="product-left">
           <img src={imageSrc} className="product-show-image" />
           <div className="product-reviews-container">
             <p>WILL ADD SOME REVIEWS SOON!</p>
-            {/* <ProductReviews product={product} reviews={reviews} /> */}
-            <ReviewLink
-              component={ReviewFormContainer}
-              to={`/products/${this.props.product.id}/review`}
-              label="Add a Review"
-            />
-            <ProtectedRoute
-              path="products/:productId/review"
-              component={ReviewFormContainer}
-            />
+            <ReviewFormContainer />
           </div>
         </div>
         <div className="product-right">

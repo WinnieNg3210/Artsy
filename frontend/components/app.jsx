@@ -13,13 +13,13 @@ const App = () => (
     <Modal />
     <HeaderContainer />
     <Switch>
-      <Route exact path="/" component={ProductIndexContainer} />
       <Route
         exact
         path="/products/:productId"
         component={ProductShowContainer}
       />
       <Route exact path="/checkout" component={CartShowContainer} />
+      <Route exact path="/" component={ProductIndexContainer} />
     </Switch>
     <Footer />
   </div>
