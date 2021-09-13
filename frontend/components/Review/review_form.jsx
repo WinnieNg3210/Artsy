@@ -4,25 +4,19 @@ import { withRouter } from "react-router-dom";
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.review;
+    this.state = {
+      content: "",
+      rating: 5,
+      author_id: this.props.currentUserId,
+      product_id: this.props.product.id,
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.navigateToProductShow = this.navigateToProductShow.bind(this);
   }
-
-  // navigateToProductShow() {
-  //   const url = `products/${this.props.match.params.productId}`;
-  //   this.props.history.push(url);
-  // }
 
   handleSubmit(e) {
     e.preventDefault();
-    const productId = parseInt(this.props.match.params.productId);
-    const review = Object.assign({}, this.state, {
-      product_id: productId,
-    });
-    this.props.createReview(review);
-    // this.navigateToProductShow();
+    this.props.createReview(this.state, this.props.product.id);
   }
 
   update(field) {
@@ -33,11 +27,12 @@ class ReviewForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <h1>Rating</h1>
-          <div>Star Reviews</div>
+          <h1>Add a Review</h1>
+          <div>Star Rating</div>
           <div>
             <label>
               Comment
+              <br />
               <textarea
                 value={this.state.content}
                 onChange={this.update("content")}
@@ -46,9 +41,6 @@ class ReviewForm extends React.Component {
           </div>
           <button type="submit">Add Review</button>
         </form>
-        {/* <button onClick={this.navigateToProductShow}>Cancel</button> */}
-
-        <h1>HI!</h1>
       </div>
     );
   }

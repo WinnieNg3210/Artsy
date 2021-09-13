@@ -5,9 +5,8 @@ import LocalShippingOutlinedIcon from "@material-ui/icons/LocalShippingOutlined"
 import CheckIcon from "@material-ui/icons/Check";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-// import { ProtectedRoute } from "../../util/route_util";
-import ReviewFormContainer from "./create_review_form_container";
-// import { ReviewLink } from "../../util/link_util";
+import ReviewFormContainer from "../Review/create_review_form_container";
+import ReviewIndexContainer from "../Review/review_index_container";
 
 class ProductShow extends React.Component {
   constructor(props) {
@@ -20,6 +19,7 @@ class ProductShow extends React.Component {
 
     this.togglePanel = this.togglePanel.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    // this.handleAddReview = this.handleAddReview.bind(this);
   }
 
   componentDidMount() {
@@ -37,7 +37,7 @@ class ProductShow extends React.Component {
   }
 
   render() {
-    const { product, currentUser } = this.props;
+    const { product, currentUser, reviews } = this.props;
     const { open } = this.state;
     let imageSrc = window.quebec;
     // let imageSrc;
@@ -46,10 +46,11 @@ class ProductShow extends React.Component {
     // } else {
     //   imageSrc = window.quebec;
     // }
-
     let buyItNow;
+    let addReview;
     if (currentUser) {
       buyItNow = <button className="buy-now-button">Buy it now</button>;
+      addReview = <ReviewFormContainer product={product} />;
     }
 
     let expand = open ? (
@@ -58,16 +59,15 @@ class ProductShow extends React.Component {
       <ExpandLessIcon className="expand-arrow" fontSize="small" />
     );
 
-    // const randomNumber = Math.floor(Math.random() * 100) + 20;
     if (!product) return null; // will need this to return a page that a product does not exist
-    // debugger;
+
     return (
       <div className="product-page-container">
         <div className="product-left">
           <img src={imageSrc} className="product-show-image" />
           <div className="product-reviews-container">
-            <p>WILL ADD SOME REVIEWS SOON!</p>
-            <ReviewFormContainer />
+            <ReviewIndexContainer productId={this.props.product.id} />
+            {addReview}
           </div>
         </div>
         <div className="product-right">

@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-    validates :product_id, :author_id, presence: true
+    validates :product_id, :author_id, :content, presence: true
     validates :rating, inclusion: { in: [1,2,3,4,5]}
     
 

@@ -1,8 +1,8 @@
 import {
   RECEIVE_REVIEW,
   REMOVE_REVIEW,
-  RECEIVE_PRODUCT,
-} from "../actions/product_actions";
+  RECEIVE_ALL_REVIEWS,
+} from "../actions/review_actions";
 
 const reviewsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -10,8 +10,8 @@ const reviewsReducer = (state = {}, action) => {
   let nextState = Object.assign({}, state);
 
   switch (action.type) {
-    case RECEIVE_PRODUCT:
-      return Object.assign({}, state, action.reviews);
+    case RECEIVE_ALL_REVIEWS:
+      return action.reviews;
     case RECEIVE_REVIEW:
       nextState[action.review.id] = action.review;
       return nextState;
