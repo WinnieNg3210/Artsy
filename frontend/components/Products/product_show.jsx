@@ -5,6 +5,9 @@ import LocalShippingOutlinedIcon from "@material-ui/icons/LocalShippingOutlined"
 import CheckIcon from "@material-ui/icons/Check";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { ProtectedRoute } from "../../util/route_util";
+import ReviewFormContainer from "./review_form_container";
+import { ReviewLink } from "../../util/link_util";
 
 class ProductShow extends React.Component {
   constructor(props) {
@@ -34,7 +37,7 @@ class ProductShow extends React.Component {
   }
 
   render() {
-    const { product, currentUser } = this.props;
+    const { product, productId, reviews, currentUser, userId } = this.props;
     const { open } = this.state;
     let imageSrc = window.quebec;
     // let imageSrc;
@@ -61,8 +64,16 @@ class ProductShow extends React.Component {
       <div className="product-page-container">
         <div className="product-left">
           <img src={imageSrc} className="product-show-image" />
-          <div className="reviews-container">
+          <div className="product-reviews-container">
             <p>WILL ADD SOME REVIEWS SOON!</p>
+            <ReviewLink
+              component={ReviewFormContainer}
+              to={`/products/${this.props.product.id}/review`}
+            />
+            <ProtectedRoute
+              path="products/:productId/review"
+              component={ReviewFormContainer}
+            />
           </div>
         </div>
         <div className="product-right">
@@ -93,7 +104,7 @@ class ProductShow extends React.Component {
             <p className="quantity">Quantity</p>
             <div className="quantity-dropdown">
               <select value={this.state.quantity} onChange={this.handleChange}>
-                <option selected value="1">
+                <option value="1" defaultValue="1">
                   1
                 </option>
                 <option value="2">2</option>

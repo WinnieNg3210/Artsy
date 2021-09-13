@@ -5,7 +5,7 @@ import {
   UPDATE_CART_ITEM,
 } from "../actions/cart_actions";
 
-const CartItemReducer = (state = {}, action) => {
+const cartItemReducer = (state = {}, action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state);
   switch (action.type) {
@@ -22,4 +22,4 @@ const CartItemReducer = (state = {}, action) => {
   }
 };
 
-export default CartItemReducer;
+export default cartItemReducer;

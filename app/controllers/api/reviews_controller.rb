@@ -1,10 +1,16 @@
 class Api::PostsController < ApplicationController 
+
+    before_action :ensure_logged_in
+
     def index 
-        @reviews = Review.all 
+        @reviews = @product.reviews
+
+        render :index
     end
 
     def show 
         @review = Review.find(params[:id])
+        render :show
     end
 
     def create 
@@ -28,7 +34,7 @@ class Api::PostsController < ApplicationController
 
     def destroy 
         @review = Review.find(params[:id])
-        if @review.destroy 
+        if @review && @review.destroy 
             render :show 
         else
             render json: @review.errors.full_messages, status: 422
@@ -38,6 +44,6 @@ class Api::PostsController < ApplicationController
     private 
 
     def review_params 
-        params.require(:review).permit(:content, :rating)
+        params.require(:review).permit(:content, :rating, :product_id, :author_id)
     end
 end

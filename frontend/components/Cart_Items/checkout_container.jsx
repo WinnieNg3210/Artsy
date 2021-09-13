@@ -12,9 +12,9 @@ class Checkout extends React.Component {
         <div className="payment-method">
           <label>
             {/* inputs are images instead */}
-            <input type="radio">Credit Card</input>
+            {/* <input type="radio">Credit Card</input>
             <input type="radio">Paypal</input>
-            <input type="radio">Installment Plan</input>
+            <input type="radio">Installment Plan</input> */}
           </label>
         </div>
         <div className="checkout-cost">
@@ -40,3 +40,5 @@ class Checkout extends React.Component {
     );
   }
 }
+
+export default Checkout;
