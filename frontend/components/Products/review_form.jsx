@@ -21,7 +21,7 @@ class ReviewForm extends React.Component {
     const review = Object.assign({}, this.state, {
       product_id: productId,
     });
-    this.props.createReview(this.state);
+    this.props.createReview(review);
     this.navigateToProductShow();
   }
 
@@ -32,7 +32,7 @@ class ReviewForm extends React.Component {
   render() {
     return (
       <div>
-        {/* <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <h1>Rating</h1>
           <div>Star Reviews</div>
           <div>
@@ -46,7 +46,7 @@ class ReviewForm extends React.Component {
           </div>
           <button type="submit">Add Review</button>
         </form>
-        <button onClick={this.navigateToProductShow}>Cancel</button> */}
+        <button onClick={this.navigateToProductShow}>Cancel</button>
 
         <h1>HI!</h1>
       </div>

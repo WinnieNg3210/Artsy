@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 // import { withRouter } from "react-router-dom";
 import ReviewForm from "./review_form";
-import { createReview } from "../../actions/review_actions";
+import { createReview } from "../../actions/product_actions";
 
 const mSTP = (state) => ({
   review: {

@@ -9,6 +9,8 @@ import { ProtectedRoute } from "../../util/route_util";
 import ReviewFormContainer from "./review_form_container";
 import { ReviewLink } from "../../util/link_util";
 
+import ProductReviews from "./product_reviews";
+
 class ProductShow extends React.Component {
   constructor(props) {
     super(props);
@@ -66,9 +68,11 @@ class ProductShow extends React.Component {
           <img src={imageSrc} className="product-show-image" />
           <div className="product-reviews-container">
             <p>WILL ADD SOME REVIEWS SOON!</p>
+            {/* <ProductReviews product={product} reviews={reviews} /> */}
             <ReviewLink
               component={ReviewFormContainer}
               to={`/products/${this.props.product.id}/review`}
+              label="Add a Review"
             />
             <ProtectedRoute
               path="products/:productId/review"
