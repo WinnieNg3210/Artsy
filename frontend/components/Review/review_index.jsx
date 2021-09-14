@@ -15,7 +15,7 @@ class ReviewIndex extends React.Component {
 
   render() {
     if (!this.props.reviews || this.props.reviews.length === 0) return null;
-    console.log(this.props.reviews);
+    // console.log(this.props.reviews);
     const allReviews = this.props.reviews.map((review, i) => {
       // debugger;
       return (

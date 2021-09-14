@@ -37,25 +37,25 @@ class ProductIndex extends React.Component {
           <ul>
             <li>
               <a href="">
-                <img src={window.quebec} className="round-image" />
+                <img src={window.street} className="round-image" />
               </a>
               <p>Street Photography</p>
             </li>
             <li>
               <a href="">
-                <img src={window.quebec} className="round-image" />
+                <img src={window.landscape} className="round-image" />
               </a>
               <p>Landscape</p>
             </li>
             <li>
               <a href="">
-                <img src={window.quebec} className="round-image" />
+                <img src={window.bw} className="round-image" />
               </a>
               <p>Black & White</p>
             </li>
             <li>
               <a href="">
-                <img src={window.quebec} className="round-image" />
+                <img src={window.modern} className="round-image" />
               </a>
               <p>Modern</p>
             </li>

@@ -12,12 +12,13 @@ class ReviewIndexItem extends React.Component {
   handleDelete(e) {
     e.preventDefault();
     this.props.deleteReview(this.props.review, this.props.productId);
-    this.props.fetchReviews(this.props.productId);
+    // this.props.fetchReviews(this.props.productId);
+    location.reload();
   }
 
   render() {
     const { review, deleteReview, reviewId, productId } = this.props;
-    console.log(this.props);
+    // console.log(this.props);
     let ratings = [];
     for (let i = 0; i < 5; i++) {
       if (i < review.rating) {
@@ -33,7 +34,9 @@ class ReviewIndexItem extends React.Component {
       deleteButton = (
         <div className="delete-review">
           {/* <button onClick={() => deleteReview(review, productId)}> */}
-          <button onClick={this.handleDelete}>Delete</button>
+          <button onClick={this.handleDelete} className="delete-review-btn">
+            Delete
+          </button>
         </div>
       );
     }
