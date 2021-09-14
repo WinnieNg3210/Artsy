@@ -47,9 +47,11 @@
   padding: 1rem 0;
 }
 
-.add-review-btn {
+.add-review-btn,
+.edit-review-submit-button {
   margin-top: 1rem;
   border: thin solid black;
+  cursor: pointer;
   width: 10rem;
   height: 2rem;
   border-radius: 2rem;
@@ -57,7 +59,13 @@
   background-color: black;
 }
 
-.delete-review-btn {
+.edit-delete-buttons {
+  display: grid;
+  grid-template-columns: 10% auto;
+}
+
+.delete-review-btn,
+.edit-review-btn {
   cursor: pointer;
   margin-top: 0.5rem;
   font-size: 0.75rem;
@@ -66,4 +74,17 @@
 
 .star-radio {
   display: none;
+}
+
+.review-edit-form {
+  text-align: center;
+
+  h1 {
+    margin-top: 5rem;
+  }
+}
+
+.edit-star-rating {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }

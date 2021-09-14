@@ -1,12 +1,14 @@
 import React from "react";
 import StarOutlineIcon from "@material-ui/icons/StarOutline";
 import StarIcon from "@material-ui/icons/Star";
+import { Link } from "react-router-dom";
 
 class ReviewIndexItem extends React.Component {
   constructor(props) {
     super(props);
 
     this.handleDelete = this.handleDelete.bind(this);
+    // this.handleEdit = this.handleEdit.bind(this);
   }
 
   handleDelete(e) {
@@ -22,13 +24,14 @@ class ReviewIndexItem extends React.Component {
     let ratings = [];
     for (let i = 0; i < 5; i++) {
       if (i < review.rating) {
-        ratings.push(<StarIcon fontSize="small" />);
+        ratings.push(<StarIcon fontSize="small" key={i} />);
       } else {
-        ratings.push(<StarOutlineIcon fontSize="small" />);
+        ratings.push(<StarOutlineIcon fontSize="small" key={i} />);
       }
     }
 
     let deleteButton;
+    let editButton;
 
     if (review.author_id === this.props.currentUserId) {
       deleteButton = (
@@ -38,6 +41,12 @@ class ReviewIndexItem extends React.Component {
             Delete
           </button>
         </div>
+      );
+
+      editButton = (
+        <Link to={`/reviews/${review.id}`} className="edit-review">
+          <button className="edit-review-btn">Edit</button>
+        </Link>
       );
     }
 
@@ -51,7 +60,10 @@ class ReviewIndexItem extends React.Component {
           <div className="review-content">
             <p>{review.content}</p>
           </div>
-          {deleteButton}
+          <div className="edit-delete-buttons">
+            {deleteButton}
+            {editButton}
+          </div>
         </div>
       </div>
     );

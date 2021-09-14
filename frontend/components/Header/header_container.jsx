@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { showModal } from "../../actions/modal_actions";
+import { withRouter } from "react-router";
 import Header from "./header";
 import { logout } from "../../actions/session_actions";
 
@@ -13,4 +14,4 @@ const mapDispatchToProps = (dispatch) => ({
   showModal: (modal) => dispatch(showModal(modal)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

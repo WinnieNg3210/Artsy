@@ -22,7 +22,7 @@ class ReviewIndex extends React.Component {
         <ReviewIndexItem
           key={i}
           review={review}
-          // reviewId={review.id}
+          updateReview={this.props.updateReview}
           fetchReviews={this.props.fetchReviews}
           productId={this.props.productId}
           currentUserId={this.props.currentUserId}

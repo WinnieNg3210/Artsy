@@ -1,36 +1,39 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
-import StarOutlineIcon from "@material-ui/icons/StarOutline";
+import { withRouter } from "react-router";
 import StarIcon from "@material-ui/icons/Star";
 
-class ReviewForm extends React.Component {
+class EditReviewForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      content: "",
-      rating: 5,
-      // rating: this.props.rating,
-      author_id: this.props.currentUserId,
-      product_id: this.props.product.id,
-      hover: null,
-    };
-
+    this.state = this.props.review;
+    this.navigateToProductShow = this.navigateToProductShow.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createReview(this.state, this.props.product.id);
-    this.setState({ content: "" });
+    const productId = this.props.review.product_id;
+    const review = Object.assign({}, this.state, {
+      product_id: productId,
+      author_id: this.props.user,
+    });
+
+    this.props.updateReview(review, productId);
+    this.navigateToProductShow();
   }
 
   update(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
   }
 
+  navigateToProductShow() {
+    const url = `/products/${this.props.review.product_id}`;
+    this.props.history.push(url);
+  }
+
   render() {
     let starRatings = (
-      <div>
+      <div className="edit-star-rating">
         {[...Array(5)].map((star, i) => {
           const ratingValue = i + 1;
           return (
@@ -59,28 +62,22 @@ class ReviewForm extends React.Component {
     );
 
     return (
-      <div className="review-form">
+      <div className="review-edit-form">
         <form onSubmit={this.handleSubmit}>
-          <h1>Add a Review</h1>
-          {/* <div>{this.state.rating}</div> */}
-          <div>{starRatings}</div>
-          <div>
-            <label>
-              <textarea
-                rows="10"
-                cols="50"
-                value={this.state.content}
-                onChange={this.update("content")}
-              />
-            </label>
-          </div>
-          <button type="submit" className="add-review-btn">
-            Add Review
-          </button>
+          <h1>Edit Your Review</h1>
+          {starRatings}
+          <textarea
+            rows="10"
+            cols="50"
+            value={this.state.content}
+            onChange={this.update("content")}
+          />
+          <br />
+          <input type="submit" className="edit-review-submit-button" />
         </form>
       </div>
     );
   }
 }
 
-export default withRouter(ReviewForm);
+export default withRouter(EditReviewForm);

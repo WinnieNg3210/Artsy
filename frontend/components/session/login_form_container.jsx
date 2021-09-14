@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { login, clearErrors } from "../../actions/session_actions";
 import { showModal, hideModal } from "../../actions/modal_actions";
 import SessionForm from "./session_form";
+import { withRouter } from "react-router";
 
 const mapStateToProps = ({ errors }) => {
   return {
@@ -27,4 +28,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(SessionForm)
+);
