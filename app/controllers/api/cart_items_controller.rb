@@ -1,34 +1,47 @@
-class Api::CartItemsController < ApplicationController 
-    def index 
-        @cart_items = CartItem.all 
+class Api::CartItemsController < ApplicationController
+    before_action :ensure_logged_in, only: [:index, :show, :create, :update, :destroy]
+
+    def index
+        @cart_items = current_user.cart_item
+        render :index
+    end
+    
+    def show
+        @cart_item = CartItem.find_by(id: params[:id])
         render :show
     end
 
-    def show 
-        render json: CartItem.find(params[:id])
-    end
-
-    def create 
+    def create
         @cart_item = CartItem.new(cart_item_params)
-        if @cartitem.save 
+        if @cart_item.save
             render :show
+        else
+            render json: @cart_item.errors.full_messages, status: 422 
         end
     end
 
-    def destroy 
-        @cart_item = CartItem.find_by(id: params[:id])
-        @cartitem.destroy
-        render: :show
+    def update
+        @cart_item = CartItem.find(params[:product_id])
+        if @CartItem.update(review_params)
+            render :show
+        else
+            render json: @review.errors.full_messages, status: 422 
+        end
     end
 
-    def update 
+    def destroy
         @cart_item = CartItem.find_by(id: params[:id])
-        if @cartitem.update()
+        if @cart_item && @cart_item.destroy
+            render :show
+        else
+            render json: @review.errors.full_messages, status: 422 
+        end
     end
 
-    private
+    private 
 
     def cart_item_params
-        params.require(:cartitem).permit(:user_id, :product_id, :quantity)
+        params.require(:cartItem).permit(:user_id, :product_id, :quantity)
     end
+
 end

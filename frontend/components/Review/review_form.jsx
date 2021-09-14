@@ -12,7 +12,7 @@ class ReviewForm extends React.Component {
       // rating: this.props.rating,
       author_id: this.props.currentUserId,
       product_id: this.props.product.id,
-      hover: null,
+      // hover: null,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,7 +34,7 @@ class ReviewForm extends React.Component {
         {[...Array(5)].map((star, i) => {
           const ratingValue = i + 1;
           return (
-            <label>
+            <label key={i}>
               <input
                 type="radio"
                 name="rating"
@@ -49,8 +49,8 @@ class ReviewForm extends React.Component {
                   color: ratingValue <= this.state.rating ? "black" : "grey",
                 }}
                 fontSize="small"
-                onMouseEnter={() => this.setState({ hover: ratingValue })}
-                onMouseLeave={() => this.setState({ hover: null })}
+                // onMouseEnter={() => this.setState({ hover: ratingValue })}
+                // onMouseLeave={() => this.setState({ hover: null })}
               />
             </label>
           );
@@ -65,14 +65,12 @@ class ReviewForm extends React.Component {
           {/* <div>{this.state.rating}</div> */}
           <div>{starRatings}</div>
           <div>
-            <label>
-              <textarea
-                rows="10"
-                cols="50"
-                value={this.state.content}
-                onChange={this.update("content")}
-              />
-            </label>
+            <textarea
+              rows="10"
+              cols="50"
+              value={this.state.content}
+              onChange={this.update("content")}
+            />
           </div>
           <button type="submit" className="add-review-btn">
             Add Review

@@ -5,13 +5,17 @@ import { withRouter } from "react-router";
 import Header from "./header";
 import { logout } from "../../actions/session_actions";
 
-const mapStateToProps = ({ session, entities: { users } }) => ({
+import { getCartItem } from "../../actions/cart_item_actions";
+
+const mapStateToProps = ({ session, entities: { users, cartItems } }) => ({
   currentUser: users[session.id],
+  cartItems: Object.values(cartItems),
 });
 
 const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),
   showModal: (modal) => dispatch(showModal(modal)),
+  getCartItem: (cartItemId) => dispatch(getCartItem(cartItemId)),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

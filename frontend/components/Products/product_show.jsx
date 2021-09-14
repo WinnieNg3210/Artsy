@@ -19,7 +19,30 @@ class ProductShow extends React.Component {
 
     this.togglePanel = this.togglePanel.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleAddToCart = this.handleAddToCart.bind(this);
+    this.navigateToCart = this.navigateToCart.bind(this);
     // this.handleAddReview = this.handleAddReview.bind(this);
+  }
+
+  handleAddToCart(e) {
+    e.preventDefault();
+    if (!this.props.user) {
+      this.props.showModal("Sign in");
+    } else {
+      const productId = this.props.match.params.productId;
+      const cartItem = Object.assign({}, this.state, {
+        product_id: productId,
+        user_id: this.props.user,
+      });
+
+      this.props.createCartItem(cartItem);
+      this.navigateToCart();
+    }
+  }
+
+  navigateToCart() {
+    const url = "/cart";
+    this.props.history.push(url);
   }
 
   componentDidMount() {
@@ -104,11 +127,22 @@ class ProductShow extends React.Component {
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
               </select>
             </div>
             <div className="product-show-button">
               {buyItNow}
-              <button className="add-item-button">Add to Cart</button>
+              <button
+                onClick={this.handleAddToCart}
+                className="add-item-button"
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
           <div className="cart-shipping-container">

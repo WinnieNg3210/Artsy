@@ -7,7 +7,7 @@ import Footer from "./footer";
 import ProductShowContainer from "./Products/product_show_container";
 import ProductIndexContainer from "./Products/product_index_container";
 import EditReviewFormContainer from "./Review/edit_review_form_container";
-// import CartShowContainer from "./Cart_Items/cart_show_container";
+import CartIndexContainer from "./Cart_Items/cart_item_index_container";
 
 const App = () => (
   <div>
@@ -24,6 +24,7 @@ const App = () => (
         path="/reviews/:reviewId"
         component={EditReviewFormContainer}
       />
+      <Route exact path="/cart" component={CartIndexContainer} />
       {/* <Route exact path="/checkout" component={CartShowContainer} /> */}
       <Route exact path="/" component={ProductIndexContainer} />
     </Switch>

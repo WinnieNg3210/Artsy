@@ -21,7 +21,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const { currentUser, logout, showModal } = this.props;
+    const { currentUser, logout, showModal, cartItems } = this.props;
     const { dropdown } = this.state;
 
     const signinLink = () => (
@@ -99,7 +99,7 @@ class Header extends React.Component {
           <Link to="/checkout">
             <div className="header-cart">
               <ShoppingCartIcon />
-              <span className="header-cart-count">0</span>
+              <span className="header-cart-count">{cartItems.length}</span>
             </div>
           </Link>
         </div>

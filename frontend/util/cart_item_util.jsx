@@ -5,19 +5,18 @@ export const getCartItems = () => {
   });
 };
 
-export const getCartItemProduct = (cartItemId) => {
+export const getCartItem = (cartItemId) => {
   return $.ajax({
     method: "GET",
     url: `/api/cart_items/${cartItemId}/`,
   });
 };
 
-export const createCartItem = (cart_item) => {
+export const createCartItem = (cartItem) => {
   return $.ajax({
     method: "POST",
     url: "api/cart_items",
-    // data: { cart_item },
-    data: cart_item,
+    data: { cartItem },
   });
 };
 
@@ -29,7 +28,7 @@ export const updateCartItem = (cartItem) => {
   });
 };
 
-export const removeCartItem = (cartItem) => {
+export const deleteCartItem = (cartItem) => {
   return $.ajax({
     method: "DELETE",
     url: `/api/cart_items/${cartItem.id}`,
