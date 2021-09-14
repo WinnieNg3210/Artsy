@@ -1,4 +1,16 @@
+.reviews-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.total-reviews {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
 .reviews-header {
+  // border: thin solid black;
+  padding-bottom: 0.5rem;
   margin: 1rem 0;
   border-bottom: thin solid lightgrey;
 }
@@ -10,4 +22,41 @@
 
 .reviewers {
   margin-top: 0.75rem;
+  display: grid;
+  grid-template-columns: 10% auto;
+
+  h1 {
+    // border: thin solid black;
+    position: relative;
+    top: 10px;
+  }
+}
+
+// .review {
+//   // border: thin solid black;
+// }
+
+.review-form {
+  // border: thin solid gray;
+  line-height: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 150;
+  border-radius: 1rem;
+  // height: 8rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.add-review-btn {
+  margin-top: 1rem;
+  border: thin solid black;
+  width: 10rem;
+  height: 2rem;
+  border-radius: 2rem;
+  color: white;
+  background-color: black;
+}
+
+.star-radio {
+  display: none;
 }

@@ -43,8 +43,8 @@ export const updateReview = (review, productId) => (dispatch) => {
   );
 };
 
-export const deleteReview = (reviewId) => (dispatch) => {
-  return ReviewApiUtil.deleteReview(reviewId).then(() =>
+export const deleteReview = (reviewId, productId) => (dispatch) => {
+  return ReviewApiUtil.deleteReview(reviewId, productId).then(() =>
     dispatch(removeReview(reviewId))
   );
 };

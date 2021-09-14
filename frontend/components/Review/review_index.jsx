@@ -17,11 +17,23 @@ class ReviewIndex extends React.Component {
     if (!this.props.reviews || this.props.reviews.length === 0) return null;
     console.log(this.props.reviews);
     const allReviews = this.props.reviews.map((review, i) => {
-      return <ReviewIndexItem key={i} review={review} />;
+      // debugger;
+      return (
+        <ReviewIndexItem
+          key={i}
+          review={review}
+          // reviewId={review.id}
+          fetchReviews={this.props.fetchReviews}
+          productId={this.props.productId}
+          currentUserId={this.props.currentUserId}
+          deleteReview={this.props.deleteReview}
+        />
+      );
     });
 
     return (
       <div className="reviews-container">
+        <p className="total-reviews">{allReviews.length} reviews</p>
         <h1 className="reviews-header">Reviews for this item</h1>
         <div className="reviews-list">{allReviews}</div>
       </div>
