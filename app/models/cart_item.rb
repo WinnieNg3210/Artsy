@@ -9,7 +9,4 @@ class CartItem < ApplicationRecord
         foreign_key: :product_id,
         class_name: :Product
 
-    def total_price
-        self.quantity * self.product.price
-    end
 end

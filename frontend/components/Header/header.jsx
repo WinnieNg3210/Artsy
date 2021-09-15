@@ -106,28 +106,28 @@ class Header extends React.Component {
         <div className="header-bottom">
           <ul className="category-items">
             <li>
-              <a href="#">Category 1</a>
+              <a href="#">Pokemon Items</a>
             </li>
             <li>
-              <a href="#">Category 2</a>
+              <a href="#">Nature</a>
             </li>
             <li>
-              <a href="#">Category 3</a>
+              <a href="#">Living Room</a>
             </li>
             <li>
-              <a href="#">Category 4</a>
+              <a href="#">Bedroom Decor</a>
             </li>
             <li>
-              <a href="#">Category 5</a>
+              <a href="#">Gifts</a>
             </li>
             <li>
-              <a href="#">Category 6</a>
+              <a href="#">Birthdays</a>
             </li>
             <li>
-              <a href="#">Category 7</a>
+              <a href="#">Decorations</a>
             </li>
             <li>
-              <a href="#">Category 8</a>
+              <a href="#">Cartoons</a>
             </li>
           </ul>
         </div>

@@ -16,6 +16,17 @@ class User < ApplicationRecord
         foreign_key: :author_id,
         class_name: :Review
 
+    has_many :cart_items,
+        foreign_key: :user_id,
+        class_name: :CartItem
+
+    has_many :products,
+        through: :cart_items,
+        source: :products
+
+    # if we want to call the cart-items associated with the user, we can do current_user.products
+    # which will return instances of product table to be associated with users 
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         user && user.is_password?(password) ? user : nil

@@ -1,0 +1,27 @@
+.cart-container {
+  padding-left: 5rem;
+  display: grid;
+  grid-template-columns: 60% auto;
+}
+
+.cart-item-img {
+  width: 20rem;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.remove-cart-item {
+  cursor: pointer;
+}
+
+.cart-item-title {
+  width: 20rem;
+}
+
+.cart-item-container {
+  display: flex;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: thin solid lightgrey;
+  //   justify-content: space-between;
+}

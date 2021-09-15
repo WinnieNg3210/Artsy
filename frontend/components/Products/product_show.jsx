@@ -14,7 +14,7 @@ class ProductShow extends React.Component {
 
     this.state = {
       open: false,
-      quantity: "1",
+      quantity: 1,
     };
 
     this.togglePanel = this.togglePanel.bind(this);
