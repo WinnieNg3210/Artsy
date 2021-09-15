@@ -96,7 +96,7 @@ class Header extends React.Component {
             <SearchIcon className="header-search-icon" />
           </div>
           {display}
-          <Link to="/checkout">
+          <Link to="/cart">
             <div className="header-cart">
               <ShoppingCartIcon />
               <span className="header-cart-count">{cartItems.length}</span>

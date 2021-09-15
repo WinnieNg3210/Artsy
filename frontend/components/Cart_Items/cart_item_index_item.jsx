@@ -1,29 +1,38 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class CartItemIndexItem extends React.Component {
+class CartIndexItem extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = this.props.cartItem;
     this.handleDeleteItem = this.handleDeleteItem.bind(this);
+    this.handleQuantity = this.handleQuantity.bind(this);
   }
 
   handleDeleteItem(e) {
     e.preventDefault();
-    this.props.deleteCartItem(this.props.cartItem);
-    location.reload();
+    // this.props.deleteCartItem(this.props.cartItem);
+    // location.reload();
+    this.props
+      .deleteCartItem(this.props.cartItem)
+      .then(this.props.getCartItems);
+  }
+
+  handleQuantity(e) {
+    e.preventDefault();
+    this.setState({ quantity: e.currentTarget.value });
   }
 
   render() {
     const {
       // imageUrl
       product_id,
-
       quantity,
       price,
       title,
-    } = this.props.cartItem;
+    } = this.state;
 
+    let totalPrice = price * this.state.quantity;
     // const { imageUrl } = this.props;
 
     // will need to have window.quebec to imageUrl
@@ -41,11 +50,12 @@ class CartItemIndexItem extends React.Component {
             className="remove-cart-item"
             onClick={this.handleDeleteItem}
           >
-            Remove
+            {/* Remove */}
+            <p>Remove</p>
           </button>
         </div>
         <div className="cart-item-quantity-container">
-          <select>
+          <select value={quantity} onChange={this.handleQuantity}>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -58,10 +68,10 @@ class CartItemIndexItem extends React.Component {
             <option value="10">10</option>
           </select>
         </div>
-        <div>${price}</div>
+        <div className="cart-item-total-price">${totalPrice}</div>
       </div>
     );
   }
 }
 
-export default CartItemIndexItem;
+export default CartIndexItem;
