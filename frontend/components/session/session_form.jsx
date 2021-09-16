@@ -29,8 +29,10 @@ class SessionForm extends React.Component {
     this.props.processForm(user).then(this.props.hideModal);
   }
 
-  guestDemo() {
-    this.setState({ email: "beOurGuest@gmail.com", password: "guestDemo" });
+  guestDemo(e) {
+    e.preventDefault();
+    const demo = { email: "beOurGuest@gmail.com", password: "guestDemo" };
+    this.props.processForm(demo).then(this.props.hideModal);
   }
 
   renderErrors() {
