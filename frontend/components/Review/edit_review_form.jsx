@@ -52,8 +52,6 @@ class EditReviewForm extends React.Component {
                   color: ratingValue <= this.state.rating ? "black" : "grey",
                 }}
                 fontSize="small"
-                onMouseEnter={() => this.setState({ hover: ratingValue })}
-                onMouseLeave={() => this.setState({ hover: null })}
               />
             </label>
           );

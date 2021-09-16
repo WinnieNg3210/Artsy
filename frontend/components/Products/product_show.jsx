@@ -62,13 +62,13 @@ class ProductShow extends React.Component {
   render() {
     const { product, currentUser, reviews } = this.props;
     const { open } = this.state;
-    let imageSrc = window.quebec;
-    // let imageSrc;
-    // if (product.imageUrl) {
-    //   imageSrc = product.imageUrl;
-    // } else {
-    //   imageSrc = window.quebec;
-    // }
+    // let imageSrc = window.quebec;
+    let imageSrc;
+    if (product.imageUrl) {
+      imageSrc = product.imageUrl;
+    } else {
+      imageSrc = window.quebec;
+    }
     let buyItNow;
     let addReview;
     if (currentUser) {
@@ -132,7 +132,6 @@ class ProductShow extends React.Component {
                 <option value="7">7</option>
                 <option value="8">8</option>
                 <option value="9">9</option>
-                <option value="10">10</option>
               </select>
             </div>
             <div className="product-show-button">

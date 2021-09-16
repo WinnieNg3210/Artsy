@@ -15,6 +15,10 @@ class Header extends React.Component {
     this.handleDropDown = this.handleDropDown.bind(this);
   }
 
+  componentDidMount() {
+    this.props.getCartItems();
+  }
+
   handleDropDown(e) {
     e.preventDefault();
     this.setState({ dropdown: !this.state.dropdown });
@@ -98,7 +102,7 @@ class Header extends React.Component {
           {display}
           <Link to="/cart">
             <div className="header-cart">
-              <ShoppingCartIcon />
+              <ShoppingCartIcon style={{ color: "black" }} />
               <span className="header-cart-count">{cartItems.length}</span>
             </div>
           </Link>

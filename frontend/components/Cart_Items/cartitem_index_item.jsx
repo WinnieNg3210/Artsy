@@ -11,8 +11,6 @@ class CartIndexItem extends React.Component {
 
   handleDeleteItem(e) {
     e.preventDefault();
-    // this.props.deleteCartItem(this.props.cartItem);
-    // location.reload();
     this.props
       .deleteCartItem(this.props.cartItem)
       .then(this.props.getCartItems);
@@ -20,28 +18,32 @@ class CartIndexItem extends React.Component {
 
   handleQuantity(e) {
     e.preventDefault();
-    this.setState({ quantity: e.currentTarget.value });
+
+    let nextCartItemState = Object.assign({}, this.state, {
+      product_id: this.state.productId,
+      quantity: e.currentTarget.value,
+    });
+
+    this.setState({ ...nextCartItemState });
+    this.props.updateCartItem(nextCartItemState);
+
+    // this.setState({ quantity: e.currentTarget.value });
+    // this.props.changeQuantity(this.state.quantity);
   }
 
   render() {
-    const {
-      // imageUrl
-      product_id,
-      quantity,
-      price,
-      title,
-    } = this.state;
+    const { product_id, quantity, price, title } = this.state;
 
     let totalPrice = price * this.state.quantity;
-    // const { imageUrl } = this.props;
+    const { imageUrl } = this.state;
 
-    // will need to have window.quebec to imageUrl
+    // will need to have window.quebec to imageUrl once we test with aws
     // debugger;
     // console.log(this.props.cartItem);
     return (
       <div className="cart-item-container">
         <Link className="cart-item" to={`/products/${product_id}`}>
-          <img className="cart-item-img" src={window.quebec} />
+          <img className="cart-item-img" src={imageUrl} />
         </Link>
         <div className="cart-item-info">
           <h1 className="cart-item-title">{title}</h1>
@@ -65,10 +67,9 @@ class CartIndexItem extends React.Component {
             <option value="7">7</option>
             <option value="8">8</option>
             <option value="9">9</option>
-            <option value="10">10</option>
           </select>
         </div>
-        <div className="cart-item-total-price">${totalPrice}</div>
+        <div className="cart-item-total-price">${totalPrice.toFixed(2)}</div>
       </div>
     );
   }

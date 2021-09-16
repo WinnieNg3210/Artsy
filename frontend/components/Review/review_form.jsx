@@ -8,7 +8,7 @@ class ReviewForm extends React.Component {
     super(props);
     this.state = {
       content: "",
-      rating: 5,
+      rating: 1,
       // rating: this.props.rating,
       author_id: this.props.currentUserId,
       product_id: this.props.product.id,
@@ -49,8 +49,6 @@ class ReviewForm extends React.Component {
                   color: ratingValue <= this.state.rating ? "black" : "grey",
                 }}
                 fontSize="small"
-                // onMouseEnter={() => this.setState({ hover: ratingValue })}
-                // onMouseLeave={() => this.setState({ hover: null })}
               />
             </label>
           );

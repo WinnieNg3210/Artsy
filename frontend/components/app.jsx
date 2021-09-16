@@ -25,7 +25,6 @@ const App = () => (
         component={EditReviewFormContainer}
       />
       <Route exact path="/cart" component={CartIndexContainer} />
-      {/* <Route exact path="/checkout" component={CartShowContainer} /> */}
       <Route exact path="/" component={ProductIndexContainer} />
     </Switch>
     <Footer />

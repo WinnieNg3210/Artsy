@@ -75,7 +75,39 @@ class ProductIndex extends React.Component {
           <div className="top-picks-title">
             <p>Our picks for you</p>
           </div>
-          <ul>{productItems}</ul>
+          <div className="top-picks-product">
+            <div>{productItems[0]}</div>
+            <div>{productItems[1]}</div>
+            <div>{productItems[2]}</div>
+            <div>{productItems[3]}</div>
+            <div>{productItems[12]}</div>
+            <div>{productItems[5]}</div>
+            <div>{productItems[6]}</div>
+            <div>{productItems[7]}</div>
+            <div>{productItems[8]}</div>
+            <div>{productItems[10]}</div>
+          </div>
+        </div>
+        <div className="nature-photography">
+          <div className="nature-category">
+            <div>
+              <p className="nature-landscape">
+                Nature <span>&</span> <span>Landscape</span>
+              </p>
+              <p className="zen">
+                Pick your <span>zen moment</span>
+              </p>
+            </div>
+
+            <div className="nature-products">
+              <div>{productItems[4]}</div>
+              <div>{productItems[7]}</div>
+              <div>{productItems[9]}</div>
+              <div>{productItems[11]}</div>
+              <div>{productItems[17]}</div>
+              <div>{productItems[15]}</div>
+            </div>
+          </div>
         </div>
         <What />
       </div>

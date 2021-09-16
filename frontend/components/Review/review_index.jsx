@@ -2,27 +2,19 @@ import React from "react";
 import ReviewIndexItem from "./review_index_item";
 
 class ReviewIndex extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.fetchReviews(this.props.productId);
-    // because we're passing the productId from the productShow page; we are passing the productId as a props
-    // therefore we need to do this.props.productId
-    // when we connect ReviewIndexContainer, we don't have to connect productId to ReviewIndexContainer
   }
 
   render() {
-    if (!this.props.reviews || this.props.reviews.length === 0) return null;
+    if (!this.props.reviews) return null;
     // console.log(this.props.reviews);
-    const allReviews = this.props.reviews.map((review, i) => {
+    const productReviews = this.props.reviews.map((review, i) => {
       // debugger;
       return (
         <ReviewIndexItem
           key={i}
           review={review}
-          updateReview={this.props.updateReview}
           fetchReviews={this.props.fetchReviews}
           productId={this.props.productId}
           currentUserId={this.props.currentUserId}
@@ -33,9 +25,9 @@ class ReviewIndex extends React.Component {
 
     return (
       <div className="reviews-container">
-        <p className="total-reviews">{allReviews.length} reviews</p>
+        <p className="total-reviews">{productReviews.length} reviews</p>
         <h1 className="reviews-header">Reviews for this item</h1>
-        <div className="reviews-list">{allReviews}</div>
+        <div className="reviews-list">{productReviews}</div>
       </div>
     );
   }
