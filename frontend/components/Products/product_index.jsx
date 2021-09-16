@@ -83,7 +83,7 @@ class ProductIndex extends React.Component {
             <div>{productItems[12]}</div>
             <div>{productItems[5]}</div>
             <div>{productItems[6]}</div>
-            <div>{productItems[7]}</div>
+            <div>{productItems[13]}</div>
             <div>{productItems[8]}</div>
             <div>{productItems[10]}</div>
           </div>
