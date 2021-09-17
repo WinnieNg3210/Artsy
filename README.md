@@ -16,8 +16,11 @@ Artsy is a cloned version of Etsy.com, an E-Commerce platform for artisan crafts
 
 ## **Features**
 
+### User Authentication
+New users can sign up for a new account or they can user the demo login to checkout the features of the site.
+
 ### Product listings
-Users are able to see all of a product's information: description, price, title, the seller and all of the reviews for this product. They can toggle on the description button to read through what the product is about.
+Users are able to see all of a product's information by selecting any images from the home page: description, price, title, the seller and all of the reviews for this product. They can toggle on the description button to read through what the product is about.
 
 ### Reviews
 Logged in users will be able to add a new review, select how many stars they want to give for the product, edit their existing review and edit the amount of stars in the edit page. If a non logged in user looks at the product page, they will be able to see past reviews but they won't be able to create nor edit any reviews.
