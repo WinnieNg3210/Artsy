@@ -95,7 +95,7 @@ class Header extends React.Component {
             <input
               className="header-search-input"
               type="text"
-              placeholder="Search for anything"
+              placeholder="search coming soon"
             />
             <SearchIcon className="header-search-icon" />
           </div>
@@ -107,7 +107,7 @@ class Header extends React.Component {
             </div>
           </Link>
         </div>
-        <div className="header-bottom">
+        {/* <div className="header-bottom">
           <ul className="category-items">
             <li>
               <a href="#">Pokemon Items</a>
@@ -134,7 +134,7 @@ class Header extends React.Component {
               <a href="#">Cartoons</a>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
     );
   }

@@ -50,6 +50,7 @@ class SessionForm extends React.Component {
   render() {
     let guestDemo;
     let signUpUser;
+    let or;
 
     if (this.props.formType === "Sign in") {
       guestDemo = (
@@ -60,7 +61,11 @@ class SessionForm extends React.Component {
           onClick={this.guestDemo}
         />
       );
+
+      or = <div className="or">or</div>;
     }
+
+    let credentials;
 
     if (this.props.formType === "Sign up") {
       signUpUser = (
@@ -74,6 +79,8 @@ class SessionForm extends React.Component {
           />
         </label>
       );
+
+      credentials = this.renderErrors();
     }
 
     let currentForm =
@@ -88,6 +95,15 @@ class SessionForm extends React.Component {
         </div>
       );
 
+    let emailError;
+    let nameError;
+    let passwordError;
+    if (this.renderErrors()) {
+      emailError = this.props.errors[1];
+      nameError = this.props.errors[2];
+      passwordError = this.props.errors[3];
+    }
+
     return (
       <div className="session-modal">
         <form onSubmit={this.handleSubmit}>
@@ -96,9 +112,10 @@ class SessionForm extends React.Component {
               x
             </div>
             {currentForm}
-            {this.renderErrors()}
+            {/* {this.renderErrors()} */}
             <div className="formInput">
               {signUpUser}
+              {nameError}
               <label className="formInput">
                 Email:
                 <input
@@ -108,7 +125,7 @@ class SessionForm extends React.Component {
                   onChange={this.update("email")}
                 />
               </label>
-
+              {emailError}
               <label className="formInput">
                 Password:
                 <input
@@ -118,11 +135,15 @@ class SessionForm extends React.Component {
                   onChange={this.update("password")}
                 />
               </label>
+              {passwordError}
               <input
                 type="submit"
                 value={this.props.formType}
                 className="form-button"
               />
+              <br />
+              {or}
+              <br />
               {guestDemo}
             </div>
           </div>
