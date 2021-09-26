@@ -76,16 +76,16 @@ class ProductIndex extends React.Component {
             <p>Our picks for you</p>
           </div>
           <div className="top-picks-product">
-            <div>{productItems[0]}</div>
-            <div>{productItems[1]}</div>
-            <div>{productItems[2]}</div>
-            <div>{productItems[3]}</div>
-            <div>{productItems[12]}</div>
-            <div>{productItems[5]}</div>
-            <div>{productItems[6]}</div>
-            <div>{productItems[13]}</div>
-            <div>{productItems[8]}</div>
-            <div>{productItems[10]}</div>
+            <div className="individual-pick">{productItems[0]}</div>
+            <div className="individual-pick">{productItems[1]}</div>
+            <div className="individual-pick">{productItems[2]}</div>
+            <div className="individual-pick">{productItems[3]}</div>
+            <div className="individual-pick">{productItems[12]}</div>
+            <div className="individual-pick">{productItems[5]}</div>
+            <div className="individual-pick">{productItems[6]}</div>
+            <div className="individual-pick">{productItems[13]}</div>
+            <div className="individual-pick">{productItems[8]}</div>
+            <div className="individual-pick">{productItems[10]}</div>
           </div>
         </div>
         <div className="nature-photography">

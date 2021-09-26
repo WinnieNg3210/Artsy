@@ -11,11 +11,11 @@
 
 .banner {
   background-color: #fdebd2;
-  height: 150px;
+  height: 16rem;
 }
 
 .welcome-banner {
-  padding-top: 1rem;
+  padding-top: 2.5rem;
   text-align: center;
   // font-family: Arial, Helvetica, sans-serif;
   font-family: "Martel", serif;
@@ -28,7 +28,7 @@
   display: flex;
   justify-content: space-evenly;
   position: relative;
-  bottom: 7vh;
+  bottom: 6vh;
 
   li {
     text-align: center;
@@ -41,16 +41,18 @@
 }
 
 .round-image {
-  height: 6rem;
-  width: 6rem;
+  height: 8rem;
+  width: 8rem;
   border-radius: 50%;
 }
 
 .top-picks-image {
   // margin: 1rem auto;
-  height: 10rem;
+  // padding: 0;
+  height: 23vh;
   width: 18vw;
   border-radius: 0.5rem;
+  // object-fit: contain;
 }
 
 .top-picks-title {
@@ -64,44 +66,64 @@
 }
 
 .top-picks-product {
-  // padding: 0 7rem;
-  display: grid;
-  grid-template-columns: repeat(5, 20%);
-  // grid-template-rows: auto;
-  // row-gap: 0rem;
-  // column-gap: 0rem;
-  // margin: auto;
-  justify-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 3.5rem;
 
-  div {
-    margin: 0 0.5rem;
+  .individual-pick {
+    padding: 0 0.4rem;
+
+    // div {
+    //   padding: 0;
+    // }
   }
 }
 
+// .top-picks-product {
+//   // padding: 0 7rem;
+//   display: grid;
+//   grid-template-columns: repeat(5, 20%);
+//   // grid-template-rows: auto;
+//   row-gap: 0rem;
+//   column-gap: 0rem;
+//   // margin: auto;
+//   justify-items: stretch;
+
+//   div {
+//     margin: 0 0.5rem;
+//   }
+// }
+
 .product-price-pill {
-  width: 100%;
+  width: 15rem;
   // border: thick solid black;
   position: relative;
   left: 2vh;
-  bottom: 4.5vh;
+  bottom: 4vh;
+  background-color: white;
+  border-radius: 1.25rem;
+  width: 7rem;
+  font-size: 2vh;
+
+  .product-price {
+    margin: 0.2vh 0.5vh;
+  }
 }
 
-.product-price {
-  background-color: white;
-  border: thin solid white;
-  font-size: 2vh;
-  border-radius: 1.25rem;
-  width: 35%;
-  height: auto;
-  padding-left: 0.5vh;
-  padding-top: 0.2vh;
-  padding-bottom: 0.2vh;
-  position: relative;
-  // left: 1rem;
-  // bottom: 2rem;
-  font-family: "Graphik Webfont", "Helvetica Neue", "Droid Sans", Arial,
-    sans-serif;
-}
+// .product-price {
+//   background-color: white;
+//   border: thin solid white;
+//   font-size: 2vh;
+//   border-radius: 1.25rem;
+//   width: 7rem;
+//   // height: auto;
+// padding-left: 0.5vh;
+// padding-top: 0.2vh;
+// padding-bottom: 0.2vh;
+//   // position: relative;
+//   font-family: "Graphik Webfont", "Helvetica Neue", "Droid Sans", Arial,
+//     sans-serif;
+// }
 
 .what-container {
   background-color: #fdebd2;
@@ -200,58 +222,58 @@
   width: 15%;
 }
 
-.nature-photography {
-  margin: 3rem 8rem 0 8rem;
-  width: 100%;
-  display: flex;
-}
+// .nature-photography {
+//   margin: 3rem 8rem 0 8rem;
+//   width: 100%;
+//   display: flex;
+// }
 
-.nature-category {
-  display: flex;
-  // flex-direction: column;
-  width: 100%;
+// .nature-category {
+//   display: flex;
+//   // flex-direction: column;
+//   // width: 100%;
 
-  div {
-    display: flex;
-    flex-direction: column;
-  }
+//   div {
+//     display: flex;
+//     flex-direction: column;
+//   }
 
-  p {
-    // border: thin solid black;
-    font-family: "Martel", serif;
-    position: relative;
-    // margin-bottom: 2rem;
-    font-size: 2.5vw;
-    top: 5rem;
-    display: flex;
-    flex-direction: column;
+//   p {
+//     // border: thin solid black;
+//     font-family: "Martel", serif;
+//     position: relative;
+//     // margin-bottom: 2rem;
+//     font-size: 2.5vw;
+//     top: 5rem;
+//     display: flex;
+//     flex-direction: column;
 
-    span {
-      margin-top: 0.5rem;
-    }
-  }
+//     span {
+//       margin-top: 0.5rem;
+//     }
+//   }
 
-  .zen {
-    font-family: "Roboto", sans-serif;
-    margin-top: 1rem;
-    font-size: 1.5vw;
-    font-weight: 350;
-  }
+//   .zen {
+//     font-family: "Roboto", sans-serif;
+//     margin-top: 1rem;
+//     font-size: 1.5vw;
+//     font-weight: 350;
+//   }
 
-  .nature-products {
-    margin-left: 3rem;
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-gap: 1.5rem;
-    row-gap: 5rem;
+//   .nature-products {
+//     margin-left: 3rem;
+//     display: grid;
+//     grid-template-columns: 30% 30% 30%;
+//     grid-gap: 1.5rem;
+//     row-gap: 5rem;
 
-    div {
-      height: 15vh;
-      width: 20vw;
-    }
-  }
+//     div {
+//       height: 15vh;
+//       width: 20vw;
+//     }
+//   }
 
-  .product-price-pill {
-    display: none;
-  }
-}
+//   .product-price-pill {
+//     display: none;
+//   }
+// }

@@ -4,10 +4,10 @@ const Footer = () => {
   return (
     <div className="footer-container">
       <div className="footer-col">
-        <h1>Shop</h1>
+        <h1>Projects</h1>
         <div className="footer-list-container">
-          <a href="#">Gift cards</a>
-          <a href="#">Artsy blog</a>
+          <a href="https://winnieng3210.github.io/Moon_Power/">Moon Power</a>
+          <a href="#">Another Project Coming Soon</a>
         </div>
       </div>
       <div className="footer-col">
@@ -20,14 +20,15 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-col">
-        <h1>About</h1>
+        <h1>Technology</h1>
         <div className="footer-list-container">
-          <a href="#">Artsy, Inc.</a>
-          <a href="#">Policies</a>
-          <a href="#">Investors</a>
-          <a href="#">Careers</a>
-          <a href="#">Press</a>
-          <a href="#">Impact</a>
+          <a href="#">Ruby on Rails</a>
+          <a href="#">React & Redux</a>
+          <a href="#">SQL</a>
+          <a href="#">JavaScript</a>
+          <a href="#">AWS</a>
+          <a href="#">Heroku</a>
+          <a href="#">HTML/CSS</a>
         </div>
       </div>
       <div className="footer-col">
