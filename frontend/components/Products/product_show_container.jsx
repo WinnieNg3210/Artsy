@@ -2,7 +2,11 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import ProductShow from "./product_show";
 import { fetchProduct } from "../../actions/product_actions";
-import { getCartItem, createCartItem } from "../../actions/cart_item_actions";
+import {
+  getCartItem,
+  createCartItem,
+  getCartItems,
+} from "../../actions/cart_item_actions";
 import { showModal } from "../../actions/modal_actions";
 
 const mSTP = (state, ownProps) => ({
@@ -17,6 +21,7 @@ const mSTP = (state, ownProps) => ({
 const mDTP = (dispatch) => ({
   fetchProduct: (productId) => dispatch(fetchProduct(productId)),
   createCartItem: (cartItem) => dispatch(createCartItem(cartItem)),
+  getCartItems: () => dispatch(getCartItems()),
   getCartItem: (cartItemId) => dispatch(getCartItem(cartItemId)),
   showModal: (modal) => dispatch(showModal(modal)),
 });

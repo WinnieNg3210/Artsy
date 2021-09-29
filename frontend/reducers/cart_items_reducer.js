@@ -9,7 +9,12 @@ const cartItemReducer = (state = {}, action) => {
   let nextState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_CART_ITEMS:
-      return action.cartItems;
+      // return action.cartItems;
+      let cartItemsArr = Object.values(action.cartItems);
+      cartItemsArr.forEach((cartItem) => {
+        nextState[cartItem.id] = cartItem;
+      });
+      return nextState;
     case RECEIVE_CART_ITEM:
       nextState[action.cartItem.id] = action.cartItem;
       return nextState;

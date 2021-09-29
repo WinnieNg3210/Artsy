@@ -8,18 +8,18 @@ class ProductIndexItem extends React.Component {
 
   render() {
     const { product } = this.props;
-    let imageSrc;
-    if (product.imageUrl) {
-      imageSrc = product.imageUrl;
-    } else {
-      imageSrc = window.quebec;
-    }
+    // let imageSrc;
+    // if (product.imageUrl) {
+    //   imageSrc = product.imageUrl;
+    // } else {
+    //   imageSrc = window.quebec;
+    // }
 
     return (
       <div key={product.id}>
         <Link to={`products/${product.id}`}>
           {/* <img src={product.imageUrl} /> */}
-          <img src={imageSrc} className="top-picks-image" />
+          <img src={product.imageUrl} className="top-picks-image" />
         </Link>
         <div className="product-price-pill">
           <p className="product-price">${product.price}</p>

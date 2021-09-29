@@ -41,6 +41,7 @@ class CartItemIndex extends React.Component {
           deleteCartItem={deleteCartItem}
           getCartItems={getCartItems}
           updateCartItem={updateCartItem}
+          // product_id={cartItem.product.id}
           // changeQuantity={this.changeQuantity}
         />
       );

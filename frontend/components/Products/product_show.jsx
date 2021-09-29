@@ -26,17 +26,22 @@ class ProductShow extends React.Component {
 
   handleAddToCart(e) {
     e.preventDefault();
+
+    // const { product, user } = this.props;
+
     if (!this.props.user) {
       this.props.showModal("Sign in");
     } else {
-      const productId = this.props.match.params.productId;
+      // const productId = this.props.match.params.productId;
+      const productId = this.props.product.id;
+
       const cartItem = Object.assign({}, this.state, {
         product_id: productId,
         user_id: this.props.user,
       });
 
-      this.props.createCartItem(cartItem);
-      this.navigateToCart();
+      this.props.createCartItem(cartItem).then(this.navigateToCart);
+      // this.navigateToCart();
     }
   }
 
@@ -47,6 +52,7 @@ class ProductShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.productId);
+    // this.props.fetchProduct(this.props.product.id);
   }
 
   togglePanel(e) {
@@ -60,15 +66,10 @@ class ProductShow extends React.Component {
   }
 
   render() {
+    debugger;
+    console.log(this.props.product);
     const { product, currentUser, reviews } = this.props;
     const { open } = this.state;
-    // let imageSrc = window.quebec;
-    let imageSrc;
-    if (product.imageUrl) {
-      imageSrc = product.imageUrl;
-    } else {
-      imageSrc = window.quebec;
-    }
     let buyItNow;
     let addReview;
     if (currentUser) {
@@ -87,7 +88,7 @@ class ProductShow extends React.Component {
     return (
       <div className="product-page-container">
         <div className="product-left">
-          <img src={imageSrc} className="product-show-image" />
+          <img src={product.imageUrl} className="product-show-image" />
           <div className="product-reviews-container">
             <ReviewIndexContainer productId={this.props.product.id} />
             {addReview}

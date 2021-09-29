@@ -2,7 +2,6 @@ class Api::CartItemsController < ApplicationController
     before_action :ensure_logged_in, only: [:index, :show, :create, :update, :destroy]
 
     def index
-        
         @cart_items = current_user.cart_items
         render :index
     end

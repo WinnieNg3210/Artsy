@@ -29,10 +29,7 @@ class ProductIndex extends React.Component {
 
     return (
       <div className="product-index-container">
-        <div className="banner">
-          {/* <h1 className="welcome-banner">High Quality Photography</h1> */}
-          {welcomeBanner}
-        </div>
+        <div className="banner">{welcomeBanner}</div>
         <div className="banner-images">
           <ul>
             <li>

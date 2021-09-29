@@ -1,6 +1,7 @@
 import {
   RECEIVE_ALL_PRODUCTS,
   RECEIVE_PRODUCT,
+  SEARCH_PRODUCTS,
 } from "../actions/product_actions";
 
 const productsReducer = (state = {}, action) => {
@@ -18,6 +19,12 @@ const productsReducer = (state = {}, action) => {
     // return action.products;
     case RECEIVE_PRODUCT:
       nextState[action.product.id] = action.product;
+      return nextState;
+    case SEARCH_PRODUCTS:
+      let searchProductsArr = Object.values(action.products);
+      searchProductsArr.forEach((product) => {
+        nextState[product.id] = product;
+      });
       return nextState;
     default:
       return state;

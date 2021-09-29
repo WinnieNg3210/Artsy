@@ -48,3 +48,5 @@ export const createCartItem = (cartItem) => (dispatch) => {
     dispatch(receiveCartItem(cartItem))
   );
 };
+
+// added an s in cartItems on line 47 and 48

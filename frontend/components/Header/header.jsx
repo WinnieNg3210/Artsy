@@ -4,6 +4,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCartOutlined";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import Search from "../../components/Header/search";
 
 class Header extends React.Component {
   constructor(props) {
@@ -91,14 +92,15 @@ class Header extends React.Component {
           <Link to="/">
             <h1 className="header-logo">Artsy</h1>
           </Link>
-          <div className="header-search-bar">
+          <Search fetchSearchProducts={this.props.fetchSearchProducts} />
+          {/* <div className="header-search-bar">
             <input
               className="header-search-input"
               type="text"
               placeholder="search coming soon"
             />
             <SearchIcon className="header-search-icon" />
-          </div>
+          </div> */}
           {display}
           <Link to="/cart">
             <div className="header-cart">
@@ -107,34 +109,6 @@ class Header extends React.Component {
             </div>
           </Link>
         </div>
-        {/* <div className="header-bottom">
-          <ul className="category-items">
-            <li>
-              <a href="#">Pokemon Items</a>
-            </li>
-            <li>
-              <a href="#">Nature</a>
-            </li>
-            <li>
-              <a href="#">Living Room</a>
-            </li>
-            <li>
-              <a href="#">Bedroom Decor</a>
-            </li>
-            <li>
-              <a href="#">Gifts</a>
-            </li>
-            <li>
-              <a href="#">Birthdays</a>
-            </li>
-            <li>
-              <a href="#">Decorations</a>
-            </li>
-            <li>
-              <a href="#">Cartoons</a>
-            </li>
-          </ul>
-        </div> */}
       </div>
     );
   }

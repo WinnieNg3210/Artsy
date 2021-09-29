@@ -10,6 +10,10 @@ Rails.application.routes.draw do
       resources :reviews, only: [:index, :create, :destroy, :update]
     end
     resources :cart_items, only: [:create, :show, :index, :destroy, :update]
+    # resources :products, only: [:search]
   end
+
+  get "/api/search", to: "api/products#search"
+  post "/api/search", to: "api/products#search"
 
 end

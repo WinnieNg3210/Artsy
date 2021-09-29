@@ -11,9 +11,9 @@ class CartIndexItem extends React.Component {
 
   handleDeleteItem(e) {
     e.preventDefault();
-    this.props
-      .deleteCartItem(this.props.cartItem)
-      .then(this.props.getCartItems);
+    this.props.deleteCartItem(this.props.cartItem);
+    // .then(this.props.getCartItems());
+    location.reload();
   }
 
   handleQuantity(e) {
@@ -32,10 +32,10 @@ class CartIndexItem extends React.Component {
   }
 
   render() {
-    const { product_id, quantity, price, title } = this.state;
+    const { product_id, quantity, price, title } = this.props.cartItem;
 
     let totalPrice = price * this.state.quantity;
-    const { imageUrl } = this.state;
+    // const { imageUrl } = this.state;
 
     // will need to have window.quebec to imageUrl once we test with aws
     // debugger;
@@ -43,7 +43,7 @@ class CartIndexItem extends React.Component {
     return (
       <div className="cart-item-container">
         <Link className="cart-item" to={`/products/${product_id}`}>
-          <img className="cart-item-img" src={imageUrl} />
+          <img className="cart-item-img" src={this.props.cartItem.imageUrl} />
         </Link>
         <div className="cart-item-info">
           <h1 className="cart-item-title">{title}</h1>

@@ -4,6 +4,7 @@ import { showModal } from "../../actions/modal_actions";
 import { withRouter } from "react-router";
 import Header from "./header";
 import { logout } from "../../actions/session_actions";
+import { fetchSearchProducts } from "../../actions/product_actions";
 
 import { getCartItem, getCartItems } from "../../actions/cart_item_actions";
 
@@ -17,6 +18,7 @@ const mapDispatchToProps = (dispatch) => ({
   showModal: (modal) => dispatch(showModal(modal)),
   getCartItem: (cartItemId) => dispatch(getCartItem(cartItemId)),
   getCartItems: () => dispatch(getCartItems()),
+  fetchSearchProducts: () => dispatch(fetchSearchProducts()),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));
