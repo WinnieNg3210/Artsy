@@ -22,11 +22,12 @@ class CartIndexItem extends React.Component {
     let nextCartItemState = Object.assign({}, this.state, {
       product_id: this.state.productId,
       quantity: e.currentTarget.value,
+      // imageUrl: this.state.imageUrl,
     });
 
     this.setState({ ...nextCartItemState });
     this.props.updateCartItem(nextCartItemState);
-
+    // location.reload();
     // this.setState({ quantity: e.currentTarget.value });
     // this.props.changeQuantity(this.state.quantity);
   }
@@ -35,7 +36,7 @@ class CartIndexItem extends React.Component {
     const { product_id, quantity, price, title } = this.props.cartItem;
 
     let totalPrice = price * this.state.quantity;
-    // const { imageUrl } = this.state;
+    const { imageUrl } = this.state;
 
     // will need to have window.quebec to imageUrl once we test with aws
     // debugger;

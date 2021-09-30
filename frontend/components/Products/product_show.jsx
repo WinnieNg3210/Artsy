@@ -66,8 +66,7 @@ class ProductShow extends React.Component {
   }
 
   render() {
-    debugger;
-    console.log(this.props.product);
+    // debugger;
     const { product, currentUser, reviews } = this.props;
     const { open } = this.state;
     let buyItNow;
