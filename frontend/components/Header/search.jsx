@@ -23,23 +23,23 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <div className="header-search-bar">
-            <input
-              className="header-search-input"
-              type="text"
-              placeholder="search coming soon"
-              onChange={this.updateSearch}
-              value={this.state.search}
-            />
-            {/* <input type="submit"> */}
-            {/* <Link to="/search"></Link> */}
-            <SearchIcon className="header-search-icon" />
-            {/* </input> */}
-          </div>
-        </form>
-      </div>
+      // <div>
+      <form onSubmit={this.handleSubmit} className="header-search-bar">
+        {/* <div className="header-search-bar"> */}
+        <input
+          className="header-search-input"
+          type="text"
+          placeholder="search coming soon"
+          onChange={this.updateSearch}
+          value={this.state.search}
+        />
+        {/* <input type="submit"> */}
+        {/* <Link to="/search"></Link> */}
+        <SearchIcon className="header-search-icon" />
+        {/* </input> */}
+        {/* </div> */}
+      </form>
+      // </div>
     );
   }
 }

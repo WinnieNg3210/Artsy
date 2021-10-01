@@ -13,6 +13,7 @@ const mSTP = (state, ownProps) => ({
   product: state.entities.products[ownProps.match.params.productId],
   currentUser: state.entities.users[state.session.id],
   user: state.session.id,
+  cartItems: Object.values(state.entities.cartItems),
   // reviews: Array.from(
   //   state.entities.products[ownProps.match.params.productId].reviews
   // ),

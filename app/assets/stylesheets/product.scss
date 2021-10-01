@@ -11,15 +11,6 @@
   //   border: thin solid black;
 }
 
-// .product-left {
-//   border: thin solid black;
-// }
-
-// .product-right {
-//   border: thin solid black;
-//   // padding: 0 1rem;
-// }
-
 .product-description,
 .description-container,
 .cart-shipping-container,
@@ -120,6 +111,11 @@
   background-color: black;
 }
 
+.add-item-button:hover {
+  transform: scale(1.05);
+  transition: 100ms ease-in-out;
+}
+
 .buy-now-button {
   border: thin solid black;
 }
@@ -162,6 +158,7 @@
 .description-container:hover {
   border-radius: 2rem;
   background-color: lightgray;
+  transition: 250ms ease-in-out;
 }
 
 .product-description-text {

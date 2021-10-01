@@ -7,6 +7,7 @@ import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ReviewFormContainer from "../Review/create_review_form_container";
 import ReviewIndexContainer from "../Review/review_index_container";
+import { LocalConvenienceStoreOutlined } from "@material-ui/icons";
 
 class ProductShow extends React.Component {
   constructor(props) {
@@ -15,34 +16,53 @@ class ProductShow extends React.Component {
     this.state = {
       open: false,
       quantity: 1,
+      addingReview: false,
+      editingReview: false,
     };
 
     this.togglePanel = this.togglePanel.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleAddToCart = this.handleAddToCart.bind(this);
     this.navigateToCart = this.navigateToCart.bind(this);
+    this.addReview = this.addReview.bind(this);
+    this.editReview = this.editReview.bind(this);
     // this.handleAddReview = this.handleAddReview.bind(this);
   }
 
   handleAddToCart(e) {
     e.preventDefault();
 
-    // const { product, user } = this.props;
-
     if (!this.props.user) {
       this.props.showModal("Sign in");
     } else {
-      // const productId = this.props.match.params.productId;
       const productId = this.props.product.id;
-
+      const cartItems = this.props.cartItems;
+      let items = {};
+      for (let i = 0; i < cartItems.length; i++) {
+        let item = cartItems[i];
+        items[item["product_id"]] = true;
+      }
       const cartItem = Object.assign({}, this.state, {
         product_id: productId,
         user_id: this.props.user,
       });
 
-      this.props.createCartItem(cartItem).then(this.navigateToCart);
-      // this.navigateToCart();
+      if (items.hasOwnProperty(productId)) {
+        this.navigateToCart();
+      } else {
+        this.props.createCartItem(cartItem).then(this.navigateToCart);
+      }
     }
+  }
+
+  addReview(e) {
+    e.preventDefault();
+    this.setState({ addingReview: !this.state.addingReview });
+  }
+
+  editReview(e) {
+    e.preventDefault();
+    this.setState({ editingReview: !this.state.editingReview });
   }
 
   navigateToCart() {
@@ -67,12 +87,13 @@ class ProductShow extends React.Component {
 
   render() {
     // debugger;
-    const { product, currentUser, reviews } = this.props;
+    const { product, currentUser, reviews, cartItems } = this.props;
+    // console.log(cartItems);
     const { open } = this.state;
-    let buyItNow;
+    // let buyItNow;
     let addReview;
     if (currentUser) {
-      buyItNow = <button className="buy-now-button">Buy it now</button>;
+      // buyItNow = <button className="buy-now-button">Buy it now</button>;
       addReview = <ReviewFormContainer product={product} />;
     }
 
@@ -128,14 +149,10 @@ class ProductShow extends React.Component {
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
               </select>
             </div>
             <div className="product-show-button">
-              {buyItNow}
+              {/* {buyItNow} */}
               <button
                 onClick={this.handleAddToCart}
                 className="add-item-button"
@@ -180,7 +197,32 @@ class ProductShow extends React.Component {
             </div>
           </div>
           {this.state.open ? (
-            <p className="product-description">{product.description}</p>
+            <div className="product-description">
+              <p>{product.description}</p>
+              <br />
+              <h2>FINE ART PHOTOGRAPHY PRINT</h2>
+              <ul>
+                <li>Unframed Print</li>
+                <li>Borderless Print</li>
+              </ul>
+              <br />
+              <h2>PRINT DETAILS</h2>
+              <ul>
+                <li>Premium Acid-Free Photo Paper</li>
+                <li>
+                  Vibrant, Fade Resistant Inks guaranteed to last a lifetime
+                </li>
+                <li>
+                  Luster (non-glossy) finish protects against fingerprints and
+                  UV exposure
+                </li>
+              </ul>
+              <br />
+              <h2>MATTE PRINT OPTION</h2>
+              <ul>
+                <li>White, 100% cottan-rag, conservation matting</li>
+              </ul>
+            </div>
           ) : null}
         </div>
       </div>

@@ -16,13 +16,13 @@ class ProductIndexItem extends React.Component {
     // }
 
     return (
-      <div key={product.id}>
+      <div key={product.id} className="top-picks-image-container">
         <Link to={`products/${product.id}`}>
           {/* <img src={product.imageUrl} /> */}
           <img src={product.imageUrl} className="top-picks-image" />
         </Link>
         <div className="product-price-pill">
-          <p className="product-price">${product.price}</p>
+          <p className="product-price">$ {product.price}</p>
         </div>
       </div>
     );

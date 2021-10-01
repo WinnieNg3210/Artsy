@@ -5,6 +5,11 @@ class CartIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.cartItem;
+    // this.state = {
+    //   productId: this.props.cartItem.product_id,
+    //   quantity: this.props.cartItem.quantity,
+    //   // quantity: this.props.quantity,
+    // };
     this.handleDeleteItem = this.handleDeleteItem.bind(this);
     this.handleQuantity = this.handleQuantity.bind(this);
   }
@@ -18,16 +23,19 @@ class CartIndexItem extends React.Component {
 
   handleQuantity(e) {
     e.preventDefault();
+    // this.props.changeQuantity(e.currentTarget.value);
 
     let nextCartItemState = Object.assign({}, this.state, {
       product_id: this.state.productId,
       quantity: e.currentTarget.value,
-      // imageUrl: this.state.imageUrl,
     });
 
     this.setState({ ...nextCartItemState });
     this.props.updateCartItem(nextCartItemState);
-    // location.reload();
+
+    // this.setState({ quantity: e.currentTarget.value });
+    location.reload();
+
     // this.setState({ quantity: e.currentTarget.value });
     // this.props.changeQuantity(this.state.quantity);
   }
@@ -36,7 +44,7 @@ class CartIndexItem extends React.Component {
     const { product_id, quantity, price, title } = this.props.cartItem;
 
     let totalPrice = price * this.state.quantity;
-    const { imageUrl } = this.state;
+    // const { imageUrl } = this.state;
 
     // will need to have window.quebec to imageUrl once we test with aws
     // debugger;
@@ -58,16 +66,16 @@ class CartIndexItem extends React.Component {
           </button>
         </div>
         <div className="cart-item-quantity-container">
-          <select value={quantity} onChange={this.handleQuantity}>
+          <select
+            value={quantity}
+            name="quantity"
+            onChange={this.handleQuantity}
+          >
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
           </select>
         </div>
         <div className="cart-item-total-price">${totalPrice.toFixed(2)}</div>

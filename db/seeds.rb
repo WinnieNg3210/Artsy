@@ -145,6 +145,26 @@ product24 = Product.create!(title: "Contrast Brick Building Old Building With Di
 image24 = URI.open("https://active-storage-artsapp-seeds.s3.amazonaws.com/p24.jpg")
 product24.image.attach(io: image24, filename:"p24.jpg")
 
+product25 = Product.create!(title: "Waterfall By Large Mountain in Forest Deciduous Trees", description: "High quality photograph by Thomas Kelly", price: 52.95, seller_id: user5.id)
+image25 = URI.open("https://active-storage-artsapp-seeds.s3.amazonaws.com/p25.jpg")
+product25.image.attach(io: image25, filename:"p25.jpg")
+
+product26 = Product.create!(title: "Busy New York City Night Life in Times Square NYC Street Photography Big Apple The City That Never Sleep", description: "High quality photograph by Andreas Ruck", price: 62.95, seller_id: user6.id)
+image26 = URI.open("https://active-storage-artsapp-seeds.s3.amazonaws.com/p26.jpg")
+product26.image.attach(io: image26, filename:"p26.jpg")
+
+product27 = Product.create!(title: "Snowy Branch on Icy Lake Nature Landscape Photography Sky Blue Moment Winter Nature", description: "High quality photograph by Kwon Youn", price: 72.95, seller_id: user7.id)
+image27 = URI.open("https://active-storage-artsapp-seeds.s3.amazonaws.com/p27.jpg")
+product27.image.attach(io: image27, filename:"p27.jpg")
+
+product28 = Product.create!(title: "Blooming Bright Pink Sakura Cherry Blossom Street Photography", description: "High quality photograph by Sara Sagano", price: 82.95, seller_id: user8.id)
+image28 = URI.open("https://active-storage-artsapp-seeds.s3.amazonaws.com/p28.jpg")
+product28.image.attach(io: image28, filename:"p28.jpg")
+
+product29 = Product.create!(title: "Girl in Kimono Holding a Red Umbrella Standing in the Large Bamboo Forest Kyoto Scenic", description: "High quality photograph by Walter Mario Stein", price: 92.95, seller_id: user9.id)
+image29 = URI.open("https://active-storage-artsapp-seeds.s3.amazonaws.com/p29.jpg")
+product29.image.attach(io: image29, filename:"p29.jpg")
+
 
 
 review1 = Review.create!(content: "Beautiful, a nice touch to my living room", rating: 5 , author_id: demoUser.id, product_id: product1.id)
@@ -195,3 +215,13 @@ review44 = Review.create!(content: "Beautiful!", rating: 5 , author_id: user11.i
 # review46 = Review.create!(content: "Always love those small details with the shadows", rating: 5 , author_id: user2.id, product_id: product23.id)
 review47 = Review.create!(content: "This is such a great photo and highlight colors so differently", rating: 5 , author_id: user3.id, product_id: product24.id)
 review48 = Review.create!(content: "Love the photo!", rating: 5 , author_id: user4.id, product_id: product24.id)
+review49 = Review.create!(content: "Street photography; love it!", rating: 5 , author_id: user5.id, product_id: product26.id)
+review50 = Review.create!(content: "captures the lights of Times Sqaure", rating: 5 , author_id: user6.id, product_id: product26.id)
+review51 = Review.create!(content: "Love the waterfall and it's not in your face", rating: 5 , author_id: user7.id, product_id: product25.id)
+review52 = Review.create!(content: "So beautiful. I'm glad I bought it; Shipping was fast and the quality is great as well", rating: 5 , author_id: user8.id, product_id: product25.id)
+review53 = Review.create!(content: "This makes me feel like I'm in a winter wonderland. So calming", rating: 5 , author_id: user9.id, product_id: product27.id)
+review54 = Review.create!(content: "The color and vibe is perfect for my minimal decoration", rating: 5 , author_id: user10.id, product_id: product27.id)
+review55 = Review.create!(content: "I love the lighting and the beautiful Sakura lining up", rating: 5 , author_id: user11.id, product_id: product28.id)
+review56 = Review.create!(content: "Beautiful; makes me want to go to Japan duing Sakura season", rating: 5 , author_id: user1.id, product_id: product28.id)
+review57 = Review.create!(content: "I love the whole person being small in such a large scenic landscape. I've been to Kyoto and it is genuinely beautiful", rating: 5 , author_id: user2.id, product_id: product29.id)
+review58 = Review.create!(content: "Love the red and green contrast of the photo", rating: 5 , author_id: user3.id, product_id: product29.id)

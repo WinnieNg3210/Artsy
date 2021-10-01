@@ -3,6 +3,7 @@
   <head>
     <title>Artsy</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= favicon_link_tag asset_path('artsyFavicon.jpg') %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,6 +15,10 @@
       window.modern = "<%= image_url('p24.jpg')%>";
       window.landscape = "<%= image_url('p13.jpg')%>";
       window.street = "<%= image_url('p15.jpg')%>";
+      window.master = "<%= image_url('master.jpg')%>";
+      window.discover = "<%= image_url('discover.jpg')%>";
+      window.amex = "<%= image_url('amex.jpg')%>";
+      window.visa = "<%= image_url('visa.jpg')%>";
     </script>
   </head>
 

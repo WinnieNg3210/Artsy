@@ -7,28 +7,26 @@ const Footer = () => {
         <h1>Projects</h1>
         <div className="footer-list-container">
           <a href="https://winnieng3210.github.io/Moon_Power/">Moon Power</a>
-          <a href="#">Another Project Coming Soon</a>
+          <a href="https://homesweetwoof.herokuapp.com/">Home Sweet Woof</a>
         </div>
       </div>
       <div className="footer-col">
-        <h1>Sell</h1>
+        <h1>Language</h1>
         <div className="footer-list-container">
-          <a href="#">Sell on Artsy</a>
-          <a href="#">Teams</a>
-          <a href="#">Forums</a>
-          <a href="#">Affiliates</a>
+          <a href="#">Ruby</a>
+          <a href="#">JavaScript</a>
         </div>
       </div>
       <div className="footer-col">
         <h1>Technology</h1>
         <div className="footer-list-container">
-          <a href="#">Ruby on Rails</a>
           <a href="#">React & Redux</a>
-          <a href="#">SQL</a>
-          <a href="#">JavaScript</a>
-          <a href="#">AWS</a>
-          <a href="#">Heroku</a>
           <a href="#">HTML/CSS</a>
+          <a href="#">Ruby on Rails</a>
+          <a href="#">AWS</a>
+          <a href="#">SQL</a>
+          <a href="#">MERN</a>
+          <a href="#">Socket.io</a>
         </div>
       </div>
       <div className="footer-col">

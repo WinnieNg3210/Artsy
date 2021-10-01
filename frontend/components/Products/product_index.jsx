@@ -34,31 +34,31 @@ class ProductIndex extends React.Component {
           <ul>
             <li>
               <a href="">
-                <img src={window.street} className="round-image" />
+                <img src={window.street} className="round-image" alt="" />
               </a>
               <p>Street Photography</p>
             </li>
             <li>
               <a href="">
-                <img src={window.landscape} className="round-image" />
+                <img src={window.landscape} className="round-image" alt="" />
               </a>
               <p>Landscape</p>
             </li>
             <li>
               <a href="">
-                <img src={window.bw} className="round-image" />
+                <img src={window.bw} className="round-image" alt="" />
               </a>
               <p>Black & White</p>
             </li>
             <li>
               <a href="">
-                <img src={window.modern} className="round-image" />
+                <img src={window.modern} className="round-image" alt="" />
               </a>
               <p>Modern</p>
             </li>
             <li>
               <a href="">
-                <img src={window.quebec} className="round-image" />
+                <img src={window.quebec} className="round-image" alt="" />
               </a>
               <p>Free Style</p>
             </li>
@@ -73,9 +73,9 @@ class ProductIndex extends React.Component {
             <p>Our picks for you</p>
           </div>
           <div className="top-picks-product">
-            <div className="individual-pick">{productItems[0]}</div>
+            <div className="individual-pick">{productItems[22]}</div>
             <div className="individual-pick">{productItems[1]}</div>
-            <div className="individual-pick">{productItems[2]}</div>
+            <div className="individual-pick">{productItems[18]}</div>
             <div className="individual-pick">{productItems[3]}</div>
             <div className="individual-pick">{productItems[12]}</div>
             <div className="individual-pick">{productItems[5]}</div>
@@ -104,6 +104,18 @@ class ProductIndex extends React.Component {
               <div>{productItems[17]}</div>
               <div>{productItems[15]}</div>
             </div>
+          </div>
+        </div>
+        <div className="editors-pick-container">
+          <p className="editor">Shop Editor's Pick</p>
+          <div className="editor-pick">
+            <div className="span-row-2">{productItems[19]}</div>
+            <div>{productItems[12]}</div>
+            <div>{productItems[2]}</div>
+            <div>{productItems[0]}</div>
+            <div>{productItems[20]}</div>
+            <div>{productItems[21]}</div>
+            <div>{productItems[23]}</div>
           </div>
         </div>
         <What />

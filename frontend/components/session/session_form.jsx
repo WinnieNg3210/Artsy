@@ -65,22 +65,19 @@ class SessionForm extends React.Component {
       or = <div className="or">or</div>;
     }
 
-    let credentials;
-
     if (this.props.formType === "Sign up") {
       signUpUser = (
         <label className="formInput">
-          First Name:
+          <p className="input-label">First Name:</p>
           <input
-            className="label"
+            // className="label"
+            className={this.renderErrors() ? "label" : "label label-error"}
             type="text"
             value={this.state.first_name}
             onChange={this.update("first_name")}
           />
         </label>
       );
-
-      credentials = this.renderErrors();
     }
 
     let currentForm =
@@ -98,6 +95,12 @@ class SessionForm extends React.Component {
     let emailError;
     let nameError;
     let passwordError;
+    let credentialError;
+
+    if (this.renderErrors() && this.props.formType === "Sign in") {
+      credentialError = this.props.errors[0];
+    }
+
     if (this.renderErrors()) {
       emailError = this.props.errors[1];
       nameError = this.props.errors[2];
@@ -115,9 +118,10 @@ class SessionForm extends React.Component {
             {/* {this.renderErrors()} */}
             <div className="formInput">
               {signUpUser}
-              {nameError}
+              <div className="error">{nameError}</div>
+              <div className="error">{credentialError}</div>
               <label className="formInput">
-                Email:
+                <p className="input-label">Email:</p>
                 <input
                   className="label"
                   type="email"
@@ -125,9 +129,9 @@ class SessionForm extends React.Component {
                   onChange={this.update("email")}
                 />
               </label>
-              {emailError}
+              <div className="error">{emailError}</div>
               <label className="formInput">
-                Password:
+                <p className="input-label">Password:</p>
                 <input
                   className="label"
                   type="password"
@@ -135,15 +139,13 @@ class SessionForm extends React.Component {
                   onChange={this.update("password")}
                 />
               </label>
-              {passwordError}
+              <div className="error">{passwordError}</div>
               <input
                 type="submit"
                 value={this.props.formType}
-                className="form-button"
+                className="form-button signIn"
               />
-              <br />
               {or}
-              <br />
               {guestDemo}
             </div>
           </div>
