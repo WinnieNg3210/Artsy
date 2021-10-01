@@ -87,7 +87,7 @@ class ProductIndex extends React.Component {
         </div>
         <div className="nature-photography">
           <div className="nature-category">
-            <div>
+            <div className="nature-text">
               <p className="nature-landscape">
                 Nature <span>&</span> <span>Landscape</span>
               </p>

@@ -6,7 +6,7 @@
   grid-template-columns: 60% auto;
   border-top: thin solid lightgrey;
   font-family: "Roboto", sans-serif;
-  padding: 1rem 10rem;
+  padding: 3vh 10vw;
 
   //   border: thin solid black;
 }
@@ -21,22 +21,35 @@
   padding-right: 1rem;
 }
 
+// left-side styling:
+
+.product-show-image {
+  border-radius: 0.75rem;
+  height: auto;
+  width: 90%;
+}
+
+// right side styling:
+
+.product-header-container {
+  margin-top: 2vh;
+}
+
 .product-seller {
-  font-size: 0.8rem;
-  margin-bottom: 1rem;
+  font-size: 1.1vw;
+  margin-bottom: 1vh;
 }
 
 .product-title {
-  // font-family: "Martel", serif;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 3vh;
+  line-height: 4vh;
   font-weight: 200;
 }
 
 .stock-price {
   display: flex;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 4vh;
 }
 
 .stock-container {
@@ -45,18 +58,18 @@
 
 .stock-check {
   position: relative;
-  bottom: 0.2rem;
-  right: 0.5rem;
+  bottom: 0.2vh;
+  right: 0.5vw;
 }
 
 .in-stock {
-  font-size: 0.85rem;
+  font-size: 1.1vw;
   font-weight: 100;
 }
 
 .product-show-price {
   display: flex;
-  font-size: 1.25rem;
+  font-size: 1.1vw;
   font-weight: medium;
 }
 
@@ -66,47 +79,37 @@
   bottom: 0.1rem;
 }
 
-.product-show-image {
-  border-radius: 0.75rem;
-  height: auto;
-  width: 90%;
-}
-
 .product-quantity-container {
-  margin-top: 1rem;
+  margin-top: 4vh;
 }
 
 .quantity {
-  font-size: 0.8rem;
+  font-size: 1.1vw;
   font-weight: 100;
 }
 
 .quantity-dropdown {
-  margin-top: 0.5rem;
+  margin-top: 1.5vh;
 
   select {
     width: 100%;
     height: 2rem;
     border-radius: 3px;
     box-shadow: 0 1px 6px 0 lightgrey;
+    font-size: 2vh;
   }
 }
 
 .product-show-button {
-  margin-top: 1rem;
-}
-
-.add-item-button,
-.buy-now-button {
-  margin-top: 0.5rem;
-  border-radius: 2rem;
-  width: 100%;
-  height: 2.5rem;
-  font-size: 0.95rem;
-  cursor: pointer;
+  margin-top: 4vh;
 }
 
 .add-item-button {
+  border-radius: 2rem;
+  width: 100%;
+  height: 5vh;
+  font-size: 2vh;
+  cursor: pointer;
   color: white;
   background-color: black;
 }
@@ -116,24 +119,20 @@
   transition: 100ms ease-in-out;
 }
 
-.buy-now-button {
-  border: thin solid black;
-}
-
 .cart-shipping-container {
-  margin-top: 1.5rem;
+  margin-top: 4vh;
 }
 
 .hot-item-container,
 .shipping-container {
   display: flex;
-  margin-top: 1rem;
+  margin-top: 2vh;
 
   p {
-    font-size: 0.75rem;
+    font-size: 2vh;
     margin-left: 1rem;
-    padding-top: 0.5rem;
-    line-height: 0.85rem;
+    // padding-top: 0.5rem;
+    line-height: 2.5vh;
   }
 
   span {
@@ -141,18 +140,14 @@
   }
 }
 
-// .shipping-truck,
-// .hot-item-cart {
-//   font-size: medium;
-// }
-
 .description-container {
   margin-top: 1.5rem;
   height: 1.5rem;
-  font-size: 0.85rem;
+  font-size: 2vh;
   // line-height: 1.5rem;
   // border: thin solid black;
-  padding-top: 0.25rem;
+  padding-top: 1vh;
+  // padding-bottom: 0.5vh;
 }
 
 .description-container:hover {
@@ -174,7 +169,44 @@
 }
 
 .product-description {
-  margin-top: 1rem;
-  line-height: 1.5rem;
-  font-size: 0.85rem;
+  margin-top: 3vh;
+  line-height: 3vh;
+  font-size: 2vh;
+  max-height: 12vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  content: "";
+  background: -webkit-linear-gradient(#000, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.show-option-container {
+  margin-top: 4vh;
+  text-align: center;
+
+  .show-desc {
+    font-size: 2vh;
+    padding-top: 0.75vh;
+  }
+}
+
+.show-option-button:hover {
+  cursor: pointer;
+  border-radius: 2rem;
+  height: 3.5vh;
+  background-color: lightgray;
+  transition: 250ms ease-in-out;
+}
+
+// .product-description.show-all {
+//   max-height: 100%;
+//   -webkit-text-fill-color: none;
+// }
+
+.show-all {
+  margin-top: 3vh;
+  line-height: 3vh;
+  font-size: 2vh;
+  margin-left: 1.16vw;
 }

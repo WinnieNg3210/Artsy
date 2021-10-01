@@ -7,19 +7,20 @@ import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ReviewFormContainer from "../Review/create_review_form_container";
 import ReviewIndexContainer from "../Review/review_index_container";
-import { LocalConvenienceStoreOutlined } from "@material-ui/icons";
 
 class ProductShow extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      open: false,
+      open: true,
+      showAll: false,
       quantity: 1,
       addingReview: false,
       editingReview: false,
     };
 
+    this.toggleShow = this.toggleShow.bind(this);
     this.togglePanel = this.togglePanel.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleAddToCart = this.handleAddToCart.bind(this);
@@ -80,20 +81,22 @@ class ProductShow extends React.Component {
     this.setState({ open: !this.state.open });
   }
 
+  toggleShow(e) {
+    e.preventDefault();
+    this.setState({ showAll: !this.state.showAll });
+  }
+
   handleChange(e) {
     e.preventDefault();
     this.setState({ quantity: e.target.value });
   }
 
   render() {
-    // debugger;
     const { product, currentUser, reviews, cartItems } = this.props;
-    // console.log(cartItems);
-    const { open } = this.state;
-    // let buyItNow;
+    const { open, showAll } = this.state;
+
     let addReview;
     if (currentUser) {
-      // buyItNow = <button className="buy-now-button">Buy it now</button>;
       addReview = <ReviewFormContainer product={product} />;
     }
 
@@ -101,6 +104,12 @@ class ProductShow extends React.Component {
       <ExpandMoreIcon className="expand-arrow" fontSize="small" />
     ) : (
       <ExpandLessIcon className="expand-arrow" fontSize="small" />
+    );
+
+    let showOption = showAll ? (
+      <p className="show-desc">Less</p>
+    ) : (
+      <p className="show-desc">Learn more about this item</p>
     );
 
     if (!product) return null; // will need this to return a page that a product does not exist
@@ -197,31 +206,42 @@ class ProductShow extends React.Component {
             </div>
           </div>
           {this.state.open ? (
-            <div className="product-description">
-              <p>{product.description}</p>
-              <br />
-              <h2>FINE ART PHOTOGRAPHY PRINT</h2>
-              <ul>
-                <li>Unframed Print</li>
-                <li>Borderless Print</li>
-              </ul>
-              <br />
-              <h2>PRINT DETAILS</h2>
-              <ul>
-                <li>Premium Acid-Free Photo Paper</li>
-                <li>
-                  Vibrant, Fade Resistant Inks guaranteed to last a lifetime
-                </li>
-                <li>
-                  Luster (non-glossy) finish protects against fingerprints and
-                  UV exposure
-                </li>
-              </ul>
-              <br />
-              <h2>MATTE PRINT OPTION</h2>
-              <ul>
-                <li>White, 100% cottan-rag, conservation matting</li>
-              </ul>
+            <div>
+              {/* <div className="product-description"> */}
+              <div className={showAll ? "show-all" : "product-description"}>
+                <p>{product.description}</p>
+                <br />
+                <h2>FINE ART PHOTOGRAPHY PRINT</h2>
+                <ul>
+                  <li>Unframed Print</li>
+                  <li>Borderless Print</li>
+                </ul>
+                <br />
+                <h2>PRINT DETAILS</h2>
+                <ul>
+                  <li>Premium Acid-Free Photo Paper</li>
+                  <li>
+                    Vibrant, Fade Resistant Inks guaranteed to last a lifetime
+                  </li>
+                  <li>
+                    Luster (non-glossy) finish protects against fingerprints and
+                    UV exposure
+                  </li>
+                </ul>
+                <br />
+                <h2>MATTE PRINT OPTION</h2>
+                <ul>
+                  <li>White, 100% cottan-rag, conservation matting</li>
+                </ul>
+              </div>
+              <div className="show-option-container">
+                <div
+                  className="show-option-button"
+                  onClick={(e) => this.toggleShow(e)}
+                >
+                  {showOption}
+                </div>
+              </div>
             </div>
           ) : null}
         </div>

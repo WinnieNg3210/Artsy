@@ -1,3 +1,34 @@
+.what-container {
+  background-color: #fdebd2;
+  text-align: center;
+  font-weight: thin;
+  padding: 2rem;
+  margin-top: 5vh;
+}
+
+.what-container h1 {
+  font-family: "Martel", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.what-container h2 {
+  // font-family: "Martel", sans-serif;
+  font-size: 1.5rem;
+}
+
+.what-container p {
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  // font-weight: thin;
+  line-height: 1.5rem;
+}
+
+.what-reasons {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
 .footer-container {
   margin-top: 2rem;
   background-color: #2f466c;

@@ -11,11 +11,11 @@
 
 .banner {
   background-color: #fdebd2;
-  height: 14rem;
+  height: 23vh;
 }
 
 .welcome-banner {
-  padding-top: 2.5rem;
+  padding-top: 2.5vh;
   text-align: center;
   // font-family: Arial, Helvetica, sans-serif;
   font-family: "Martel", sans-serif;
@@ -47,8 +47,6 @@
 }
 
 .top-picks-image {
-  // margin: 1rem auto;
-  // padding: 0;
   height: 23vh;
   width: 18vw;
   border-radius: 0.5rem;
@@ -107,92 +105,53 @@
   }
 }
 
-// .product-price {
-//   background-color: white;
-//   border: thin solid white;
-//   font-size: 2vh;
-//   border-radius: 1.25rem;
-//   width: 7rem;
-//   // height: auto;
-// padding-left: 0.5vh;
-// padding-top: 0.2vh;
-// padding-bottom: 0.2vh;
-//   // position: relative;
-//   font-family: "Graphik Webfont", "Helvetica Neue", "Droid Sans", Arial,
-//     sans-serif;
-// }
-
-.what-container {
-  background-color: #fdebd2;
-  text-align: center;
-  font-weight: thin;
-  padding: 2rem;
-  margin-top: 10vh;
-}
-
-.what-container h1 {
-  font-family: "Martel", sans-serif;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.what-container h2 {
-  // font-family: "Martel", sans-serif;
-  font-size: 1.5rem;
-}
-
-.what-container p {
-  padding: 1rem 2rem;
-  font-size: 0.9rem;
-  // font-weight: thin;
-  line-height: 1.5rem;
-}
-
-.what-reasons {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-}
-
 .nature-photography {
   margin-top: 8vh;
   margin-bottom: 8vh;
+  padding: 0 4vw;
 }
 
 .nature-category {
-  display: flex;
-  justify-content: center;
-  // flex-direction: column;
-  // width: 100%;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  // grid-column-gap: 2vw;
+  position: relative;
 
-  div {
+  .nature-text {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    margin-left: 2vw;
   }
 
-  p {
+  //   div {
+  //     display: flex;
+  //     flex-direction: column;
+  //   }
+
+  .nature-landscape {
     // border: thin solid black;
     font-family: "Martel", sans-serif;
-    position: relative;
+    margin-top: 4vh;
     // margin-bottom: 2rem;
     font-size: 2.5vw;
-    top: 5rem;
     display: flex;
     flex-direction: column;
 
     span {
-      margin-top: 0.5rem;
+      margin-top: 1vh;
     }
   }
 
   .zen {
     font-family: "Roboto", sans-serif;
-    margin-top: 1rem;
+    margin-top: 2vh;
     font-size: 1.5vw;
     font-weight: 350;
   }
 
   .nature-products {
-    margin-left: 3rem;
+    // margin-left: 3rem;
     display: grid;
     grid-template-columns: 30% 30% 30%;
     justify-content: center;
@@ -203,10 +162,6 @@
       height: 24vh;
       width: 23vw;
     }
-  }
-
-  .product-price-pill {
-    display: none;
   }
 }
 
@@ -236,6 +191,6 @@
 
   .top-picks-image {
     width: 25vw;
-    height: 50vh;
+    height: 50.5vh;
   }
 }
