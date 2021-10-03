@@ -9,7 +9,6 @@ class ReviewForm extends React.Component {
     this.state = {
       content: "",
       rating: 1,
-      // rating: this.props.rating,
       author_id: this.props.currentUserId,
       product_id: this.props.product.id,
       // hover: null,
@@ -20,8 +19,11 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createReview(this.state, this.props.product.id);
-    this.setState({ content: "" });
+    this.props
+      .createReview(this.state, this.props.product.id)
+      .then(this.props.addReview(e));
+    // .then(this.setState({ content: "" }));
+    // debugger;
   }
 
   update(field) {
@@ -70,9 +72,21 @@ class ReviewForm extends React.Component {
               onChange={this.update("content")}
             />
           </div>
-          <button type="submit" className="add-review-btn">
-            Add Review
-          </button>
+          <div className="review-buttons">
+            <button
+              type="submit"
+              className="add-review-btn"
+              // onClick={() => this.props.addReview()}
+            >
+              Add Review
+            </button>
+            <button
+              className="cancel-review-btn"
+              onClick={this.props.addReview}
+            >
+              Cancel
+            </button>
+          </div>
         </form>
       </div>
     );

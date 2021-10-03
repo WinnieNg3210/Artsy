@@ -17,7 +17,6 @@ class ProductShow extends React.Component {
       showAll: false,
       quantity: 1,
       addingReview: false,
-      editingReview: false,
     };
 
     this.toggleShow = this.toggleShow.bind(this);
@@ -26,7 +25,6 @@ class ProductShow extends React.Component {
     this.handleAddToCart = this.handleAddToCart.bind(this);
     this.navigateToCart = this.navigateToCart.bind(this);
     this.addReview = this.addReview.bind(this);
-    this.editReview = this.editReview.bind(this);
     // this.handleAddReview = this.handleAddReview.bind(this);
   }
 
@@ -59,11 +57,7 @@ class ProductShow extends React.Component {
   addReview(e) {
     e.preventDefault();
     this.setState({ addingReview: !this.state.addingReview });
-  }
-
-  editReview(e) {
-    e.preventDefault();
-    this.setState({ editingReview: !this.state.editingReview });
+    console.log(this.state.addingReview);
   }
 
   navigateToCart() {
@@ -93,11 +87,31 @@ class ProductShow extends React.Component {
 
   render() {
     const { product, currentUser, reviews, cartItems } = this.props;
-    const { open, showAll } = this.state;
+    const { open, showAll, addingReview } = this.state;
 
-    let addReview;
-    if (currentUser) {
-      addReview = <ReviewFormContainer product={product} />;
+    let createReview;
+    if (currentUser && addingReview) {
+      // debugger;
+      createReview = (
+        // <div className={addingReview ? "show-review-form" : ""}>
+        <ReviewFormContainer
+          product={product}
+          addReview={this.addReview}
+          addingReview={this.state.addingReview}
+        />
+        // </div>
+      );
+    }
+
+    let addReviewBtn;
+    if (currentUser && !addingReview) {
+      // button disappears when add review is clicked to show review form
+
+      addReviewBtn = (
+        <button className="add-review-btn" onClick={this.addReview}>
+          Add Review
+        </button>
+      );
     }
 
     let expand = open ? (
@@ -120,7 +134,8 @@ class ProductShow extends React.Component {
           <img src={product.imageUrl} className="product-show-image" />
           <div className="product-reviews-container">
             <ReviewIndexContainer productId={this.props.product.id} />
-            {addReview}
+            {addReviewBtn}
+            {createReview}
           </div>
         </div>
         <div className="product-right">
@@ -161,7 +176,6 @@ class ProductShow extends React.Component {
               </select>
             </div>
             <div className="product-show-button">
-              {/* {buyItNow} */}
               <button
                 onClick={this.handleAddToCart}
                 className="add-item-button"

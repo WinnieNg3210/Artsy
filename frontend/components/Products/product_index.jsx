@@ -20,9 +20,7 @@ class ProductIndex extends React.Component {
     // let welcomeBanner;
 
     let welcomeBanner = currentUser ? (
-      <h1 className="welcome-banner">
-        Welcome back, {currentUser.first_name}!
-      </h1>
+      <h1 className="welcome-banner">Hi, {currentUser.first_name}!</h1>
     ) : (
       <h1 className="welcome-banner">High Quality Photography</h1>
     );

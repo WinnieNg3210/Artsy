@@ -93,14 +93,6 @@ class Header extends React.Component {
             <h1 className="header-logo">Artsy</h1>
           </Link>
           <Search fetchSearchProducts={this.props.fetchSearchProducts} />
-          {/* <div className="header-search-bar">
-            <input
-              className="header-search-input"
-              type="text"
-              placeholder="search coming soon"
-            />
-            <SearchIcon className="header-search-icon" />
-          </div> */}
           {display}
           <Link to="/cart">
             <div className="header-cart">
