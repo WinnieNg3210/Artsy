@@ -13,29 +13,29 @@ const Footer = () => {
       <div className="footer-col">
         <h1>Language</h1>
         <div className="footer-list-container">
-          <a href="#">Ruby</a>
-          <a href="#">JavaScript</a>
+          <p>Ruby</p>
+          <p>JavaScript</p>
         </div>
       </div>
       <div className="footer-col">
         <h1>Technology</h1>
         <div className="footer-list-container">
-          <a href="#">React & Redux</a>
-          <a href="#">HTML/CSS</a>
-          <a href="#">Ruby on Rails</a>
-          <a href="#">AWS</a>
-          <a href="#">SQL</a>
-          <a href="#">MERN</a>
-          <a href="#">Socket.io</a>
+          <p>React & Redux</p>
+          <p>HTML/CSS</p>
+          <p>Ruby on Rails</p>
+          <p>AWS</p>
+          <p>SQL</p>
+          <p>MERN</p>
+          <p>Socket.io</p>
         </div>
       </div>
       <div className="footer-col">
         <div className="help-container">
-          <h1>Help</h1>
+          <h1>Social</h1>
           <div className="footer-list-container">
-            <a href="#">Help Center</a>
-            <a href="#">Trust and safety</a>
-            <a href="#">Privacy settings</a>
+            <a href="https://github.com/winnieNg3210">Github</a>
+            <a href="https://www.linkedin.com/in/cwingng/">LinkedIn</a>
+            <a href="https://angel.co/winnie-ng-2">AngelList</a>
           </div>
         </div>
         <div className="social">

@@ -86,7 +86,7 @@ class ProductShow extends React.Component {
   }
 
   render() {
-    const { product, currentUser, reviews, cartItems } = this.props;
+    const { product, currentUser } = this.props;
     const { open, showAll, addingReview } = this.state;
 
     let createReview;

@@ -21,9 +21,10 @@ const App = () => (
       />
       <Route
         exact
-        path="/reviews/:reviewId"
+        path="/products/:productId/reviews/:reviewId"
         component={EditReviewFormContainer}
       />
+      {/* added "products/:productId/" */}
       <Route exact path="/cart" component={CartIndexContainer} />
       <Route exact path="/" component={ProductIndexContainer} />
     </Switch>

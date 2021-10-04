@@ -10,6 +10,10 @@ class EditReviewForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // componentDidMount() {
+  //   this.props.fetchProduct(this.props.product.id);
+  // }
+
   handleSubmit(e) {
     e.preventDefault();
     const productId = this.props.review.product_id;
@@ -19,6 +23,7 @@ class EditReviewForm extends React.Component {
     });
 
     this.props.updateReview(review, productId);
+    // .then(this.props.handleEdit());
     this.navigateToProductShow();
   }
 
@@ -32,12 +37,14 @@ class EditReviewForm extends React.Component {
   }
 
   render() {
+    const { product } = this.props;
+
     let starRatings = (
       <div className="edit-star-rating">
         {[...Array(5)].map((star, i) => {
           const ratingValue = i + 1;
           return (
-            <label>
+            <label key={i}>
               <input
                 type="radio"
                 name="rating"
@@ -46,7 +53,6 @@ class EditReviewForm extends React.Component {
                 onClick={() => this.setState({ rating: ratingValue })}
               />
               <StarIcon
-                key={i}
                 className="star"
                 style={{
                   color: ratingValue <= this.state.rating ? "black" : "grey",
@@ -61,12 +67,20 @@ class EditReviewForm extends React.Component {
 
     return (
       <div className="review-edit-form">
-        <form onSubmit={this.handleSubmit}>
-          <h1>Edit Your Review</h1>
+        <div className="edit-product-review">
+          <img src={product.imageUrl} />
+          <div>
+            <p>{product.title}</p>
+            <p>Seller: {product.seller.first_name}</p>
+            <p>Price: ${product.price}</p>
+          </div>
+        </div>
+        <form onSubmit={this.handleSubmit} className="edit-product-form">
+          <h1>Tell us your thoughts!</h1>
           {starRatings}
           <textarea
-            rows="10"
-            cols="50"
+            rows="15"
+            cols="70"
             value={this.state.content}
             onChange={this.update("content")}
           />

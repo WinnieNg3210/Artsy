@@ -19,8 +19,8 @@ class CartItemIndex extends React.Component {
     this.props.getCartItems();
   }
 
-  changeQuantity(q) {
-    this.setState({ quantity: q });
+  changeQuantity(cartItem) {
+    this.props.updateCartItem(cartItem);
   }
 
   handleCheckout(e) {
@@ -29,12 +29,10 @@ class CartItemIndex extends React.Component {
       this.props.deleteCartItem(item);
     });
     this.props.history.push("/");
-    location.reload();
   }
 
   render() {
     if (!this.props.cartItems) return null;
-    // prevents React from getting upset for not finding a shopping cart
     const { deleteCartItem, getCartItems, updateCartItem } = this.props;
 
     const allCartItems = this.props.cartItems.map((cartItem) => {
@@ -46,7 +44,7 @@ class CartItemIndex extends React.Component {
           getCartItems={getCartItems}
           updateCartItem={updateCartItem}
           imageUrl={cartItem.imageUrl}
-          // changeQuantity={this.changeQuantity}
+          changeQuantity={this.changeQuantity}
           // quantity={cartItem.quantity}
           // product_id={cartItem.product.id}
         />

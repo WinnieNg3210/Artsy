@@ -32,6 +32,7 @@ export const getCartItem = (cartItemId) => (dispatch) => {
 };
 
 export const updateCartItem = (cartItem) => (dispatch) => {
+  // console.log(cartItem);
   return CartItemApiUtils.updateCartItem(cartItem).then((cartItem) =>
     dispatch(receiveCartItem(cartItem))
   );

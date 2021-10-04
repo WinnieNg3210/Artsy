@@ -48,8 +48,7 @@
 }
 
 .add-review-btn,
-.cancel-review-btn,
-.edit-review-submit-button {
+.cancel-review-btn {
   margin: 1vh 1vw;
   border: thin solid black;
   cursor: pointer;
@@ -78,14 +77,51 @@
 }
 
 .review-edit-form {
-  text-align: center;
+  margin: 0 10vw;
+  display: flex;
+  justify-content: space-evenly;
+
+  .edit-product-form {
+    text-align: center;
+  }
 
   h1 {
-    margin-top: 5rem;
+    margin-top: 1.75vh;
+    font-size: 2vh;
+    font-family: "Martel", sans-serif;
+  }
+
+  textarea {
+    font-size: 1.75vh;
+    font-family: "Martel", sans-serif;
+  }
+}
+
+.edit-product-review {
+  div {
+    margin-top: 2vh;
+    text-align: left;
+  }
+
+  p {
+    font-family: "Martel", sans-serif;
+    font-size: 2vh;
+    line-height: 4vh;
   }
 }
 
 .edit-star-rating {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.edit-review-submit-button {
+  margin-top: 2vh;
+  border: thin solid black;
+  cursor: pointer;
+  width: 10rem;
+  height: 2rem;
+  border-radius: 2rem;
+  color: white;
+  background-color: black;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import StarOutlineIcon from "@material-ui/icons/StarOutline";
 import StarIcon from "@material-ui/icons/Star";
 import { Link } from "react-router-dom";
+import EditReviewFormContainer from "../Review/edit_review_form_container";
 
 class ReviewIndexItem extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class ReviewIndexItem extends React.Component {
   // }
 
   render() {
-    const { review } = this.props;
+    const { review, productId } = this.props;
     // console.log(this.props);
     let ratings = [];
     for (let i = 0; i < 5; i++) {
@@ -61,7 +62,10 @@ class ReviewIndexItem extends React.Component {
       );
 
       editButton = (
-        <Link to={`/reviews/${review.id}`} className="edit-review">
+        <Link
+          to={`/products/${productId}/reviews/${review.id}`}
+          className="edit-review"
+        >
           <button className="edit-review-btn">Edit</button>
         </Link>
       );
@@ -81,6 +85,7 @@ class ReviewIndexItem extends React.Component {
             {deleteButton}
             {editButton}
           </div>
+          {/* {editForm} */}
         </div>
       </div>
     );

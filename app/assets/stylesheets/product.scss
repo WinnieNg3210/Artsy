@@ -192,18 +192,16 @@
   }
 }
 
+.show-option-button {
+  height: 3.5vh;
+}
+
 .show-option-button:hover {
   cursor: pointer;
   border-radius: 2rem;
-  height: 3.5vh;
   background-color: lightgray;
   transition: 250ms ease-in-out;
 }
-
-// .product-description.show-all {
-//   max-height: 100%;
-//   -webkit-text-fill-color: none;
-// }
 
 .show-all {
   margin-top: 3vh;

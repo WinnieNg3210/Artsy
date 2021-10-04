@@ -9,7 +9,8 @@ class ReviewIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchReviews(this.props.productId);
+    // this should be
+    this.props.fetchReviews(this.props.product.id);
   }
 
   handleDelete(review, product) {
@@ -27,7 +28,8 @@ class ReviewIndex extends React.Component {
           key={i}
           review={review}
           fetchReviews={this.props.fetchReviews}
-          productId={this.props.productId}
+          // productId={this.props.productId}
+          productId={this.props.product.id}
           currentUserId={this.props.currentUserId}
           // deleteReview={this.props.deleteReview}
           handleDelete={this.handleDelete}

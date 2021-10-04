@@ -8,8 +8,9 @@ import {
 import ReviewIndex from "./review_index";
 import { withRouter } from "react-router";
 
-const mSTP = (state) => ({
+const mSTP = (state, ownProps) => ({
   reviews: Object.values(state.entities.reviews),
+  product: state.entities.products[ownProps.match.params.productId],
   currentUserId: state.session.id,
 });
 
