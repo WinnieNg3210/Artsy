@@ -7,18 +7,34 @@ class ReviewIndexItem extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleDelete = this.handleDelete.bind(this);
-    // this.handleEdit = this.handleEdit.bind(this);
+    this.state = {
+      editingReview: false,
+    };
+
+    // this.handleDelete = this.handleDelete.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
+    this.removeReview = this.removeReview.bind(this);
   }
 
-  handleDelete(e) {
+  handleEdit(e) {
     e.preventDefault();
-    this.props
-      .deleteReview(this.props.review, this.props.productId)
-      .then(this.props.fetchReviews(this.props.productId));
-    // this.props.fetchReviews(this.props.productId);
-    // location.reload();
+    this.setState({ editingReview: !this.state.editingReview });
   }
+
+  removeReview() {
+    // e.preventDefault();
+    this.props.handleDelete(this.props.review, this.props.productId);
+  }
+
+  // handleDelete(e) {
+  //   e.preventDefault();
+  //   debugger;
+  //   this.props
+  //     .deleteReview(this.props.review, this.props.productId)
+  //     .then(this.props.fetchReviews(this.props.productId));
+  //   // this.props.fetchReviews(this.props.productId);
+  //   // location.reload();
+  // }
 
   render() {
     const { review } = this.props;
@@ -38,7 +54,7 @@ class ReviewIndexItem extends React.Component {
     if (review.author_id === this.props.currentUserId) {
       deleteButton = (
         <div className="delete-review">
-          <button onClick={this.handleDelete} className="delete-review-btn">
+          <button onClick={this.removeReview} className="delete-review-btn">
             Delete
           </button>
         </div>

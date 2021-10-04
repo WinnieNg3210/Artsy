@@ -2,8 +2,19 @@ import React from "react";
 import ReviewIndexItem from "./review_index_item";
 
 class ReviewIndex extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchReviews(this.props.productId);
+  }
+
+  handleDelete(review, product) {
+    // e.preventDefault();
+    this.props.deleteReview(review, product);
   }
 
   render() {
@@ -18,7 +29,8 @@ class ReviewIndex extends React.Component {
           fetchReviews={this.props.fetchReviews}
           productId={this.props.productId}
           currentUserId={this.props.currentUserId}
-          deleteReview={this.props.deleteReview}
+          // deleteReview={this.props.deleteReview}
+          handleDelete={this.handleDelete}
         />
       );
     });

@@ -18,7 +18,7 @@ class CartIndexItem extends React.Component {
     e.preventDefault();
     this.props.deleteCartItem(this.props.cartItem);
     // .then(this.props.getCartItems());
-    location.reload();
+    // location.reload();
   }
 
   handleQuantity(e) {

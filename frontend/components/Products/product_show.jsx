@@ -57,7 +57,7 @@ class ProductShow extends React.Component {
   addReview(e) {
     e.preventDefault();
     this.setState({ addingReview: !this.state.addingReview });
-    console.log(this.state.addingReview);
+    // console.log(this.state.addingReview);
   }
 
   navigateToCart() {
