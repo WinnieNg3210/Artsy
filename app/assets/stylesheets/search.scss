@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
 
 .search-container {
-  margin: 2vh 5vw;
+  margin: 2vh 4vw;
   font-family: "Martel", sans-serif;
 }
 
@@ -25,15 +25,15 @@
     margin: 0.5vh 0;
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 18vw;
+    width: 22vw;
     white-space: nowrap;
   }
 }
 
 .searched-image {
-  border-radius: 0.75rem;
-  //   height: 21vh;
-  //   width: 18vw;
-  height: auto;
-  width: 90%;
+  //   border-radius: 0.75rem;
+  height: 27vh;
+  width: 22vw;
+  //   height: auto;
+  //   width: 90%;
 }

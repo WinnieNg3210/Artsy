@@ -11,9 +11,9 @@ class Search extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   this.props.fetchSearchProducts(this.props.products);
-  // }
+  componentDidMount() {
+    this.props.fetchSearchProducts(this.state.search);
+  }
 
   render() {
     const { products } = this.props;
