@@ -1,15 +1,49 @@
 import React from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import { withRouter } from "react-router";
+import { Link } from "react-router-dom";
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
+    this.formDiv = React.createRef();
     this.state = {
       search: "",
+      display: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateSearch = this.updateSearch.bind(this);
+    this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
+    this.toggleDisplay = this.toggleDisplay.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleOutsideClick);
+    // console.log("mount");
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleOutsideClick);
+    // console.log("unmount");
+  }
+
+  handleOutsideClick(e) {
+    if (this.formDiv.current && !this.formDiv.current.contains(e.target)) {
+      this.setState({ display: false });
+    }
+    // console.log("clicked outside");
+  }
+
+  toggleDisplay() {
+    if (!this.state.display) {
+      this.setState({ display: !this.state.display });
+    }
+  }
+
+  handleSelect(e) {
+    // e.preventDefault();
+    this.setState({ search: e.currentTarget.innerText, display: false });
   }
 
   handleSubmit(e) {
@@ -25,21 +59,69 @@ class SearchBar extends React.Component {
     return (e) => this.setState({ [field]: e.currentTarget.value });
   }
 
-  render() {
+  suggestions() {
+    const suggestions = [];
     const { search } = this.state;
+    const { products } = this.props;
+
+    if (search.length === 0) {
+      return products.slice(0, 5);
+    }
+
+    products.forEach((product) => {
+      if (product.title.toLowerCase().includes(search.toLowerCase())) {
+        suggestions.push(product);
+      }
+    });
+
+    return suggestions;
+  }
+
+  render() {
+    const { search, display } = this.state;
+    console.log(this.suggestions());
+    const searchResults = this.suggestions().map((result, i) => {
+      return (
+        <li key={i}>
+          <Link
+            to={`/products/${result.id}`}
+            className="search-product-link"
+            // onClick={this.handleSelect}
+          >
+            {result.title}
+          </Link>
+        </li>
+      );
+    });
+
+    let showResult;
+    if (display) {
+      showResult = <ul className="search-dropdown">{searchResults}</ul>;
+    }
+
     return (
-      <form onSubmit={this.handleSubmit} className="header-search-bar">
-        <input
-          className="header-search-input"
-          type="text"
-          placeholder="search coming soon"
-          onChange={this.updateSearch("search")}
-          value={search}
-        />
-        <button type="submit" className="search-button">
-          <SearchIcon className="header-search-icon" />
-        </button>
-      </form>
+      <div className="header-search-container">
+        <div className="header-search-top">
+          <form
+            onSubmit={this.handleSubmit}
+            className="header-search-bar"
+            ref={this.formDiv}
+          >
+            <input
+              className="header-search-input"
+              type="text"
+              placeholder="search anything"
+              onChange={this.updateSearch("search")}
+              value={search}
+              onFocus={this.toggleDisplay}
+            />
+          </form>
+          <button type="submit" className="search-button">
+            <SearchIcon className="header-search-icon" />
+          </button>
+        </div>
+        {showResult}
+      </div>
     );
   }
 }

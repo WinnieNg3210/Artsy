@@ -8,7 +8,11 @@ import { fetchSearchProducts } from "../../actions/product_actions";
 
 import { getCartItem, getCartItems } from "../../actions/cart_item_actions";
 
-const mapStateToProps = ({ session, entities: { users, cartItems } }) => ({
+const mapStateToProps = ({
+  session,
+  entities: { users, cartItems, products },
+}) => ({
+  products: Object.values(products),
   currentUser: users[session.id],
   cartItems: Object.values(cartItems),
 });

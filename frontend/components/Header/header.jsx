@@ -93,7 +93,10 @@ class Header extends React.Component {
           <Link to="/">
             <h1 className="header-logo">Artsy</h1>
           </Link>
-          <SearchBar fetchSearchProducts={this.props.fetchSearchProducts} />
+          <SearchBar
+            fetchSearchProducts={this.props.fetchSearchProducts}
+            products={this.props.products}
+          />
           {display}
           <Link to="/cart">
             <div className="header-cart">

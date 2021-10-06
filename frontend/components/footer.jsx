@@ -6,8 +6,12 @@ const Footer = () => {
       <div className="footer-col">
         <h1>Projects</h1>
         <div className="footer-list-container">
-          <a href="https://winnieng3210.github.io/Moon_Power/">Moon Power</a>
-          <a href="https://homesweetwoof.herokuapp.com/">Home Sweet Woof</a>
+          <a href="https://winnieng3210.github.io/Moon_Power/" target="_blank">
+            Moon Power
+          </a>
+          <a href="https://homesweetwoof.herokuapp.com/#/" target="_blank">
+            Home Sweet Woof
+          </a>
         </div>
       </div>
       <div className="footer-col">
@@ -33,9 +37,15 @@ const Footer = () => {
         <div className="help-container">
           <h1>Social</h1>
           <div className="footer-list-container">
-            <a href="https://github.com/winnieNg3210">Github</a>
-            <a href="https://www.linkedin.com/in/cwingng/">LinkedIn</a>
-            <a href="https://angel.co/winnie-ng-2">AngelList</a>
+            <a href="https://github.com/winnieNg3210" target="_blank">
+              Github
+            </a>
+            <a href="https://www.linkedin.com/in/cwingng/" target="_blank">
+              LinkedIn
+            </a>
+            <a href="https://angel.co/winnie-ng-2" target="_blank">
+              AngelList
+            </a>
           </div>
         </div>
         <div className="social">
@@ -48,13 +58,13 @@ const Footer = () => {
             {/* </div> */}
           </div>
           <div className="social-links">
-            <a href="https://github.com/winnieNg3210">
+            <a href="https://github.com/winnieNg3210" target="_blank">
               <img
                 src="https://img.icons8.com/nolan/64/github.png"
                 alt="Github"
               />
             </a>
-            <a href="https://www.linkedin.com/in/cwingng/">
+            <a href="https://www.linkedin.com/in/cwingng/" target="_blank">
               <img
                 src="https://img.icons8.com/nolan/64/linkedin.png"
                 alt="LinkedIn"
