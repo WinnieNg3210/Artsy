@@ -6,6 +6,7 @@ import {
   getCartItem,
   createCartItem,
   getCartItems,
+  deleteCartItem,
 } from "../../actions/cart_item_actions";
 import { showModal } from "../../actions/modal_actions";
 
@@ -24,6 +25,7 @@ const mDTP = (dispatch) => ({
   createCartItem: (cartItem) => dispatch(createCartItem(cartItem)),
   getCartItems: () => dispatch(getCartItems()),
   getCartItem: (cartItemId) => dispatch(getCartItem(cartItemId)),
+  deleteCartItem: (cartItemId) => dispatch(deleteCartItem(cartItemId)),
   showModal: (modal) => dispatch(showModal(modal)),
 });
 

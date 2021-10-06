@@ -27,16 +27,6 @@ class ReviewIndexItem extends React.Component {
     this.props.handleDelete(this.props.review, this.props.productId);
   }
 
-  // handleDelete(e) {
-  //   e.preventDefault();
-  //   debugger;
-  //   this.props
-  //     .deleteReview(this.props.review, this.props.productId)
-  //     .then(this.props.fetchReviews(this.props.productId));
-  //   // this.props.fetchReviews(this.props.productId);
-  //   // location.reload();
-  // }
-
   render() {
     const { review, productId } = this.props;
     // console.log(this.props);

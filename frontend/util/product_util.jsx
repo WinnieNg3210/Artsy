@@ -14,10 +14,10 @@ export const fetchProduct = (productId) => {
 
 // search products
 
-export const fetchSearchProducts = (products) => {
+export const fetchSearchProducts = (search) => {
   return $.ajax({
-    method: "POST",
-    url: `/api/search?q=${products}`,
-    data: { products },
+    method: "GET",
+    url: `/api/products?search=${search}`,
+    // data: { search },
   });
 };

@@ -80,7 +80,7 @@ class EditReviewForm extends React.Component {
           {starRatings}
           <textarea
             rows="15"
-            cols="70"
+            cols="55"
             value={this.state.content}
             onChange={this.update("content")}
           />

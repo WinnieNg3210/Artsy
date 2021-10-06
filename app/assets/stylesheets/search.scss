@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Martel:wght@200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+
+.search-container {
+  margin: 2vh 5vw;
+  font-family: "Martel", sans-serif;
+}
+
+.search-results {
+  font-size: 3vh;
+}
+
+.all-searched-products {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  margin-top: 3vh;
+}
+
+.searched-product {
+  //   width: 18vw;
+  margin-right: 1vw;
+
+  p {
+    margin: 0.5vh 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 18vw;
+    white-space: nowrap;
+  }
+}
+
+.searched-image {
+  border-radius: 0.75rem;
+  //   height: 21vh;
+  //   width: 18vw;
+  height: auto;
+  width: 90%;
+}

@@ -78,8 +78,9 @@
 
 .review-edit-form {
   margin: 0 10vw;
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 50% 40%;
+  column-gap: 8vw;
 
   .edit-product-form {
     text-align: center;
@@ -98,6 +99,12 @@
 }
 
 .edit-product-review {
+  img {
+    width: 45vw;
+    height: 45vh;
+    border-radius: 1rem;
+  }
+
   div {
     margin-top: 2vh;
     text-align: left;

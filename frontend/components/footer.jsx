@@ -47,7 +47,7 @@ const Footer = () => {
             <div className="download-app">Download the Artsy App</div>
             {/* </div> */}
           </div>
-          <div className="socialLinks">
+          <div className="social-links">
             <a href="https://github.com/winnieNg3210">
               <img
                 src="https://img.icons8.com/nolan/64/github.png"

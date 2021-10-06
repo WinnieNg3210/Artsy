@@ -36,15 +36,16 @@ class ProductShow extends React.Component {
     } else {
       const productId = this.props.product.id;
       const cartItems = this.props.cartItems;
+
+      const cartItem = Object.assign({}, this.state, {
+        product_id: productId,
+        user_id: this.props.user,
+      });
       let items = {};
       for (let i = 0; i < cartItems.length; i++) {
         let item = cartItems[i];
         items[item["product_id"]] = true;
       }
-      const cartItem = Object.assign({}, this.state, {
-        product_id: productId,
-        user_id: this.props.user,
-      });
 
       if (items.hasOwnProperty(productId)) {
         this.navigateToCart();

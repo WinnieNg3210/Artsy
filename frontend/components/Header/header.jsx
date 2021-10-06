@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCartOutlined";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import Search from "../../components/Header/search";
+import SearchBar from "../Search/searchBar";
 
 class Header extends React.Component {
   constructor(props) {
@@ -31,7 +30,7 @@ class Header extends React.Component {
 
     const signinLink = () => (
       <nav className="sign-in-container">
-        <button onClick={() => showModal("Sign in")} className="signInButton">
+        <button onClick={() => showModal("Sign in")} className="sign-in-button">
           Sign in
         </button>
       </nav>
@@ -41,16 +40,18 @@ class Header extends React.Component {
 
     if (dropdown && currentUser) {
       dropDownMenu = (
-        <div className="dropDownContainer">
-          <div className="dropDownName">
+        <div className="drop-down-container">
+          <div className="drop-down-name">
             <div className="drop-down-circle">
-              <h3 className="dropDownBtn">{currentUser.first_name[0]}</h3>
+              <h3 className="drop-down-btn">{currentUser.first_name[0]}</h3>
             </div>
-            <h3 className="dropDownBtn full-name">{currentUser.first_name}</h3>
+            <h3 className="drop-down-btn full-name">
+              {currentUser.first_name}
+            </h3>
           </div>
-          <div className="signoutIcon">
+          <div className="sign-out-icon">
             <ExitToAppIcon className="exit-app-icon" />
-            <button onClick={logout} className="signOutButton">
+            <button onClick={logout} className="sign-out-button">
               Sign Out
             </button>
           </div>
@@ -73,7 +74,7 @@ class Header extends React.Component {
         <div className="hover-drop-down">
           <div className="name-drop-arrow">
             <div className="orange-circle">
-              <h2 className="dropDownClick" onClick={this.handleDropDown}>
+              <h2 className="drop-down-click" onClick={this.handleDropDown}>
                 {currentUser.first_name[0]}
               </h2>
             </div>
@@ -92,7 +93,7 @@ class Header extends React.Component {
           <Link to="/">
             <h1 className="header-logo">Artsy</h1>
           </Link>
-          <Search fetchSearchProducts={this.props.fetchSearchProducts} />
+          <SearchBar fetchSearchProducts={this.props.fetchSearchProducts} />
           {display}
           <Link to="/cart">
             <div className="header-cart">

@@ -67,7 +67,7 @@ class SessionForm extends React.Component {
 
     if (this.props.formType === "Sign up") {
       signUpUser = (
-        <label className="formInput">
+        <label className="form-input">
           <p className="input-label">First Name:</p>
           <input
             // className="label"
@@ -82,12 +82,12 @@ class SessionForm extends React.Component {
 
     let currentForm =
       this.props.formType === "Sign up" ? (
-        <div className="navLink">
+        <div className="nav-link">
           Please sign up to continue or <span>{this.props.otherForm}</span> with
           demo
         </div>
       ) : (
-        <div className="navLink">
+        <div className="nav-link">
           Please sign in to continue or <span>{this.props.otherForm}</span>
         </div>
       );
@@ -111,16 +111,16 @@ class SessionForm extends React.Component {
       <div className="session-modal">
         <form onSubmit={this.handleSubmit}>
           <div className="modal-form">
-            <div onClick={this.props.hideModal} className="exitModalButton">
+            <div onClick={this.props.hideModal} className="exit-modal-button">
               x
             </div>
             {currentForm}
             {/* {this.renderErrors()} */}
-            <div className="formInput">
+            <div className="form-input">
               {signUpUser}
               <div className="error">{nameError}</div>
               <div className="error">{credentialError}</div>
-              <label className="formInput">
+              <label className="form-input">
                 <p className="input-label">Email:</p>
                 <input
                   className="label"
@@ -130,7 +130,7 @@ class SessionForm extends React.Component {
                 />
               </label>
               <div className="error">{emailError}</div>
-              <label className="formInput">
+              <label className="form-input">
                 <p className="input-label">Password:</p>
                 <input
                   className="label"
@@ -143,7 +143,7 @@ class SessionForm extends React.Component {
               <input
                 type="submit"
                 value={this.props.formType}
-                className="form-button signIn"
+                className="form-button sign-in"
               />
               {or}
               {guestDemo}

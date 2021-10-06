@@ -33,11 +33,8 @@ class CartIndexItem extends React.Component {
 
     this.setState({ ...nextCartItemState });
     this.props.updateCartItem(nextCartItemState);
-    // .then(this.props.getCartItems());
 
     location.reload();
-
-    // this.setState({ quantity: e.currentTarget.value });
   }
 
   render() {

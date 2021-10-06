@@ -15,7 +15,7 @@ const mDTP = (dispatch, ownProps) => ({
   processForm: (user) => dispatch(signup(user)),
   otherForm: (
     <button
-      className="otherForm"
+      className="other-form"
       onClick={() => dispatch(showModal("Sign in"))}
     >
       sign in

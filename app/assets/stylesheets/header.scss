@@ -26,7 +26,7 @@
 .header-search-icon {
   padding-left: 10px;
   padding-right: 5px;
-  border-radius: 0 24px 24px 0;
+  // border-radius: 0 24px 24px 0;
 }
 
 .header-search-input {
@@ -55,7 +55,7 @@
   transform: rotate(180deg);
 }
 
-.signOutButton {
+.sign-out-button {
   margin-left: 0.65rem;
 }
 
@@ -69,12 +69,12 @@
   border-radius: 2rem;
 }
 
-.signInButton {
+.sign-in-button {
   cursor: pointer;
   text-decoration: none;
   border: none;
   // background-color: white;
-  font-size: 0.75rem;
+  font-size: 1.1vw;
   padding: 0;
 }
 
@@ -135,7 +135,7 @@
   // margin-bottom: 1em;
 }
 
-.dropDownContainer {
+.drop-down-container {
   background-color: white;
   position: absolute;
   width: 100px;
@@ -151,33 +151,6 @@
   // left: 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
-
-// .dropDownContainer:before {
-//   content: "";
-//   position: absolute;
-//   border-color: grey;
-//   border: solid transparent;
-//   border-bottom-color: white;
-//   border-width: 11px;
-//   margin-left: -10px;
-//   top: -21px;
-//   // right: 65px;
-//   right: 1rem;
-//   z-index: 1;
-// }
-
-// .drop-down-menu:after {
-//   content: "";
-//   position: absolute;
-//   right: 66px;
-//   top: -21px;
-//   width: 0;
-//   height: 0;
-//   border: solid transparent;
-//   border-width: 10px;
-//   border-bottom-color: #2b1a41;
-//   z-index: 0;
-// }
 
 .drop-down-circle {
   width: 1.65rem;
@@ -198,17 +171,17 @@
   font-size: 0.85rem;
 }
 
-.dropDownName {
+.drop-down-name {
   display: flex;
 }
 
-.dropDownClick,
+.drop-down-click,
 .drop-down-arrow {
   cursor: pointer;
 }
 
-.dropDownBtn,
-.signOutButton {
+.drop-down-btn,
+.sign-out-button {
   font-family: "Martel";
   font-size: 0.85rem;
   cursor: pointer;
@@ -227,4 +200,13 @@
     color: black;
     font-size: 0.75rem;
   }
+}
+
+.search-button {
+  border: thick solid red;
+  border-radius: 0 24px 24px 0;
+}
+
+.search-button:hover {
+  cursor: pointer;
 }

@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => ({
   showModal: (modal) => dispatch(showModal(modal)),
   getCartItem: (cartItemId) => dispatch(getCartItem(cartItemId)),
   getCartItems: () => dispatch(getCartItems()),
-  fetchSearchProducts: () => dispatch(fetchSearchProducts()),
+  fetchSearchProducts: (products) => dispatch(fetchSearchProducts(products)),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

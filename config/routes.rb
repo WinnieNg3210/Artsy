@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     # resources :products, only: [:search]
   end
 
-  get "/api/search", to: "api/products#search"
-  post "/api/search", to: "api/products#search"
+  # get "/api/search", to: "api/products#search"
+  # post "/api/search", to: "api/products#search"
 
 end
