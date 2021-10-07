@@ -249,7 +249,13 @@ class ProductShow extends React.Component {
                   <li>White, 100% cottan-rag, conservation matting</li>
                 </ul>
               </div>
-              <div className="show-option-container">
+              <div
+                className={
+                  showAll
+                    ? "show-option-container less"
+                    : "show-option-container more"
+                }
+              >
                 <div
                   className="show-option-button"
                   onClick={(e) => this.toggleShow(e)}

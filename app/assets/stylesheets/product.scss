@@ -188,13 +188,22 @@
   text-align: center;
 
   .show-desc {
+    // border: thin solid black;
     font-size: 2vh;
-    padding-top: 0.75vh;
+    padding-top: 1vh;
   }
 }
 
 .show-option-button {
   height: 3.5vh;
+}
+
+.show-option-container.more {
+  padding: 0 5vw;
+}
+
+.show-option-container.less {
+  padding: 0 13vw;
 }
 
 .show-option-button:hover {

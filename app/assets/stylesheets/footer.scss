@@ -106,7 +106,14 @@
   margin-top: 0.75rem;
 }
 
-.social-links img {
-  height: auto;
-  width: 15%;
+.social-links {
+  img {
+    height: auto;
+    width: 15%;
+  }
+
+  img:hover {
+    transform: scale(1.1);
+    transition: 250ms ease-in-out;
+  }
 }
