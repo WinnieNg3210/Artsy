@@ -1,5 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Martel:wght@200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+
 .what-container {
   background-color: #fdebd2;
+  font-family: "Martel", sans-serif;
   text-align: center;
   font-weight: thin;
   padding: 2rem;
@@ -13,7 +18,7 @@
 }
 
 .what-container h2 {
-  // font-family: "Martel", sans-serif;
+  font-family: "Martel", sans-serif;
   font-size: 1.5rem;
 }
 
