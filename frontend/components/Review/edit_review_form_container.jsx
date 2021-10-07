@@ -15,7 +15,7 @@ class EditReviewFormContainer extends React.Component {
     this.props.fetchProduct(this.props.match.params.productId);
   }
   render() {
-    // console.log("this is" + this.props.product);
+    console.log(this.props.product);
     const { review, updateReview, user, product } = this.props;
     if (!user || !review || !(user === review.author_id)) return null;
     return (
@@ -25,6 +25,7 @@ class EditReviewFormContainer extends React.Component {
         product={product}
         fetchReview={this.props.fetchReview}
         fetchProduct={this.props.fetchProduct}
+        // imageUrl={product.imageUrl}
       />
     );
   }

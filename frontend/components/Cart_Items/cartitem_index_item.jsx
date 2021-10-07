@@ -24,20 +24,20 @@ class CartIndexItem extends React.Component {
     this.setState({ ...nextCartItemState });
     this.props.updateCartItem(nextCartItemState);
     location.reload();
-    // this.setState({ quantity: e.currentTarget.value });
   }
 
   render() {
-    const { product_id, quantity, price, title } = this.props.cartItem;
+    const { product_id, quantity, price, title, imageUrl } =
+      this.props.cartItem;
 
     let totalPrice = price * this.state.quantity;
 
     // console.log(this.props.cartItem);
-
+    // if (!imageUrl) return null;
     return (
       <div className="cart-item-container">
         <Link className="cart-item" to={`/products/${product_id}`}>
-          <img className="cart-item-img" src={this.props.cartItem.imageUrl} />
+          <img className="cart-item-img" src={imageUrl} />
         </Link>
         <div className="cart-item-info">
           <h1 className="cart-item-title">{title}</h1>

@@ -36,10 +36,6 @@
   }
 }
 
-// .review {
-//   // border: thin solid black;
-// }
-
 .review-form {
   // border: thin solid gray;
   line-height: 1.5rem;
@@ -81,10 +77,12 @@
 }
 
 .review-edit-form {
-  margin: 0 10vw;
+  border-top: thin solid lightgray;
+  padding: 4vw;
   display: grid;
-  grid-template-columns: 50% 40%;
-  column-gap: 8vw;
+  grid-template-columns: 45% 50%;
+  column-gap: 3vw;
+  justify-content: center;
 
   .edit-product-form {
     text-align: center;
@@ -104,8 +102,8 @@
 
 .edit-product-review {
   img {
-    width: 45vw;
-    height: 45vh;
+    width: 40vw;
+    height: 40vh;
     border-radius: 1rem;
   }
 
@@ -116,6 +114,7 @@
 
   p {
     font-family: "Martel", sans-serif;
+    // border: thin solid black;
     font-size: 2vh;
     line-height: 4vh;
   }

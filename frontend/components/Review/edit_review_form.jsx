@@ -65,10 +65,12 @@ class EditReviewForm extends React.Component {
       </div>
     );
 
+    if (!product) return null;
     return (
       <div className="review-edit-form">
         <div className="edit-product-review">
-          <img src={product.imageUrl} />
+          {product.imageUrl && <img src={product.imageUrl} />}
+          {/* <img src={this.props.review.product_id.imageUrl} /> */}
           <div>
             <p>{product.title}</p>
             <p>Seller: {product.seller.first_name}</p>
@@ -79,8 +81,8 @@ class EditReviewForm extends React.Component {
           <h1>Tell us your thoughts!</h1>
           {starRatings}
           <textarea
-            rows="15"
-            cols="55"
+            rows="10"
+            cols="50"
             value={this.state.content}
             onChange={this.update("content")}
           />
