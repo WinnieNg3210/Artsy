@@ -11,7 +11,7 @@ import CartIndexContainer from "./Cart_Items/cart_item_index_container";
 import SearchContainer from "./Search/search_container";
 
 const App = () => (
-  <div>
+  <div className="app">
     <Modal />
     <HeaderContainer />
     <Switch>
@@ -29,7 +29,7 @@ const App = () => (
       <Route exact path="/cart" component={CartIndexContainer} />
       <Route exact path="/" component={ProductIndexContainer} />
     </Switch>
-    <Footer />
+    <Footer className="footer" />
   </div>
 );
 

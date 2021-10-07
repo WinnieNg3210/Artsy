@@ -70,8 +70,8 @@ class SessionForm extends React.Component {
         <label className="form-input">
           <p className="input-label">First Name:</p>
           <input
-            // className="label"
-            className={this.renderErrors() ? "label" : "label label-error"}
+            className="label"
+            // className={this.renderErrors() ? "label" : "label label-error"}
             type="text"
             value={this.state.first_name}
             onChange={this.update("first_name")}
@@ -92,20 +92,20 @@ class SessionForm extends React.Component {
         </div>
       );
 
-    let emailError;
-    let nameError;
-    let passwordError;
-    let credentialError;
+    // let emailError;
+    // let nameError;
+    // let passwordError;
+    // let credentialError;
 
-    if (this.renderErrors() && this.props.formType === "Sign in") {
-      credentialError = this.props.errors[0];
-    }
+    // if (this.renderErrors() && this.props.formType === "Sign in") {
+    //   credentialError = this.props.errors[0];
+    // }
 
-    if (this.renderErrors()) {
-      emailError = this.props.errors[1];
-      nameError = this.props.errors[2];
-      passwordError = this.props.errors[3];
-    }
+    // if (this.renderErrors()) {
+    //   emailError = this.props.errors[1];
+    //   nameError = this.props.errors[2];
+    //   passwordError = this.props.errors[3];
+    // }
 
     return (
       <div className="session-modal">
@@ -115,11 +115,11 @@ class SessionForm extends React.Component {
               x
             </div>
             {currentForm}
-            {/* {this.renderErrors()} */}
+            {this.renderErrors()}
             <div className="form-input">
               {signUpUser}
-              <div className="error">{nameError}</div>
-              <div className="error">{credentialError}</div>
+              {/* <div className="error">{nameError}</div> */}
+              {/* <div className="error">{credentialError}</div> */}
               <label className="form-input">
                 <p className="input-label">Email:</p>
                 <input
@@ -129,7 +129,7 @@ class SessionForm extends React.Component {
                   onChange={this.update("email")}
                 />
               </label>
-              <div className="error">{emailError}</div>
+              {/* <div className="error">{emailError}</div> */}
               <label className="form-input">
                 <p className="input-label">Password:</p>
                 <input
@@ -139,7 +139,7 @@ class SessionForm extends React.Component {
                   onChange={this.update("password")}
                 />
               </label>
-              <div className="error">{passwordError}</div>
+              {/* <div className="error">{passwordError}</div> */}
               <input
                 type="submit"
                 value={this.props.formType}

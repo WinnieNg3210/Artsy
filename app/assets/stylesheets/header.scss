@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Besley&display=swap");
 
+// .header {
+//   display: flex;
+// }
+
 .header-top {
   padding: 2rem 3.5rem;
   display: flex;
+  // flex: 1;
   align-items: center;
 }
 
@@ -37,13 +42,15 @@
 }
 
 .sign-in-container {
-  padding: 0.2rem 1rem 0 1rem;
+  padding: 1vh 1.2vw 0 1.2vw;
+  // border: thin solid black;
   height: 1.5rem;
 }
 
 .sign-in-container:hover {
   background-color: lightgray;
   border-radius: 2rem;
+  transition: 250ms ease-in-out;
 }
 
 .sign-in-button {
@@ -51,7 +58,8 @@
   text-decoration: none;
   border: none;
   // background-color: white;
-  font-size: 1.1vw;
+  width: 100%;
+  font-size: 1vw;
   padding: 0;
 }
 
@@ -65,14 +73,6 @@
   margin-left: 1.5em;
   margin-right: 1.5em;
 }
-
-// .hover-drop-down:hover {
-//   text-align: center;
-//   width: 5rem;
-//   height: 3rem;
-//   border-radius: 45%;
-//   background-color: lightgrey;
-// }
 
 .name-drop-arrow {
   display: flex;

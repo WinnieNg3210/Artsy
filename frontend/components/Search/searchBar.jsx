@@ -15,34 +15,31 @@ class SearchBar extends React.Component {
     this.updateSearch = this.updateSearch.bind(this);
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
-    this.toggleDisplay = this.toggleDisplay.bind(this);
+    this.searchDisplay = this.searchDisplay.bind(this);
   }
 
   componentDidMount() {
-    document.addEventListener("mousedown", this.handleOutsideClick);
-    // console.log("mount");
+    window.addEventListener("mousedown", this.handleOutsideClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleOutsideClick);
-    // console.log("unmount");
+    window.removeEventListener("mousedown", this.handleOutsideClick);
   }
 
   handleOutsideClick(e) {
     if (this.formDiv.current && !this.formDiv.current.contains(e.target)) {
       this.setState({ display: false });
     }
-    // console.log("clicked outside");
   }
 
-  toggleDisplay() {
+  searchDisplay() {
     if (!this.state.display) {
-      this.setState({ display: !this.state.display });
+      this.setState({ display: true });
     }
   }
 
   handleSelect(e) {
-    // e.preventDefault();
+    e.preventDefault();
     this.setState({ search: e.currentTarget.innerText, display: false });
   }
 
@@ -79,7 +76,7 @@ class SearchBar extends React.Component {
 
   render() {
     const { search, display } = this.state;
-    console.log(this.suggestions());
+
     const searchResults = this.suggestions().map((result, i) => {
       return (
         <li key={i}>
@@ -113,14 +110,14 @@ class SearchBar extends React.Component {
               placeholder="search anything"
               onChange={this.updateSearch("search")}
               value={search}
-              onFocus={this.toggleDisplay}
+              onFocus={this.searchDisplay}
             />
           </form>
           <button type="submit" className="search-button">
             <SearchIcon className="header-search-icon" />
           </button>
         </div>
-        {showResult}
+        {/* {showResult} */}
       </div>
     );
   }

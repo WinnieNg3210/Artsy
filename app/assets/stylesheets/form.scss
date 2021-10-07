@@ -26,9 +26,10 @@
   font-size: 1vw;
 }
 
-.error {
+.error,
+.individual-errors {
   color: red;
-  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .form-input input {

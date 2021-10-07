@@ -9,4 +9,7 @@ class CartItem < ApplicationRecord
         foreign_key: :product_id,
         class_name: :Product
 
+    # has_one :image,
+    #     through: :product,
+    #     source: :image
 end

@@ -4,6 +4,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCartOutlined";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import SearchBar from "../Search/searchBar";
+import { withRouter } from "react-router";
 
 class Header extends React.Component {
   constructor(props) {
@@ -13,6 +14,12 @@ class Header extends React.Component {
     };
 
     this.handleDropDown = this.handleDropDown.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
+    this.handleGoCart = this.handleGoCart.bind(this);
+  }
+
+  handleLogout() {
+    this.props.logout().then(this.props.history.push("/"));
   }
 
   componentDidMount() {
@@ -22,6 +29,15 @@ class Header extends React.Component {
   handleDropDown(e) {
     e.preventDefault();
     this.setState({ dropdown: !this.state.dropdown });
+  }
+
+  handleGoCart(e) {
+    e.preventDefault();
+    if (!this.props.currentUser) {
+      this.props.showModal("Sign in");
+    } else {
+      this.props.history.push("/cart");
+    }
   }
 
   render() {
@@ -51,7 +67,7 @@ class Header extends React.Component {
           </div>
           <div className="sign-out-icon">
             <ExitToAppIcon className="exit-app-icon" />
-            <button onClick={logout} className="sign-out-button">
+            <button onClick={this.handleLogout} className="sign-out-button">
               Sign Out
             </button>
           </div>
@@ -96,18 +112,20 @@ class Header extends React.Component {
           <SearchBar
             fetchSearchProducts={this.props.fetchSearchProducts}
             products={this.props.products}
+            className="search-bar"
           />
           {display}
-          <Link to="/cart">
-            <div className="header-cart">
-              <ShoppingCartIcon style={{ color: "black" }} />
-              <span className="header-cart-count">{cartItems.length}</span>
-            </div>
-          </Link>
+          <div className="header-cart">
+            <ShoppingCartIcon
+              style={{ color: "black" }}
+              onClick={this.handleGoCart}
+            />
+            <span className="header-cart-count">{cartItems.length}</span>
+          </div>
         </div>
       </div>
     );
   }
 }
 
-export default Header;
+export default withRouter(Header);

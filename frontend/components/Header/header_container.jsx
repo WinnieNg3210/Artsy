@@ -15,6 +15,7 @@ const mapStateToProps = ({
   products: Object.values(products),
   currentUser: users[session.id],
   cartItems: Object.values(cartItems),
+  // user: state.session.id,
 });
 
 const mapDispatchToProps = (dispatch) => ({

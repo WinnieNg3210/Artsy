@@ -5,11 +5,6 @@ class CartIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.cartItem;
-    // this.state = {
-    //   productId: this.props.cartItem.product_id,
-    //   quantity: this.props.cartItem.quantity,
-    //   // quantity: this.props.quantity,
-    // };
     this.handleDeleteItem = this.handleDeleteItem.bind(this);
     this.handleQuantity = this.handleQuantity.bind(this);
   }
@@ -18,29 +13,26 @@ class CartIndexItem extends React.Component {
     e.preventDefault();
     this.props.deleteCartItem(this.props.cartItem);
     // .then(this.props.getCartItems());
-    // location.reload();
   }
 
   handleQuantity(e) {
     e.preventDefault();
-    // this.props.changeQuantity(e.currentTarget.value);
-
     let nextCartItemState = Object.assign({}, this.state, {
       product_id: this.state.productId,
       quantity: e.currentTarget.value,
-      // imageUrl: this.state.productId.imageUrl,
     });
-
     this.setState({ ...nextCartItemState });
     this.props.updateCartItem(nextCartItemState);
-
     location.reload();
+    // this.setState({ quantity: e.currentTarget.value });
   }
 
   render() {
     const { product_id, quantity, price, title } = this.props.cartItem;
 
     let totalPrice = price * this.state.quantity;
+
+    // console.log(this.props.cartItem);
 
     return (
       <div className="cart-item-container">
