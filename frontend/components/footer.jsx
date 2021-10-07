@@ -70,6 +70,12 @@ const Footer = () => {
                 alt="LinkedIn"
               />
             </a>
+            <a href="https://angel.co/winnie-ng-2" target="_blank">
+              <img
+                src="https://img.icons8.com/nolan/64/angelist.png"
+                alt="AngelList"
+              />
+            </a>
           </div>
         </div>
       </div>
