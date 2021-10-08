@@ -87,7 +87,18 @@ class EditReviewForm extends React.Component {
             onChange={this.update("content")}
           />
           <br />
-          <input type="submit" className="edit-review-submit-button" />
+          <div className="edit-buttons">
+            <button type="submit" className="editing-button">
+              Submit
+            </button>
+
+            <button
+              className="editing-button"
+              onClick={this.navigateToProductShow}
+            >
+              Cancel
+            </button>
+          </div>
         </form>
       </div>
     );
