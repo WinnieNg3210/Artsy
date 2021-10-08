@@ -102,6 +102,11 @@ class Header extends React.Component {
     );
 
     const display = currentUser ? welcome(currentUser, logout) : signinLink();
+    const cartItemTotal = currentUser ? (
+      <span className="header-cart-count">{cartItems.length}</span>
+    ) : (
+      <span className="header-cart-count">0</span>
+    );
 
     return (
       <div className="header">
@@ -120,7 +125,8 @@ class Header extends React.Component {
               style={{ color: "black" }}
               onClick={this.handleGoCart}
             />
-            <span className="header-cart-count">{cartItems.length}</span>
+            {/* <span className="header-cart-count">{cartItems.length}</span> */}
+            {cartItemTotal}
           </div>
         </div>
       </div>
