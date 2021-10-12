@@ -107,6 +107,16 @@ class SessionForm extends React.Component {
     //   passwordError = this.props.errors[3];
     // }
 
+    const emailError =
+      this.props.formType === "Sign in"
+        ? this.props.errors[0]
+        : this.props.errors[1];
+    const passwordError =
+      this.props.formType === "Sign in"
+        ? this.props.errors[0]
+        : this.props.errors[3];
+    const nameError = this.props.errors[2];
+
     return (
       <div className="session-modal">
         <form onSubmit={this.handleSubmit}>
@@ -115,10 +125,10 @@ class SessionForm extends React.Component {
               x
             </div>
             {currentForm}
-            {this.renderErrors()}
+            {/* {this.renderErrors()} */}
             <div className="form-input">
               {signUpUser}
-              {/* <div className="error">{nameError}</div> */}
+              <div className="error">{nameError}</div>
               {/* <div className="error">{credentialError}</div> */}
               <label className="form-input">
                 <p className="input-label">Email:</p>
@@ -129,7 +139,7 @@ class SessionForm extends React.Component {
                   onChange={this.update("email")}
                 />
               </label>
-              {/* <div className="error">{emailError}</div> */}
+              <div className="error">{emailError}</div>
               <label className="form-input">
                 <p className="input-label">Password:</p>
                 <input
@@ -139,7 +149,7 @@ class SessionForm extends React.Component {
                   onChange={this.update("password")}
                 />
               </label>
-              {/* <div className="error">{passwordError}</div> */}
+              <div className="error">{passwordError}</div>
               <input
                 type="submit"
                 value={this.props.formType}
