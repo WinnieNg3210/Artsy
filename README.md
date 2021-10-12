@@ -41,3 +41,6 @@ Logged in users can add items to their shopping cart. From the product show page
 ### Search Functionality
 
 All users are able to search for any items based on the search input and it will send them to the search page.
+![artsy_search](https://user-images.githubusercontent.com/32966351/136874672-2c2be39e-8a95-4175-a909-878860c7879a.gif)
+
+
