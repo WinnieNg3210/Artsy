@@ -43,4 +43,34 @@ Logged in users can add items to their shopping cart. From the product show page
 All users are able to search for any items based on the search input and it will send them to the search page.
 ![artsy_search](https://user-images.githubusercontent.com/32966351/136874672-2c2be39e-8a95-4175-a909-878860c7879a.gif)
 
+### Code Snippet
+To make sure there's only one unique cart item in the page, I parsed through the current state of the cart items by first setting up an empty object, then iterate through the current list of cart items that is in the redux store and find if an item is there based on its id. If the id key exists, then the item will not be added to the cart page, instead it will navigate to the cart page and any changes in cart item quantity will be made in the cart page itself. If the id key does not exist yet in the cart item page, then it will be added to the page.
 
+```...javascript
+  handleAddToCart(e) {
+    e.preventDefault();
+
+    if (!this.props.user) {
+      this.props.showModal("Sign in");
+    } else {
+      const productId = this.props.product.id;
+      const cartItems = this.props.cartItems;
+
+      const cartItem = Object.assign({}, this.state, {
+        product_id: productId,
+        user_id: this.props.user,
+      });
+      let items = {};
+      for (let i = 0; i < cartItems.length; i++) {
+        let item = cartItems[i];
+        items[item["product_id"]] = true;
+      }
+
+      if (items.hasOwnProperty(productId)) {
+        this.navigateToCart();
+      } else {
+        this.props.createCartItem(cartItem).then(this.navigateToCart);
+      }
+    }
+  }
+```
