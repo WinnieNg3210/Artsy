@@ -83,7 +83,8 @@ class SearchBar extends React.Component {
           <Link
             to={`/products/${result.id}`}
             className="search-product-link"
-            // onClick={this.handleSelect}
+            onClick={this.handleSelect}
+            // ref={this.formDiv}
           >
             {result.title}
           </Link>
@@ -113,7 +114,11 @@ class SearchBar extends React.Component {
               onFocus={this.searchDisplay}
             />
           </form>
-          <button type="submit" className="search-button">
+          <button
+            type="submit"
+            className="search-button"
+            onClick={this.handleSubmit}
+          >
             <SearchIcon className="header-search-icon" />
           </button>
         </div>

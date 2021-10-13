@@ -25,10 +25,11 @@ class CartItemIndex extends React.Component {
 
   handleCheckout(e) {
     e.preventDefault();
-    this.props.cartItems.forEach((item) => {
-      this.props.deleteCartItem(item);
-    });
-    this.props.history.push("/");
+    // this.props.cartItems.forEach((item) => {
+    //   this.props.deleteCartItem(item);
+    // });
+    // this.props.history.push("/");
+    this.props.showModal("Checkout");
   }
 
   render() {

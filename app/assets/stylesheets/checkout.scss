@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Martel:wght@200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+
+.checkout-container {
+  //   border: thin solid white;
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+
+  width: 80%;
+  height: auto;
+
+  p {
+    line-height: 1.5rem;
+    margin: 0.5vh 0;
+  }
+}
+
+.checkout-top {
+  background-color: #eb6d20;
+  color: white;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2vh;
+
+  h1 {
+    font-size: 4vh;
+    font-weight: 500;
+  }
+}
+
+.checkout-bottom {
+  padding: 0 2rem 2rem 2rem;
+}
+
+.checkout-scroll {
+  width: 100%;
+  height: 25vh;
+  overflow: scroll;
+  padding-right: 1.5vw;
+}
+
+.checkout-title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 20vw;
+  white-space: nowrap;
+}
+
+.checkout-pricing {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-pricing.total {
+  padding-top: 1vh;
+  border-top: thin solid grey;
+}
+
+.checkout-home-container {
+  padding: 0 8vw;
+}
+
+.checkout-home {
+  cursor: pointer;
+  margin-top: 4vh;
+  border-radius: 2rem;
+  width: 100%;
+  height: 5vh;
+  font-size: 1.2vw;
+  color: white;
+  background-color: black;
+}
+
+.checkout-item-container {
+  margin: 2vh auto;
+  display: grid;
+  grid-template-columns: 45% 55%;
+
+  img {
+    width: 13vw;
+    height: auto;
+  }
+
+  p {
+    margin-top: 1vh;
+  }
+}
+
+.checkout-home:hover {
+  transform: scale(1.05);
+}
