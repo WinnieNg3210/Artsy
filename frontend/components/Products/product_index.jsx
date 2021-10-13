@@ -72,16 +72,16 @@ class ProductIndex extends React.Component {
             <p>Our picks for you</p>
           </div>
           <div className="top-picks-product">
-            <div className="individual-pick">{productItems[22]}</div>
+            <div className="individual-pick">{productItems[19]}</div>
             <div className="individual-pick">{productItems[1]}</div>
-            <div className="individual-pick">{productItems[18]}</div>
-            <div className="individual-pick">{productItems[3]}</div>
-            <div className="individual-pick">{productItems[12]}</div>
-            <div className="individual-pick">{productItems[5]}</div>
-            <div className="individual-pick">{productItems[6]}</div>
-            <div className="individual-pick">{productItems[13]}</div>
-            <div className="individual-pick">{productItems[8]}</div>
+            <div className="individual-pick">{productItems[35]}</div>
+            <div className="individual-pick">{productItems[37]}</div>
             <div className="individual-pick">{productItems[10]}</div>
+            <div className="individual-pick">{productItems[6]}</div>
+            <div className="individual-pick">{productItems[8]}</div>
+            <div className="individual-pick">{productItems[13]}</div>
+            <div className="individual-pick">{productItems[18]}</div>
+            <div className="individual-pick">{productItems[14]}</div>
           </div>
         </div>
         <div className="nature-photography">
@@ -108,12 +108,12 @@ class ProductIndex extends React.Component {
         <div className="editors-pick-container">
           <p className="editor">Shop Editor's Pick</p>
           <div className="editor-pick">
-            <div className="span-row-2">{productItems[19]}</div>
+            <div className="span-row-2">{productItems[22]}</div>
             <div>{productItems[12]}</div>
             <div>{productItems[2]}</div>
             <div>{productItems[0]}</div>
-            <div>{productItems[20]}</div>
-            <div>{productItems[21]}</div>
+            <div>{productItems[34]}</div>
+            <div>{productItems[36]}</div>
             <div>{productItems[23]}</div>
           </div>
         </div>
