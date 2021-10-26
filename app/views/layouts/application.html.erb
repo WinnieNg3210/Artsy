@@ -2,8 +2,9 @@
 <html>
   <head>
     <title>Artsy</title>
+    <%= favicon_link_tag asset_path('artsyFavicon.jpg') %>
     <meta property="og:title" content="Artsy" />
-     <meta property="og:image" content="https://active-storage-artsapp-seeds.s3.amazonaws.com/artsy.gif" />
+     <meta property="og:image" content="https://artsyvideo.s3.amazonaws.com/!artsy.gif" />
      <meta 
        property="og:description"
        content="A brief description of your project"
@@ -13,7 +14,6 @@
        content="https://artsyyapp.herokuapp.com/"
      />
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= favicon_link_tag asset_path('artsyFavicon.jpg') %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
