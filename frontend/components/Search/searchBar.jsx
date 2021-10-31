@@ -6,42 +6,42 @@ import { Link } from "react-router-dom";
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.formDiv = React.createRef();
+    // this.formDiv = React.createRef();
     this.state = {
       search: "",
-      display: false,
+      // display: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateSearch = this.updateSearch.bind(this);
-    this.handleOutsideClick = this.handleOutsideClick.bind(this);
-    this.handleSelect = this.handleSelect.bind(this);
-    this.searchDisplay = this.searchDisplay.bind(this);
+    // this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    // this.handleSelect = this.handleSelect.bind(this);
+    // this.searchDisplay = this.searchDisplay.bind(this);
   }
 
-  componentDidMount() {
-    window.addEventListener("mousedown", this.handleOutsideClick);
-  }
+  // componentDidMount() {
+  //   window.addEventListener("mousedown", this.handleOutsideClick);
+  // }
 
-  componentWillUnmount() {
-    window.removeEventListener("mousedown", this.handleOutsideClick);
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener("mousedown", this.handleOutsideClick);
+  // }
 
-  handleOutsideClick(e) {
-    if (this.formDiv.current && !this.formDiv.current.contains(e.target)) {
-      this.setState({ display: false });
-    }
-  }
+  // handleOutsideClick(e) {
+  //   if (this.formDiv.current && !this.formDiv.current.contains(e.target)) {
+  //     this.setState({ display: false });
+  //   }
+  // }
 
-  searchDisplay() {
-    if (!this.state.display) {
-      this.setState({ display: true });
-    }
-  }
+  // searchDisplay() {
+  //   if (!this.state.display) {
+  //     this.setState({ display: true });
+  //   }
+  // }
 
-  handleSelect(e) {
-    e.preventDefault();
-    this.setState({ search: e.currentTarget.innerText, display: false });
-  }
+  // handleSelect(e) {
+  //   e.preventDefault();
+  //   this.setState({ search: e.currentTarget.innerText, display: false });
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -77,25 +77,25 @@ class SearchBar extends React.Component {
   render() {
     const { search, display } = this.state;
 
-    const searchResults = this.suggestions().map((result, i) => {
-      return (
-        <li key={i}>
-          <Link
-            to={`/products/${result.id}`}
-            className="search-product-link"
-            onClick={this.handleSelect}
-            // ref={this.formDiv}
-          >
-            {result.title}
-          </Link>
-        </li>
-      );
-    });
+    // const searchResults = this.suggestions().map((result, i) => {
+    //   return (
+    //     <li key={i}>
+    //       <Link
+    //         to={`/products/${result.id}`}
+    //         className="search-product-link"
+    //         onClick={this.handleSelect}
+    //         ref={this.formDiv}
+    //       >
+    //         {result.title}
+    //       </Link>
+    //     </li>
+    //   );
+    // });
 
-    let showResult;
-    if (display) {
-      showResult = <ul className="search-dropdown">{searchResults}</ul>;
-    }
+    // let showResult;
+    // if (display) {
+    //   showResult = <ul className="search-dropdown">{searchResults}</ul>;
+    // }
 
     return (
       <div className="header-search-container">
@@ -103,7 +103,7 @@ class SearchBar extends React.Component {
           <form
             onSubmit={this.handleSubmit}
             className="header-search-bar"
-            ref={this.formDiv}
+            // ref={this.formDiv}
           >
             <input
               className="header-search-input"
@@ -111,7 +111,7 @@ class SearchBar extends React.Component {
               placeholder="search anything"
               onChange={this.updateSearch("search")}
               value={search}
-              onFocus={this.searchDisplay}
+              // onFocus={this.searchDisplay}
             />
           </form>
           <button
