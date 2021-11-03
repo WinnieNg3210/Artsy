@@ -23,7 +23,10 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getCartItems();
+    if (this.props.currentUser) {
+      this.props.getCartItems();
+    }
+    // this.props.getCartItems();
   }
 
   handleDropDown(e) {
