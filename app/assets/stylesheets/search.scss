@@ -69,8 +69,11 @@
 }
 
 .header-search-icon {
-  padding-left: 10px;
-  padding-right: 5px;
+  display: flex;
+  align-self: center;
+  // color: white;
+  // padding-left: 10px;
+  // padding-right: 5px;
   // border-radius: 0 24px 24px 0;
 }
 
@@ -124,9 +127,9 @@
 }
 
 .search-button {
-  height: 5vh;
-  margin-left: 1.1vw;
-  width: 3vw;
+  // background-color: black;
+  margin-left: 1.1rem;
+  width: 3rem;
   border-radius: 0 24px 24px 0;
 }
 

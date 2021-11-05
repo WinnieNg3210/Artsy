@@ -10,8 +10,7 @@
 }
 
 .header-logo {
-  // padding: 0 1vw 0 0;
-  padding-right: 1vw;
+  padding-right: 1rem;
   font-size: 2em;
   color: #eb6d20;
   font-family: "Besley", serif;
@@ -20,7 +19,6 @@
 .header-cart {
   display: flex;
   align-items: center;
-  padding: 2vh 1vw;
   border-radius: 50%;
 }
 
@@ -42,9 +40,11 @@
 }
 
 .sign-in-container {
-  padding: 1vh 1.2vw 0 1.2vw;
+  padding: 0 1.2rem;
+  display: flex;
+  align-items: center;
   // border: thin solid black;
-  height: 1.5rem;
+  // height: 1.5rem;
 }
 
 .sign-in-container:hover {
@@ -59,24 +59,25 @@
   border: none;
   // background-color: white;
   width: 100%;
-  font-size: 1vw;
+  font-size: 1rem;
   padding: 0;
 }
 
 .header-sign-in {
   color: black;
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 .header-sign-in {
-  margin-left: 1.5em;
-  margin-right: 1.5em;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .name-drop-arrow {
   display: flex;
   // border: thin solid lightgray;
-  padding: 2vh 0;
+  justify-content: center;
+  padding: 1rem 0;
   border-radius: 50%;
 }
 
@@ -84,6 +85,7 @@
 .header-cart:hover {
   background-color: lightgray;
   transition: 250ms ease-in-out;
+  // transition: all 0.4s;
   cursor: pointer;
 }
 
