@@ -7,85 +7,68 @@
   display: flex;
   // flex: 1;
   align-items: center;
+  justify-content: center;
+  // gap: 15px;
 }
 
 .header-logo {
-  padding-right: 1rem;
-  font-size: 2em;
+  font-size: 2rem;
   color: #eb6d20;
   font-family: "Besley", serif;
+}
+
+.sign-in-container {
+  border-radius: 1.5rem;
+  padding: 0.25rem 0.75rem;
+  display: flex;
+  align-items: center;
+  height: 1.5rem;
+}
+
+.sign-in-container:hover,
+.header-cart:hover {
+  background-color: lightgray;
+  transition: 250ms ease-in-out;
+}
+
+.sign-in-button {
+  // background-color: white;
+  width: 100%;
+  font-size: 1rem;
 }
 
 .header-cart {
   display: flex;
   align-items: center;
   border-radius: 50%;
-}
-
-.exit-app-icon {
   cursor: pointer;
-  position: relative;
-  left: 0;
-  top: 8px;
-
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
+  padding: 1rem;
 }
 
-.sign-out-button {
-  margin-left: 0.65rem;
-}
+// .exit-app-icon {
+//   cursor: pointer;
+//   position: relative;
+//   left: 0;
+//   top: 8px;
 
-.sign-in-container {
-  padding: 0 1.2rem;
-  display: flex;
-  align-items: center;
-  // border: thin solid black;
-  // height: 1.5rem;
-}
-
-.sign-in-container:hover {
-  background-color: lightgray;
-  border-radius: 2rem;
-  transition: 250ms ease-in-out;
-}
-
-.sign-in-button {
-  cursor: pointer;
-  text-decoration: none;
-  border: none;
-  // background-color: white;
-  width: 100%;
-  font-size: 1rem;
-  padding: 0;
-}
-
-.header-sign-in {
-  color: black;
-  font-size: 1rem;
-}
-
-.header-sign-in {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
+//   -webkit-transform: rotate(180deg);
+//   -moz-transform: rotate(180deg);
+//   -ms-transform: rotate(180deg);
+//   -o-transform: rotate(180deg);
+//   transform: rotate(180deg);
+// }
 
 .name-drop-arrow {
   display: flex;
-  // border: thin solid lightgray;
-  justify-content: center;
+  align-items: center;
+
   padding: 1rem 0;
   border-radius: 50%;
 }
 
-.name-drop-arrow:hover,
-.header-cart:hover {
+.name-drop-arrow:hover {
   background-color: lightgray;
   transition: 250ms ease-in-out;
-  // transition: all 0.4s;
   cursor: pointer;
 }
 
@@ -107,27 +90,34 @@
   }
 }
 
-.header-bottom {
-  width: 100%;
-  // margin-top: 0.5em;
-  // margin-bottom: 1em;
+.hover-drop-down {
+  position: relative;
 }
 
 .drop-down-container {
   background-color: white;
-  position: absolute;
-  width: 100px;
-  // height: 100px;
+  width: 130px;
   padding: 1rem;
-  border: thin solid grey;
+  border: thin solid lightgrey;
   border-radius: 0.75rem;
   z-index: 7;
   text-align: left;
 
-  top: 6rem;
-  right: 7rem;
-  // left: 0;
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.drop-down-name,
+.sign-out-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .drop-down-circle {
@@ -143,39 +133,7 @@
   }
 }
 
-.full-name {
-  margin-left: 0.5rem;
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-}
-
-.drop-down-name {
-  display: flex;
-}
-
-.drop-down-click,
-.drop-down-arrow {
-  cursor: pointer;
-}
-
-.drop-down-btn,
 .sign-out-button {
-  font-family: "Martel";
-  font-size: 0.85rem;
-  cursor: pointer;
-}
-
-.category-items {
-  margin-bottom: 1rem;
-  padding: 0rem 4rem;
-  display: flex;
-  justify-content: space-evenly;
-
-  li a {
-    font-family: "Graphik Webfont", "Helvetica Neue", "Droid Sans", Arial,
-      sans-serif;
-    font-weight: 400;
-    color: black;
-    font-size: 0.75rem;
-  }
+  font-family: "Besley", serif;
+  font-size: 1rem;
 }
