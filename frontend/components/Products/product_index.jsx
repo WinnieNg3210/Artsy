@@ -1,6 +1,7 @@
 import React from "react";
 import ProductIndexItem from "./product_index_item";
 import What from "./what";
+import { Link } from "react-router-dom";
 
 class ProductIndex extends React.Component {
   constructor(props) {
@@ -23,55 +24,55 @@ class ProductIndex extends React.Component {
     let welcomeBanner = currentUser ? (
       <h1 className="welcome-banner">Hi, {currentUser.first_name}!</h1>
     ) : (
-      <h1 className="welcome-banner">High Quality Photography</h1>
+      <h1 className="welcome-banner">Capture the moment on the wall!</h1>
     );
 
     return (
       <div className="product-index-container">
-        <div className="banner">{welcomeBanner}</div>
-        <div className="banner-images">
-          <ul>
-            <li>
-              <a href="">
-                <img src={window.street} className="round-image" alt="" />
-              </a>
-              <p>Street Photography</p>
-            </li>
-            <li>
-              <a href="">
-                <img src={window.landscape} className="round-image" alt="" />
-              </a>
-              <p>Landscape</p>
-            </li>
-            <li>
-              <a href="">
-                <img src={window.bw} className="round-image" alt="" />
-              </a>
-              <p>Black & White</p>
-            </li>
-            <li>
-              <a href="">
-                <img src={window.modern} className="round-image" alt="" />
-              </a>
-              <p>Modern</p>
-            </li>
-            <li>
-              <a href="">
-                <img src={window.quebec} className="round-image" alt="" />
-              </a>
-              <p>Free Style</p>
-            </li>
-          </ul>
+        <div className="banner">
+          {welcomeBanner}
+          <div className="banner-images">
+            <ul>
+              <li>
+                <Link to="/products?search=street">
+                  <img src={window.street} className="round-image" alt="" />
+                </Link>
+
+                <p>Street Photography</p>
+              </li>
+              <li>
+                <Link to="/products?search=landscape">
+                  <img src={window.landscape} className="round-image" alt="" />
+                </Link>
+                <p>Landscape</p>
+              </li>
+              <li>
+                <Link to="/products?search=black%20and%20white">
+                  <img src={window.bw} className="round-image" alt="" />
+                </Link>
+                <p>Black & White</p>
+              </li>
+              <li>
+                <Link to="/products?search=modern">
+                  <img src={window.modern} className="round-image" alt="" />
+                </Link>
+                <p>Modern</p>
+              </li>
+              <li>
+                <Link to="/products?search=pokemon">
+                  <img src={window.quebec} className="round-image" alt="" />
+                </Link>
+                <p>Free Style</p>
+              </li>
+            </ul>
+          </div>
         </div>
-        {/* <div className="top-picks">
-          <h2>Our picks for you</h2>
-          <ul></ul>
-        </div> */}
+
         <div className="top-picks">
           <div className="top-picks-title">
             <p>Our picks for you</p>
           </div>
-          <div className="top-picks-product">
+          <div className="top-picks-products">
             <div className="individual-pick">{productItems[19]}</div>
             <div className="individual-pick">{productItems[1]}</div>
             <div className="individual-pick">{productItems[35]}</div>

@@ -3,40 +3,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
 
 .product-index-container {
-  // font-family: "Guardian-EgypTT", "Charter Bitstream", "Noto Serif Light",
-  //   "Droid Serif", Georgia, serif;
-  font-family: "Graphik Webfont", "Helvetica Neue", "Droid Sans", Arial,
-    sans-serif;
+  font-family: "Martel", sans-serif;
 }
 
 .banner {
+  position: relative;
   background-color: #fdebd2;
-  height: 23vh;
+  position: relative;
+  text-align: center;
+
+  margin-bottom: 8rem;
 }
 
 .welcome-banner {
-  padding-top: 2.5vh;
-  text-align: center;
-  // font-family: Arial, Helvetica, sans-serif;
-  font-family: "Martel", sans-serif;
-  font-weight: 100;
-  font-size: 7vh; // 2rem
+  position: relative;
+  top: 2rem;
+  font-size: 3rem;
 }
 
 .banner-images ul {
-  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  text-align: center;
+  gap: 7rem;
+
   position: relative;
-  bottom: 7vh;
+  bottom: -5rem;
 
   li {
     text-align: center;
   }
 
   p {
-    margin-top: 0.5rem;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0.5rem auto;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+
+    // border: thin solid black;
+  }
+
+  li:hover {
+    transform: scale(1.2);
+    transition: 250ms ease-in-out;
   }
 }
 
@@ -46,44 +54,29 @@
   border-radius: 50%;
 }
 
-.top-picks-image {
-  height: 23vh;
-  width: 18vw;
-  border-radius: 0.5rem;
-  // object-fit: contain;
-}
-
-.top-picks-image:hover {
-  transition: 250ms ease-in-out;
-  box-shadow: 8px 8px 8px rgba(77, 79, 82, 0.3);
-  // transform: scale(1.1);
-  // z-index: 50;
-}
-
 .top-picks-title {
   text-align: center;
-  margin-bottom: 2rem; // give title space between product image
-
-  p {
-    font-family: "Martel", serif;
-    font-size: 5vh;
-  }
+  margin-bottom: 2rem;
+  font-size: 3rem;
 }
 
-.top-picks-product {
-  // display: flex;
-  // flex-wrap: wrap;
-  // padding: 0 3.25vw;
-  position: relative;
+.top-picks-products {
   display: grid;
-  grid-template-columns: repeat(5, 18%);
-  grid-column-gap: 1vw;
-  grid-row-gap: 1.25vh;
-  justify-content: center;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  // width: 100%;
+}
 
-  // .individual-pick {
-  //   padding: 0 0.4rem;
-  // }
+.individual-pick {
+  // border: thin solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.top-picks-image {
+  height: 23vh;
+  width: 19vw;
+  border-radius: 0.5rem;
 }
 
 .top-picks-image-container {
@@ -92,105 +85,160 @@
 
 .product-price-pill {
   position: absolute;
-  // position: relative;
-  left: 2vh;
-  bottom: 2vh;
+
+  border-radius: 2rem;
+  z-index: 1;
+
+  // border: thick solid white;
   background-color: white;
-  border-radius: 1.25rem;
-  width: 7vw;
-  font-size: 2vh;
+  bottom: 1rem;
+  left: 1rem;
 
-  .product-price {
-    margin: 0.2vh 0.5vh;
-  }
-}
+  padding: 5px 1.5rem 5px 10px;
 
-.nature-photography {
-  margin-top: 8vh;
-  margin-bottom: 8vh;
-  padding: 0 4vw;
-}
-
-.nature-category {
-  display: grid;
-  grid-template-columns: 20% 80%;
-  // grid-column-gap: 2vw;
-  position: relative;
-
-  .nature-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 2vw;
-  }
-
-  //   div {
-  //     display: flex;
-  //     flex-direction: column;
-  //   }
-
-  .nature-landscape {
-    // border: thin solid black;
-    font-family: "Martel", sans-serif;
-    margin-top: 4vh;
-    // margin-bottom: 2rem;
-    font-size: 2.5vw;
-    display: flex;
-    flex-direction: column;
-
-    span {
-      margin-top: 1vh;
-    }
-  }
-
-  .zen {
+  p {
     font-family: "Roboto", sans-serif;
-    margin-top: 2vh;
-    font-size: 1.5vw;
-    font-weight: 350;
-  }
-
-  .nature-products {
-    // margin-left: 3rem;
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    justify-content: center;
-    grid-column-gap: 2vw;
-    grid-row-gap: 1.25vh;
-
-    .top-picks-image {
-      height: 24vh;
-      width: 23vw;
-    }
   }
 }
 
-.editor {
-  font-family: "Martel", sans-serif;
-  margin-bottom: 2vh;
-  margin-left: 4vw;
-  font-size: 2.25vw;
-  // font-weight: 350;
-}
+// .top-picks-image:hover {
+//   transition: 250ms ease-in-out;
+//   box-shadow: 8px 8px 8px rgba(77, 79, 82, 0.3);
+//   // transform: scale(1.1);
+//   // z-index: 50;
+// }
 
-.editor-pick {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 25% 22% 22% 22%;
-  grid-row-gap: 1.25vh;
-  grid-column-gap: 1vw;
+// .top-picks-title {
+//   text-align: center;
+//   margin-bottom: 2rem; // give title space between product image
 
-  .top-picks-image {
-    width: 22vw;
-    height: 24.5vh;
-  }
-}
+//   p {
+//     font-family: "Martel", serif;
+//     font-size: 5vh;
+//   }
+// }
 
-.span-row-2 {
-  grid-row: span 2 / auto;
+// .top-picks-product {
+//   // display: flex;
+//   // flex-wrap: wrap;
+//   // padding: 0 3.25vw;
+//   position: relative;
+//   display: grid;
+//   grid-template-columns: repeat(5, 18%);
+//   grid-column-gap: 1vw;
+//   grid-row-gap: 1.25vh;
+//   justify-content: center;
 
-  .top-picks-image {
-    width: 25vw;
-    height: 50.5vh;
-  }
-}
+//   // .individual-pick {
+//   //   padding: 0 0.4rem;
+//   // }
+// }
+
+// .top-picks-image-container {
+//   position: relative;
+// }
+
+// .product-price-pill {
+//   position: absolute;
+//   // position: relative;
+//   left: 2vh;
+//   bottom: 2vh;
+//   background-color: white;
+//   border-radius: 1.25rem;
+//   width: 7vw;
+//   font-size: 2vh;
+
+//   .product-price {
+//     margin: 0.2vh 0.5vh;
+//   }
+// }
+
+// .nature-photography {
+//   margin-top: 8vh;
+//   margin-bottom: 8vh;
+//   padding: 0 4vw;
+// }
+
+// .nature-category {
+//   display: grid;
+//   grid-template-columns: 20% 80%;
+//   // grid-column-gap: 2vw;
+//   position: relative;
+
+//   .nature-text {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     margin-left: 2vw;
+//   }
+
+//   //   div {
+//   //     display: flex;
+//   //     flex-direction: column;
+//   //   }
+
+//   .nature-landscape {
+//     // border: thin solid black;
+//     font-family: "Martel", sans-serif;
+//     margin-top: 4vh;
+//     // margin-bottom: 2rem;
+//     font-size: 2.5vw;
+//     display: flex;
+//     flex-direction: column;
+
+//     span {
+//       margin-top: 1vh;
+//     }
+//   }
+
+//   .zen {
+//     font-family: "Roboto", sans-serif;
+//     margin-top: 2vh;
+//     font-size: 1.5vw;
+//     font-weight: 350;
+//   }
+
+//   .nature-products {
+//     // margin-left: 3rem;
+//     display: grid;
+//     grid-template-columns: 30% 30% 30%;
+//     justify-content: center;
+//     grid-column-gap: 2vw;
+//     grid-row-gap: 1.25vh;
+
+//     .top-picks-image {
+//       height: 24vh;
+//       width: 23vw;
+//     }
+//   }
+// }
+
+// .editor {
+//   font-family: "Martel", sans-serif;
+//   margin-bottom: 2vh;
+//   margin-left: 4vw;
+//   font-size: 2.25vw;
+//   // font-weight: 350;
+// }
+
+// .editor-pick {
+//   display: grid;
+//   justify-content: center;
+//   grid-template-columns: 25% 22% 22% 22%;
+//   grid-row-gap: 1.25vh;
+//   grid-column-gap: 1vw;
+
+//   .top-picks-image {
+//     width: 22vw;
+//     height: 24.5vh;
+//   }
+// }
+
+// .span-row-2 {
+//   grid-row: span 2 / auto;
+
+//   .top-picks-image {
+//     width: 25vw;
+//     height: 50.5vh;
+//   }
+// }
