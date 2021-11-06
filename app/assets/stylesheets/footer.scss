@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Martel:wght@200;300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&display=swap");
 
 .what-container {
   background-color: #fdebd2;
@@ -8,23 +8,23 @@
   text-align: center;
   font-weight: thin;
   padding: 2rem;
-  margin-top: 5vh;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .what-container h1 {
-  font-family: "Roboto", sans-serif;
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 2rem;
 }
 
 .what-container h2 {
-  font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .what-container p {
   padding: 1rem 2rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   // font-weight: thin;
   line-height: 1.5rem;
 }
@@ -35,10 +35,6 @@
 }
 
 .footer-container {
-  // position: relative;
-  // bottom: 0;
-  // border: thick solid black;
-  margin-top: 16vh;
   background-color: #2f466c;
   font-family: "Roboto", sans-serif;
   padding: 2rem;
@@ -46,7 +42,7 @@
   display: grid;
   -ms-grid-columns: 25% 25% 25% auto;
   grid-template-columns: 25% 25% 25% auto;
-  font-size: 0.9rem;
+  font-size: 1.25rem;
 }
 
 .footer-col,
@@ -56,57 +52,56 @@
   flex-direction: column;
 }
 
-.footer-list-container {
-  margin-top: 1.25vh;
-
-  p {
-    margin-top: 1.1vh;
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 100;
+.footer-col {
+  // margin-top: 1.25vh;
+  h1 {
+    font-weight: 600;
+    margin-bottom: 1rem;
   }
 
+  p,
   a {
-    margin-top: 1.1vh;
+    margin-top: 0.75rem;
     color: white;
-    font-size: 0.75rem;
-    font-weight: 100;
+    font-size: 1rem;
+    font-weight: 300;
   }
 }
 
-.download-container {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-  border-radius: 2rem;
-  border: thin solid white;
-  // border-width: 2px;
-  width: 12rem;
-  font-size: 0.75rem;
-}
+// .download-container {
+//   display: flex;
+//   justify-content: space-evenly;
+//   margin-top: 2rem;
+//   margin-bottom: 1.5rem;
+//   border-radius: 2rem;
+//   border: thin solid white;
+//   // border-width: 2px;
+//   width: 12rem;
+//   font-size: 0.75rem;
+// }
 
-.download-logo {
-  color: #2f466c;
-  font-size: 1rem;
-  font-family: "Martel";
-  background-color: white;
-  border-radius: 0.25rem;
-  margin: 0.5rem 0;
-  width: 1.5rem;
-  height: 1.25rem;
-  text-align: center;
+// .download-logo {
+//   color: #2f466c;
+//   font-size: 1rem;
+//   font-family: "Martel";
+//   background-color: white;
+//   border-radius: 0.25rem;
+//   margin: 0.5rem 0;
+//   width: 1.5rem;
+//   height: 1.25rem;
+//   text-align: center;
 
-  p {
-    margin-top: 0.15rem;
-  }
-}
+//   p {
+//     margin-top: 0.15rem;
+//   }
+// }
 
-.download-app {
-  margin-top: 0.75rem;
-}
+// .download-app {
+//   margin-top: 0.75rem;
+// }
 
 .social-links {
+  margin-top: 2rem;
   img {
     height: auto;
     width: 15%;

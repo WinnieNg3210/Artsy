@@ -12,6 +12,9 @@ const Footer = () => {
           <a href="https://homesweetwoof.herokuapp.com/#/" target="_blank">
             Home Sweet Woof
           </a>
+          <a href="https://www.winnieng.dev/" target="_blank">
+            Portfolio
+          </a>
         </div>
       </div>
       <div className="footer-col">
@@ -48,36 +51,36 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="social">
-          <div className="download-container">
-            {/* <div className="downloads"> */}
+        {/* <div className="social"> */}
+        {/* <div className="download-container">
+            
             <div className="download-logo">
               <p>A</p>
             </div>
             <div className="download-app">Download the Artsy App</div>
-            {/* </div> */}
-          </div>
-          <div className="social-links">
-            <a href="https://github.com/winnieNg3210" target="_blank">
-              <img
-                src="https://img.icons8.com/nolan/64/github.png"
-                alt="Github"
-              />
-            </a>
-            <a href="https://www.linkedin.com/in/cwingng/" target="_blank">
-              <img
-                src="https://img.icons8.com/nolan/64/linkedin.png"
-                alt="LinkedIn"
-              />
-            </a>
-            <a href="https://angel.co/winnie-ng-2" target="_blank">
-              <img
-                src="https://img.icons8.com/nolan/64/angelist.png"
-                alt="AngelList"
-              />
-            </a>
-          </div>
+            
+          </div> */}
+        <div className="social-links">
+          <a href="https://github.com/winnieNg3210" target="_blank">
+            <img
+              src="https://img.icons8.com/nolan/64/github.png"
+              alt="Github"
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/cwingng/" target="_blank">
+            <img
+              src="https://img.icons8.com/nolan/64/linkedin.png"
+              alt="LinkedIn"
+            />
+          </a>
+          <a href="https://angel.co/winnie-ng-2" target="_blank">
+            <img
+              src="https://img.icons8.com/nolan/64/angelist.png"
+              alt="AngelList"
+            />
+          </a>
         </div>
+        {/* </div> */}
       </div>
     </div>
   );
