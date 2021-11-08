@@ -180,3 +180,10 @@ input:focus {
   margin: 0;
   box-sizing: border-box;
 }
+
+.top-picks,
+.nature-photography,
+.editors-pick-container {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}

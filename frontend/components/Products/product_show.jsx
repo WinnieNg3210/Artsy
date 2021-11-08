@@ -142,15 +142,15 @@ class ProductShow extends React.Component {
         <div className="product-right">
           {/* <p className="product-seller">PokemonLover</p> */}
           <div className="product-header-container">
-            <p className="product-seller">
+            <p className="product-seller margin-bottom">
               Sold by: {product?.seller?.first_name}
             </p>
 
             {/* star ratings will appear once we get to review components */}
-            <h1 className="product-title">{product.title}</h1>
+            <h1 className="product-title margin-bottom">{product.title}</h1>
           </div>
 
-          <div className="stock-price">
+          <div className="stock-price margin-bottom">
             <p className="product-show-price">
               <span>$</span>
               <span className="price">{product.price}</span>
@@ -158,14 +158,14 @@ class ProductShow extends React.Component {
             </p>
             <div className="stock-container">
               <div className="stock-check">
-                <CheckIcon fontSize="small" />
+                <CheckIcon fontSize="small" className="check-icon" />
               </div>
               <p className="in-stock">In Stock</p>
             </div>
           </div>
-          <div className="product-quantity-container">
+          <div className="product-quantity-container margin-bottom">
             <p className="quantity">Quantity</p>
-            <div className="quantity-dropdown">
+            <div className="quantity-dropdown margin-bottom">
               <select value={this.state.quantity} onChange={this.handleChange}>
                 <option value="1" defaultValue="1">
                   1
@@ -185,7 +185,7 @@ class ProductShow extends React.Component {
               </button>
             </div>
           </div>
-          <div className="cart-shipping-container">
+          <div className="cart-shipping-container margin-bottom">
             <div className="hot-item-container">
               <ShoppingCartOutlinedIcon
                 style={{ color: "grey" }}
@@ -193,8 +193,8 @@ class ProductShow extends React.Component {
                 className="hot-item-cart"
               />
               <p>
-                <span className="hot-item">Other people want this. </span>
-                Over 20 people have this in their carts right now
+                Other people want this. Over 20 people have this in their carts
+                right now
               </p>
             </div>
             <div className="shipping-container">
@@ -203,25 +203,21 @@ class ProductShow extends React.Component {
                 fontSize="large"
                 className="shipping-truck"
               />
-              <p>
-                <span>Hooray!</span> This item ships free to the US.
-              </p>
+              <p>Hooray! This item ships free to the US.</p>
             </div>
           </div>
 
           <div className="description-container">
-            <div className="description-hover">
-              <div
-                className="product-description-text"
-                onClick={(e) => this.togglePanel(e)}
-              >
-                <h1>Description</h1>
-                {expand}
-              </div>
+            <div
+              className="product-description-text"
+              onClick={(e) => this.togglePanel(e)}
+            >
+              <h1>Description</h1>
+              {expand}
             </div>
           </div>
           {this.state.open ? (
-            <div>
+            <div className="description">
               {/* <div className="product-description"> */}
               <div className={showAll ? "show-all" : "product-description"}>
                 <p>{product.description}</p>
