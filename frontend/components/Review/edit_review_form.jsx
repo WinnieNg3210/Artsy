@@ -69,12 +69,18 @@ class EditReviewForm extends React.Component {
     return (
       <div className="review-edit-form">
         <div className="edit-product-review">
-          {product.imageUrl && <img src={product.imageUrl} />}
+          {product.imageUrl && (
+            <img src={product.imageUrl} className="review-image" />
+          )}
           {/* <img src={this.props.review.product_id.imageUrl} /> */}
           <div>
             <p>{product.title}</p>
-            <p>Seller: {product.seller.first_name}</p>
-            <p>Price: ${product.price}</p>
+            <p>
+              <span>Seller:</span> {product.seller.first_name}
+            </p>
+            <p>
+              <span>Price:</span> ${product.price}
+            </p>
           </div>
         </div>
         <form onSubmit={this.handleSubmit} className="edit-product-form">

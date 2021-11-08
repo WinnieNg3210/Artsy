@@ -39,9 +39,13 @@ class ReviewIndex extends React.Component {
 
     return (
       <div className="reviews-container">
-        <p className="total-reviews">{productReviews.length} reviews</p>
+        <p className="total-reviews review-margin-bottom">
+          {productReviews.length} reviews
+        </p>
         <h1 className="reviews-header">Reviews for this item</h1>
-        <div className="reviews-list">{productReviews}</div>
+        <div className="reviews-list review-margin-bottom">
+          {productReviews}
+        </div>
       </div>
     );
   }

@@ -135,7 +135,7 @@ class ProductShow extends React.Component {
           <img src={product.imageUrl} className="product-show-image" />
           <div className="product-reviews-container">
             <ReviewIndexContainer productId={this.props.product.id} />
-            {addReviewBtn}
+            <div className="add-btn-container">{addReviewBtn}</div>
             {createReview}
           </div>
         </div>
