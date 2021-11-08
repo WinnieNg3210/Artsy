@@ -31,7 +31,8 @@
 
 .what-reasons {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
 }
 
 .footer-container {
@@ -67,38 +68,6 @@
     font-weight: 300;
   }
 }
-
-// .download-container {
-//   display: flex;
-//   justify-content: space-evenly;
-//   margin-top: 2rem;
-//   margin-bottom: 1.5rem;
-//   border-radius: 2rem;
-//   border: thin solid white;
-//   // border-width: 2px;
-//   width: 12rem;
-//   font-size: 0.75rem;
-// }
-
-// .download-logo {
-//   color: #2f466c;
-//   font-size: 1rem;
-//   font-family: "Martel";
-//   background-color: white;
-//   border-radius: 0.25rem;
-//   margin: 0.5rem 0;
-//   width: 1.5rem;
-//   height: 1.25rem;
-//   text-align: center;
-
-//   p {
-//     margin-top: 0.15rem;
-//   }
-// }
-
-// .download-app {
-//   margin-top: 0.75rem;
-// }
 
 .social-links {
   margin-top: 2rem;

@@ -131,14 +131,13 @@ class ProductShow extends React.Component {
 
     return (
       <div className="product-page-container">
-        <div className="product-left">
-          <img src={product.imageUrl} className="product-show-image" />
-          <div className="product-reviews-container">
-            <ReviewIndexContainer productId={this.props.product.id} />
-            <div className="add-btn-container">{addReviewBtn}</div>
-            {createReview}
-          </div>
+        <img src={product.imageUrl} className="product-show-image" />
+        <div className="product-reviews-container">
+          <ReviewIndexContainer productId={this.props.product.id} />
+          <div className="add-btn-container">{addReviewBtn}</div>
+          {createReview}
         </div>
+
         <div className="product-right">
           {/* <p className="product-seller">PokemonLover</p> */}
           <div className="product-header-container">

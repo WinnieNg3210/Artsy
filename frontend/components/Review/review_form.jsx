@@ -64,10 +64,10 @@ class ReviewForm extends React.Component {
           <h1>Add a Review</h1>
           {/* <div>{this.state.rating}</div> */}
           <div>{starRatings}</div>
-          <div>
+          <div className="add-review-textarea">
             <textarea
               rows="10"
-              cols="50"
+              cols="35"
               value={this.state.content}
               onChange={this.update("content")}
             />

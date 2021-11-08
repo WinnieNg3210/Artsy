@@ -124,4 +124,65 @@
       height: 58vh;
     }
   }
+
+  /**************************/
+  /* What is Artsy SECTION */
+  /**************************/
+
+  .what-reasons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+  }
+
+  /**************************/
+  /* FOOTER SECTION */
+  /**************************/
+
+  .footer-container {
+    background-color: #2f466c;
+    font-family: "Roboto", sans-serif;
+    padding: 2rem;
+    color: white;
+    display: grid;
+    -ms-grid-columns: 25% 25% 25% auto;
+    grid-template-columns: 25% 25% 25% auto;
+    font-size: 1.25rem;
+  }
+
+  .footer-col,
+  .footer-list-container,
+  .help-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-col {
+    // margin-top: 1.25vh;
+    h1 {
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    p,
+    a {
+      margin-top: 0.75rem;
+      color: white;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+  }
+
+  .social-links {
+    margin-top: 2rem;
+    img {
+      height: auto;
+      width: 15%;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+      transition: 250ms ease-in-out;
+    }
+  }
 }
