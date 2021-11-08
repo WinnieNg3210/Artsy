@@ -1,0 +1,71 @@
+// @import url("https://fonts.googleapis.com/css2?family=Besley&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Martel:wght@200;300&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+
+@media (min-width: 64rem) {
+  /**************************/
+  /* BANNER */
+  /**************************/
+
+  .welcome-banner {
+    font-size: 3rem;
+  }
+
+  .banner-images ul {
+    li:hover {
+      transform: scale(1.2);
+      transition: 250ms ease-in-out;
+    }
+  }
+
+  .round-image {
+    height: 8rem;
+    width: 8rem;
+    // rid
+    border-radius: 50%;
+  }
+
+  /**************************/
+  /* TOP PICKS */
+  /**************************/
+
+  .top-picks-title {
+    font-size: 3rem;
+  }
+  /**************************/
+  /* NATURE SECTION */
+  /**************************/
+
+  .nature-photography {
+    font-family: "Roboto", sans-serif;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    // padding: 0 ;
+  }
+
+  .nature-category {
+    .nature-text {
+      margin-left: 2rem;
+    }
+
+    .nature-landscape {
+      font-size: 3rem;
+    }
+  }
+
+  /**************************/
+  /* EDITOR PICK SECTION */
+  /**************************/
+
+  .editor {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .span-row-2 {
+    .top-picks-image {
+      width: 30vw;
+      height: 52vh;
+    }
+  }
+}

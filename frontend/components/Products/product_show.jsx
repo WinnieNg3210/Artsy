@@ -122,9 +122,9 @@ class ProductShow extends React.Component {
     );
 
     let showOption = showAll ? (
-      <p className="show-desc">Less</p>
+      <p className="show-desc less">Less</p>
     ) : (
-      <p className="show-desc">Learn more about this item</p>
+      <p className="show-desc more">Learn more about this item</p>
     );
 
     if (!product) return null; // will need this to return a page that a product does not exist

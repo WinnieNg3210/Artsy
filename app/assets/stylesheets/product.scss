@@ -8,12 +8,14 @@
 
   font-family: "Roboto", sans-serif;
   display: grid;
-  grid-template-columns: 55% auto;
+  grid-template-columns: 2fr 1fr;
   gap: 4rem;
 }
 
 .product-show-image {
   border-radius: 9px;
+  width: 100%;
+  height: auto;
 }
 
 .margin-bottom {
@@ -155,31 +157,32 @@
 }
 
 .show-option-container {
-  margin-top: 2rem;
+  margin: 2rem auto;
   text-align: center;
 
+  // width: max-content;
+  // border: thin solid black;
+
   .show-desc {
-    // border: thin solid black;
     font-size: 1.25rem;
-    padding-top: 1vh;
   }
 }
 
-.show-option-button {
-  height: 2.5rem;
-}
-
 .show-option-container.more {
-  padding: 0 5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  // border: thin solid black;
 }
 
 .show-option-container.less {
-  padding: 0 13rem;
+  padding-left: 9rem;
+  padding-right: 9rem;
+  border: thin solid transparent;
 }
 
 .show-option-button:hover {
+  background-color: lightgrey;
   border-radius: 2rem;
-  background-color: lightgray;
   transition: 250ms ease-in-out;
 }
 
@@ -216,6 +219,7 @@
   margin-top: 1rem;
   display: grid;
   grid-template-columns: 10% auto;
+  gap: 1rem;
 
   h1 {
     position: relative;

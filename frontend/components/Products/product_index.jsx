@@ -38,7 +38,7 @@ class ProductIndex extends React.Component {
                   <img src={window.street} className="round-image" alt="" />
                 </Link>
 
-                <p>Street Photography</p>
+                <p>Street</p>
               </li>
               <li>
                 <Link to="/products?search=landscape">
