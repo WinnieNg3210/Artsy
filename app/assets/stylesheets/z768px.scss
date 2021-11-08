@@ -53,13 +53,11 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      // align-items: center;
-      //   margin-left: 2rem;
     }
 
     .nature-landscape {
       // margin-top: 4rem;
-      //   font-size: 2rem;
+      //   font-size: 3rem;
       text-align: left;
       display: flex;
       flex-direction: column;
@@ -68,26 +66,26 @@
         margin-top: 1rem;
       }
     }
+  }
 
-    .zen {
-      text-align: left;
-      margin-top: 1rem;
-      font-size: 1rem;
-      font-weight: 350;
-    }
+  .zen {
+    text-align: left;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 350;
+  }
 
-    .nature-products {
-      // margin-left: 3rem;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.5rem;
-      // justify-content: center;
+  .nature-products {
+    // margin-left: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    // justify-content: center;
 
-      .top-picks-image {
-        // height: 24vh;
-        height: 30vh;
-        width: 23vw;
-      }
+    .top-picks-image {
+      // height: 24vh;
+      height: 22vh;
+      width: 23vw;
     }
   }
 
@@ -98,6 +96,7 @@
   .editor {
     margin-bottom: 2rem;
     font-size: 2rem;
+
     font-family: "Roboto", sans-serif;
     text-align: left;
   }
