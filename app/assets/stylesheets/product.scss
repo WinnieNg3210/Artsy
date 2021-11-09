@@ -78,11 +78,6 @@
   background-color: black;
 }
 
-.add-item-button:hover {
-  transform: scale(1.05);
-  transition: 100ms ease-in-out;
-}
-
 .hot-item-container,
 .shipping-container {
   display: flex;
@@ -115,12 +110,6 @@
 
   position: relative;
   left: -10px;
-}
-
-.description-container:hover {
-  border-radius: 2rem;
-  background-color: lightgray;
-  transition: 250ms ease-in-out;
 }
 
 .product-description-text {
@@ -182,12 +171,6 @@
   padding-left: 9rem;
   padding-right: 9rem;
   border: thin solid transparent;
-}
-
-.show-option-button:hover {
-  background-color: lightgrey;
-  border-radius: 2rem;
-  transition: 250ms ease-in-out;
 }
 
 /**************************/

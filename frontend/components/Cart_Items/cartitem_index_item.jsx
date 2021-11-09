@@ -39,7 +39,7 @@ class CartIndexItem extends React.Component {
         <Link className="cart-item" to={`/products/${product_id}`}>
           <img className="cart-item-img" src={imageUrl} />
         </Link>
-        <div className="cart-item-info">
+        <div className="cart-item-container-right">
           <h1 className="cart-item-title">{title}</h1>
           <button
             type="submit"
@@ -49,21 +49,25 @@ class CartIndexItem extends React.Component {
             {/* Remove */}
             <p>Remove</p>
           </button>
+          <div className="cart-item-flex">
+            <div className="cart-item-quantity-container">
+              <select
+                value={quantity}
+                name="quantity"
+                onChange={this.handleQuantity}
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <div className="cart-item-total-price">
+              ${totalPrice.toFixed(2)}
+            </div>
+          </div>
         </div>
-        <div className="cart-item-quantity-container">
-          <select
-            value={quantity}
-            name="quantity"
-            onChange={this.handleQuantity}
-          >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </div>
-        <div className="cart-item-total-price">${totalPrice.toFixed(2)}</div>
       </div>
     );
   }
