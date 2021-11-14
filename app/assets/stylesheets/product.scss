@@ -9,7 +9,7 @@
 
   display: grid;
   grid-template-columns: 1fr;
-  // gap: 2rem;
+  gap: 2rem;
 }
 
 .product-show-image {
@@ -205,7 +205,8 @@
 .reviewers {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: 20% auto;
+  grid-template-columns: 5% auto;
+  gap: 2rem;
 
   h1 {
     position: relative;
@@ -242,8 +243,8 @@
 }
 
 .edit-delete-buttons {
-  display: grid;
-  grid-template-columns: 10% auto;
+  display: flex;
+  gap: 1rem;
 }
 
 .delete-review-btn,

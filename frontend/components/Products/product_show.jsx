@@ -131,7 +131,14 @@ class ProductShow extends React.Component {
 
     return (
       <div className="product-page-container">
-        <img src={product.imageUrl} className="product-show-image" />
+        <div className="product-left">
+          <img src={product.imageUrl} className="product-show-image" />
+          <div className="product-reviews-container">
+            <ReviewIndexContainer productId={this.props.product.id} />
+            <div className="add-btn-container">{addReviewBtn}</div>
+            {createReview}
+          </div>
+        </div>
         <div className="product-right product-show-span-row-2">
           {/* <p className="product-seller">PokemonLover</p> */}
           <div className="product-header-container">
@@ -254,11 +261,6 @@ class ProductShow extends React.Component {
               </div>
             </div>
           ) : null}
-        </div>
-        <div className="product-reviews-container">
-          <ReviewIndexContainer productId={this.props.product.id} />
-          <div className="add-btn-container">{addReviewBtn}</div>
-          {createReview}
         </div>
       </div>
     );

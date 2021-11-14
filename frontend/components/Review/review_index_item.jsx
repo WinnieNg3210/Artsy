@@ -63,7 +63,9 @@ class ReviewIndexItem extends React.Component {
 
     return (
       <div className="reviewers">
-        <h1>{review.first_name}</h1>
+        <div className="reviewer-name">
+          <h1>{review.first_name}</h1>
+        </div>
         <div className="review">
           <div className="review-rating-container">
             <div className="review-rating">{ratings}</div>
